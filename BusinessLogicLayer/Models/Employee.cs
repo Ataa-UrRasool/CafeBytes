@@ -16,8 +16,17 @@ namespace DbProject.BusinessLogicLayer.Models
 
 		public string CreateInsertQuery()
 		{
-			return "INSERT INTO Employees (name, phoneNo, email, address, hourlyRate)" +
-				" VALUES ('" + Name + "', '" + PhoneNumber + "', '" + Email + "', '" + Address + "', '" + HourlyRate + "')";
+			if (Gender.ToUpper() == Constants.GENDER_MALE)
+			{
+				return "INSERT INTO Employees (name, phoneNo, email, address, hourlyRate, gender)" +
+				" VALUES ('" + Name + "', '" + PhoneNumber + "', '" + Email + "', '" + Address + "', '" + HourlyRate + "', 1)";
+			}
+			else
+			{
+				return "INSERT INTO Employees (name, phoneNo, email, address, hourlyRate, gender)" +
+				" VALUES ('" + Name + "', '" + PhoneNumber + "', '" + Email + "', '" + Address + "', '" + HourlyRate + "', 2)";
+			}
+
 		}
 
 		public string CreateIDCountQuery()

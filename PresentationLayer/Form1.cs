@@ -12,25 +12,27 @@ namespace DbProject
 
 		private void signInBtn_Click(object sender, EventArgs e)
 		{
-
-			Manager manager = new Manager();
-			manager.Show();
-			this.Visible = false;
 			Authentication authentication = new Authentication();
 			string role = authentication.Authenticate(this.usernameBox.Text, this.passwordBox.Text);
-			//if (role == Constants.ROLE_MANAGER)
-			//{
 
-			//}
-			//else if (role ==  Constants.ROLE_CASHIER)
-			//{
+			if (role == Constants.ROLE_MANAGER)
+			{
+				Manager manager = new Manager();
+				manager.Visible = true;
+				this.Visible = false;
 
-			//}
-			//else 
-			//{
+			}
+			else if (role == Constants.ROLE_EMPLOYEES)
+			{
+				Employee customerByEmployee = new Employee();
+				customerByEmployee.Visible = true;
+				this.Visible = false;
+			}
+			else
+			{
+				MessageBox.Show("Fuck oFF");
+			}
 
-			//	MessageBox.Show("Error!");
-			//}
 		}
 	}
 }

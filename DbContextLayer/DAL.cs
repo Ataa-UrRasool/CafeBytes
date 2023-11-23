@@ -16,10 +16,7 @@ namespace DbProject.DbContextLayer
 		SqlConnection sqlConnection;
 		SqlCommand sqlCommand;
 
-		public DAL()
-		{
-			//sqlConnection = new SqlConnection(connectionString);
-		}
+		public DAL() { }
 
 		public DataTable executeGetData(string query)
 		{
@@ -30,6 +27,7 @@ namespace DbProject.DbContextLayer
 			SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
 			DataTable dt = new DataTable();
 			sqlDataAdapter.Fill(dt);
+
 
 			sqlConnection.Close();
 			sqlDataAdapter.Dispose();
@@ -49,7 +47,7 @@ namespace DbProject.DbContextLayer
 			}
 			else
 			{
-
+				MessageBox.Show("Error!");
 			}
 
 		}

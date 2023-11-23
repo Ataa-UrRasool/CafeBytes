@@ -15,5 +15,11 @@ namespace DbProject.BusinessLogicLayer
 			DAL dAL = new DAL();
 			dAL.Insert(employee.CreateInsertQuery());
 		}
+
+		public void CreateCustomer(Customer customer)
+		{
+			DAL dAL = new DAL();
+			dAL.Insert(customer.CreateInsertQuery());
+		}
 	}
 }
