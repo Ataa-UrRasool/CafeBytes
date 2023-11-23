@@ -30,6 +30,7 @@
 		{
 			tabControl1 = new TabControl();
 			tab_createCustomer = new TabPage();
+			cmb_gender = new ComboBox();
 			txt_password = new TextBox();
 			lbl_password = new Label();
 			txt_username = new TextBox();
@@ -45,7 +46,6 @@
 			txt_phoneNo = new TextBox();
 			txt_name = new TextBox();
 			tabPage2 = new TabPage();
-			cmb_gender = new ComboBox();
 			tabControl1.SuspendLayout();
 			tab_createCustomer.SuspendLayout();
 			SuspendLayout();
@@ -85,6 +85,15 @@
 			tab_createCustomer.Size = new Size(1372, 719);
 			tab_createCustomer.TabIndex = 0;
 			tab_createCustomer.Text = "Create Customer";
+			// 
+			// cmb_gender
+			// 
+			cmb_gender.FormattingEnabled = true;
+			cmb_gender.Items.AddRange(new object[] { "Male", "Female" });
+			cmb_gender.Location = new Point(559, 363);
+			cmb_gender.Name = "cmb_gender";
+			cmb_gender.Size = new Size(364, 28);
+			cmb_gender.TabIndex = 28;
 			// 
 			// txt_password
 			// 
@@ -234,15 +243,6 @@
 			tabPage2.Text = "tabPage2";
 			tabPage2.UseVisualStyleBackColor = true;
 			// 
-			// cmb_gender
-			// 
-			cmb_gender.FormattingEnabled = true;
-			cmb_gender.Items.AddRange(new object[] { "Male", "Female" });
-			cmb_gender.Location = new Point(559, 363);
-			cmb_gender.Name = "cmb_gender";
-			cmb_gender.Size = new Size(364, 28);
-			cmb_gender.TabIndex = 28;
-			// 
 			// Employee
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
@@ -251,7 +251,7 @@
 			Controls.Add(tabControl1);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			Name = "Employee";
-			Text = "CustomerByEmployee";
+			Text = "Employee View";
 			tabControl1.ResumeLayout(false);
 			tab_createCustomer.ResumeLayout(false);
 			tab_createCustomer.PerformLayout();

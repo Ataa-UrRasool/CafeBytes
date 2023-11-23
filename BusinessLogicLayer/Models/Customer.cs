@@ -18,13 +18,13 @@ namespace DbProject.BusinessLogicLayer.Models
 		{
 			if (Gender.ToUpper() == Constants.GENDER_MALE)
 			{
-				return "INSERT INTO Employees (name, phoneNo, email, address, gender, LoyaltyPoints)" +
-					" VALUES ('" + Name + "', '" + PhoneNumber + "', '" + Email + "', '" + Address + "', '" + 1 + "', '" + 0 + "');";
+				return "INSERT INTO Customers (name, phoneNo, email, address, gender, loyaltyPoints, role)" +
+					" VALUES ('" + Name + "', '" + PhoneNumber + "', '" + Email + "', '" + Address + "', 1, 0, 3);";
 			}
 			else
 			{
-				return "INSERT INTO Employees (name, phoneNo, email, address, gender, LoyaltyPoints)" +
-					" VALUES ('" + Name + "', '" + PhoneNumber + "', '" + Email + "', '" + Address + "', '" + 2 + "', '" + 0 + "');";
+				return "INSERT INTO Customers (name, phoneNo, email, address, gender, loyaltyPoints, role)" +
+					" VALUES ('" + Name + "', '" + PhoneNumber + "', '" + Email + "', '" + Address + "', 2, 0, 3);";
 			}
 		}
 	}

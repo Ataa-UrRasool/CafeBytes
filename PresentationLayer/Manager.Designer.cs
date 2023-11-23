@@ -30,6 +30,7 @@
 		{
 			tab_ViewManager = new TabControl();
 			tab_createEmployeeProfile = new TabPage();
+			cmb_gender = new ComboBox();
 			txt_hourlyRate = new TextBox();
 			lbl_hourlyRate = new Label();
 			txt_password = new TextBox();
@@ -47,7 +48,6 @@
 			txt_phoneNo = new TextBox();
 			txt_name = new TextBox();
 			tabPage2 = new TabPage();
-			cmb_gender = new ComboBox();
 			tab_ViewManager.SuspendLayout();
 			tab_createEmployeeProfile.SuspendLayout();
 			SuspendLayout();
@@ -88,6 +88,15 @@
 			tab_createEmployeeProfile.Size = new Size(1372, 718);
 			tab_createEmployeeProfile.TabIndex = 0;
 			tab_createEmployeeProfile.Text = "CreateEmployee";
+			// 
+			// cmb_gender
+			// 
+			cmb_gender.FormattingEnabled = true;
+			cmb_gender.Items.AddRange(new object[] { "Male", "Female" });
+			cmb_gender.Location = new Point(567, 360);
+			cmb_gender.Name = "cmb_gender";
+			cmb_gender.Size = new Size(364, 28);
+			cmb_gender.TabIndex = 45;
 			// 
 			// txt_hourlyRate
 			// 
@@ -193,12 +202,13 @@
 			// 
 			btn_createProfile.BackColor = Color.Transparent;
 			btn_createProfile.ForeColor = SystemColors.GrayText;
-			btn_createProfile.Location = new Point(661, 605);
+			btn_createProfile.Location = new Point(671, 592);
 			btn_createProfile.Name = "btn_createProfile";
 			btn_createProfile.Size = new Size(150, 40);
 			btn_createProfile.TabIndex = 33;
 			btn_createProfile.Text = "Create Profile";
 			btn_createProfile.UseVisualStyleBackColor = false;
+			btn_createProfile.Click += btn_createProfile_Click;
 			// 
 			// lbl_phoneNo
 			// 
@@ -255,15 +265,6 @@
 			tabPage2.TabIndex = 1;
 			tabPage2.Text = "tabPage2";
 			tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// cmb_gender
-			// 
-			cmb_gender.FormattingEnabled = true;
-			cmb_gender.Items.AddRange(new object[] { "Male", "Female" });
-			cmb_gender.Location = new Point(567, 360);
-			cmb_gender.Name = "cmb_gender";
-			cmb_gender.Size = new Size(364, 28);
-			cmb_gender.TabIndex = 45;
 			// 
 			// Manager
 			// 

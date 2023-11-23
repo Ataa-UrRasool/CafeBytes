@@ -27,6 +27,7 @@ namespace DbProject.PresentationLayer
 			customer.PhoneNumber = txt_phoneNo.Text;
 			customer.Gender = cmb_gender.Text;
 			customer.Address = txt_address.Text;
+
 			customer.Username = txt_username.Text;
 			customer.Password = txt_password.Text;
 

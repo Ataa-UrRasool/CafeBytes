@@ -13,13 +13,29 @@ namespace DbProject.BusinessLogicLayer
 		public void CreateEmployee(Employee employee)
 		{
 			DAL dAL = new DAL();
-			dAL.Insert(employee.CreateInsertQuery());
+			
+			dAL.Insert(employee.CreateInsertCredentialsQuery());
+			
+			employee.CredentialID = dAL.GetEmployeeIDCount(employee.CreateIDCountQuery());
+
+			int x = dAL.Insert(employee.CreateInsertQuery());
+			if(x > 0)
+			{
+				MessageBox.Show("Employee created...");
+			}
+			else
+			{
+				MessageBox.Show("Error while creating the employee...");
+			}
+
 		}
 
 		public void CreateCustomer(Customer customer)
 		{
 			DAL dAL = new DAL();
 			dAL.Insert(customer.CreateInsertQuery());
+
+
 		}
 	}
 }

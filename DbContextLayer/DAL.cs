@@ -34,22 +34,25 @@ namespace DbProject.DbContextLayer
 			return dt;
 		}
 
-		public void Insert(string query)
+		public int Insert(string query)
 		{
 			sqlConnection = new SqlConnection(connectionString);
 			sqlCommand = new SqlCommand(query, sqlConnection);
 
 			sqlConnection.Open();
 			int a = sqlCommand.ExecuteNonQuery();
-			if (a > 0)
-			{
-				MessageBox.Show("User Added");
-			}
-			else
-			{
-				MessageBox.Show("Error!");
-			}
 
+			return a;
+		}
+
+		public int GetEmployeeIDCount(string query)
+		{
+			sqlConnection = new SqlConnection(connectionString);
+			sqlCommand = new SqlCommand(query, sqlConnection);
+
+			sqlConnection.Open();
+			int n = (int)sqlCommand.ExecuteScalar();
+			return n;
 		}
 	}
 }
