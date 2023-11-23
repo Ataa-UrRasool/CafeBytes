@@ -21,20 +21,30 @@ namespace DbProject.PresentationLayer
 
 		private void btn_createProfile_Click(object sender, EventArgs e)
 		{
-			BusinessLogicLayer.Models.Employee employee = new BusinessLogicLayer.Models.Employee();
-			employee.Name = txt_name.Text;
-			employee.Email = txt_email.Text;
-			employee.PhoneNumber = txt_phoneNo.Text;
-			employee.Gender = cmb_gender.Text;
-			employee.Address = txt_address.Text;
-			employee.HourlyRate = float.Parse(txt_hourlyRate.Text);
-			
-			employee.Username = txt_username.Text;
-			employee.Password = txt_password.Text;
+			if (new Utility().UsernameExists(txt_username.Text))
+			{
+				MessageBox.Show("Username already exists.");
+				txt_username.Clear();
+			}
+			else
+			{
+				BusinessLogicLayer.Models.Employee employee = new BusinessLogicLayer.Models.Employee();
+				employee.Name = txt_name.Text;
+				employee.Email = txt_email.Text;
+				employee.PhoneNumber = txt_phoneNo.Text;
+				employee.Gender = cmb_gender.Text;
+				employee.Address = txt_address.Text;
+				employee.HourlyRate = float.Parse(txt_hourlyRate.Text);
 
-			UserCreation userCreation = new UserCreation();
-			userCreation.CreateEmployee(employee);
+				employee.Username = txt_username.Text;
+				employee.Password = txt_password.Text;
+
+				UserCreation userCreation = new UserCreation();
+				userCreation.CreateEmployee(employee);
+			}
+
 		}
 
 	}
+
 }

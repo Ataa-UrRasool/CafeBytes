@@ -45,7 +45,7 @@ namespace DbProject.DbContextLayer
 			return a;
 		}
 
-		public int GetEmployeeIDCount(string query)
+		public int ExecuteGetCount(string query)
 		{
 			sqlConnection = new SqlConnection(connectionString);
 			sqlCommand = new SqlCommand(query, sqlConnection);

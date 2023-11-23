@@ -16,7 +16,7 @@ namespace DbProject.BusinessLogicLayer
 			
 			dAL.Insert(employee.CreateInsertCredentialsQuery());
 			
-			employee.CredentialID = dAL.GetEmployeeIDCount(employee.CreateIDCountQuery());
+			employee.CredentialID = dAL.ExecuteGetCount(employee.CreateIDCountQuery());
 
 			int x = dAL.Insert(employee.CreateInsertQuery());
 			if(x > 0)
