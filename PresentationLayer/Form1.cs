@@ -13,15 +13,18 @@ namespace DbProject
 		{
 			Authentication authentication = new Authentication();
 			string role = authentication.Authenticate(this.usernameBox.Text, this.passwordBox.Text);
-			if (role == "msnsger")
+			if (role == Constants.ROLE_MANAGER)
 			{
 
 			}
-			else if (csdhirt)
+			else if (role ==  Constants.ROLE_CASHIER)
 			{
-				//incorrect
+				
 			}
-			else { error}
+			else 
+			{
+				MessageBox.Show("Error!");
+			}
 		}
 	}
 }

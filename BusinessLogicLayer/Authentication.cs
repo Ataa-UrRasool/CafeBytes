@@ -17,7 +17,7 @@ namespace DbProject.BusinessLogicLayer
 			//Dataset ans = dAL.executeGet(CreateGetCredentialsQuery(username));
 			DataTable dt = dAL.executeGetData(CreateGetCredentialsQuery(username));
 			//dt.
-			return false;
+			return Constants.ROLE_MANAGER;
 		}
 
 		private string CreateGetCredentialsQuery(string username)
