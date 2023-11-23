@@ -9,8 +9,8 @@ namespace DbProject.BusinessLogicLayer.Models
 	internal class Schedule
 	{
 		public int Id { get; set; }
-		public Time ScheduleTime { get; set; }
-		public Date ScheduleDate { get; set; }
+		public TimeOnly ScheduleTime { get; set; }
+		public DateOnly ScheduleDate { get; set; }
 	}
 
 }

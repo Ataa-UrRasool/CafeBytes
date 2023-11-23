@@ -14,19 +14,10 @@ namespace DbProject.BusinessLogicLayer.Models
 
 		public List<Schedule> EmployeeSchedule { get; set; }
 
-		public Employee() { Id = GetIDCount() + 1; }
-
-		public int GetIDCount()
-		{
-			int count = new DAL().executeGetData(CreateIDCountQuery());
-			return count;
-		}
-
 		public string CreateInsertQuery()
 		{
-			string query = "INSERT INTO Employees (ID, name, ) VALUES ('" + Id + "')";
-
-			return query;
+			return "INSERT INTO Employees (name, phoneNo, email, address, hourlyRate)" +
+				" VALUES ('" + Name + "', '" + PhoneNumber + "', '" + Email + "', '" + Address + "', '" + HourlyRate + "')";
 		}
 
 		public string CreateIDCountQuery()

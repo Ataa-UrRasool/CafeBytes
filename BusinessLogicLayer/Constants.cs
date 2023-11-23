@@ -11,5 +11,6 @@ namespace DbProject.BusinessLogicLayer
 	{
 		public static string ROLE_MANAGER = "MANAGER";
 		public static string ROLE_CASHIER = "CASHIER";
+		public static string NO_MATCH = "NO MATCH";
 	}
 }

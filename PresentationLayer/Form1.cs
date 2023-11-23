@@ -1,4 +1,5 @@
 using DbProject.BusinessLogicLayer;
+using DbProject.PresentationLayer;
 
 namespace DbProject
 {
@@ -11,20 +12,25 @@ namespace DbProject
 
 		private void signInBtn_Click(object sender, EventArgs e)
 		{
+
+			Manager manager = new Manager();
+			manager.Show();
+			this.Visible = false;
 			Authentication authentication = new Authentication();
 			string role = authentication.Authenticate(this.usernameBox.Text, this.passwordBox.Text);
-			if (role == Constants.ROLE_MANAGER)
-			{
+			//if (role == Constants.ROLE_MANAGER)
+			//{
 
-			}
-			else if (role ==  Constants.ROLE_CASHIER)
-			{
-				
-			}
-			else 
-			{
-				MessageBox.Show("Error!");
-			}
+			//}
+			//else if (role ==  Constants.ROLE_CASHIER)
+			//{
+
+			//}
+			//else 
+			//{
+
+			//	MessageBox.Show("Error!");
+			//}
 		}
 	}
 }

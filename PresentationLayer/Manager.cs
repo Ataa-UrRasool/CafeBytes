@@ -25,11 +25,13 @@ namespace DbProject.PresentationLayer
 			employee.Name = txt_name.Text;
 			employee.Email = txt_email.Text;
 			employee.PhoneNumber = txt_phoneNo.Text;
-		
-			UserCreation userCreation = new UserCreation();	
+			employee.Gender = txt_gender.Text;
+			employee.Address = txt_address.Text;
+			employee.HourlyRate = float.Parse(txt_hourlyRate.Text);
+
+			UserCreation userCreation = new UserCreation();
 			userCreation.CreateEmployee(employee);
 		}
-
 
 	}
 }
