@@ -34,5 +34,12 @@ namespace DbProject
 			}
 
 		}
+
+		private void lbl_guestScreen_Click(object sender, EventArgs e)
+		{
+			this.Visible = false;
+			GuestUsers guestUsers = new GuestUsers();
+			guestUsers.Visible = true;
+		}
 	}
 }
