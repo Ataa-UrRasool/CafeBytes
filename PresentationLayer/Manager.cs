@@ -28,23 +28,105 @@ namespace DbProject.PresentationLayer
 			}
 			else
 			{
-				BusinessLogicLayer.Models.Employee employee = new BusinessLogicLayer.Models.Employee();
-				employee.Name = txt_name.Text;
-				employee.Email = txt_email.Text;
-				employee.PhoneNumber = txt_phoneNo.Text;
-				employee.Gender = cmb_gender.Text;
-				employee.Address = txt_address.Text;
-				employee.HourlyRate = float.Parse(txt_hourlyRate.Text);
+				BusinessLogicLayer.Models.Employee employee = new BusinessLogicLayer.Models.Employee
+				{
+					Name = txt_name.Text,
+					Email = txt_email.Text,
+					PhoneNumber = txt_phoneNo.Text,
+					Gender = cmb_gender.Text,
+					Address = txt_address.Text,
+					HourlyRate = float.Parse(txt_hourlyRate.Text),
 
-				employee.Username = txt_username.Text;
-				employee.Password = txt_password.Text;
+					Username = txt_username.Text,
+					Password = txt_password.Text
+				};
 
 				UserCreation userCreation = new UserCreation();
 				userCreation.CreateEmployee(employee);
 			}
-
 		}
 
+		private void btn_addItem_Click(object sender, EventArgs e)
+		{
+			Item item = new Item
+			{
+				Name = txt_itemName.Text,
+				Description = txt_itemDescription.Text,
+				NutritionalInformation = txt_itemNutritionalInfo.Text,
+				LoyaltyPointsReward = int.Parse(txt_itemLoyaltyPointsReward.Text),
+				LoyaltyPointsPrice = int.Parse(txt_itemLoyaltyPointsPrice.Text)
+			};
+			MenuCreation menuCreation = new MenuCreation();
+		}
+
+		private void btn_addDiscount_Click(object sender, EventArgs e)
+		{
+			Discount discount = new Discount
+			{
+				Name = txt_discountName.Text,
+				Value = float.Parse(txt_dicountValue.Text)
+			};
+			if (cmb_discountStatus.SelectedItem != null)
+			{
+				if (cmb_discountStatus.SelectedIndex == 0)
+				{
+					discount.Status = 1; //Active
+				}
+				else
+				{
+					discount.Status = 2; //Inactive
+				}
+			}
+
+			RulesCreation rulesCreation = new RulesCreation();
+			rulesCreation.CreateDiscountRule(discount);
+		}
+
+		private void btn_addTax_Click(object sender, EventArgs e)
+		{
+			Tax tax = new Tax
+			{
+				Name = txt_taxName.Text,
+				Value = float.Parse(txt_taxValue.Text)
+			};
+			if (cmb_taxStatus.SelectedItem != null)
+			{
+				if (cmb_taxStatus.SelectedIndex == 0)
+				{
+					tax.Status = 1; //Active
+				}
+				else
+				{
+					tax.Status = 2; //Inactive
+				}
+			}
+
+			RulesCreation rulesCreation = new RulesCreation();
+			rulesCreation.CreateTaxRule(tax);
+		}
+
+
+		private void cmb_discountInfo_Click(object sender, EventArgs e)
+		{
+			cmb_discountInfo.Items.Clear();
+			Utility utility = new Utility();
+			List<Discount> list = utility.GetDiscounts();
+			for (int i = 0; i < list.Count; i++)
+			{
+				cmb_discountInfo.Items.Add(list[i].Name);
+			}
+		}
+
+		private void cmb_taxInfo_Click(object sender, EventArgs e)
+		{
+			cmb_taxInfo.Items.Clear();
+			Utility utility = new Utility();
+			List<Tax> list = utility.GetTaxes();
+			for (int i = 0;i < list.Count;i++)
+			{
+				cmb_taxInfo.Items.Add(list[i].Name);
+			}
+		}
 	}
 
 }

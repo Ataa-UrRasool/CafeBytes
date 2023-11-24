@@ -16,5 +16,8 @@ namespace DbProject.BusinessLogicLayer
 
 		public static string GENDER_MALE = "MALE";
 		public static string GENDER_FEMALE = "FEMALE";
+
+		public static string STATUS_ACTIVE = "ACTIVE";
+		public static string STATUS_INACTIVE = "INACTIVE";
 	}
 }
