@@ -54,9 +54,13 @@ namespace DbProject.PresentationLayer
 				Description = txt_itemDescription.Text,
 				NutritionalInformation = txt_itemNutritionalInfo.Text,
 				LoyaltyPointsReward = int.Parse(txt_itemLoyaltyPointsReward.Text),
-				LoyaltyPointsPrice = int.Parse(txt_itemLoyaltyPointsPrice.Text)
+				LoyaltyPointsPrice = int.Parse(txt_itemLoyaltyPointsPrice.Text),
+				Price = float.Parse(txt_itemPrice.Text),
+				Tax = cmb_taxInfo.SelectedIndex + 1,
+				Discount = cmb_discountInfo.SelectedIndex + 1,
 			};
 			MenuCreation menuCreation = new MenuCreation();
+			menuCreation.AddMenuItem(item);
 		}
 
 		private void btn_addDiscount_Click(object sender, EventArgs e)
@@ -122,11 +126,12 @@ namespace DbProject.PresentationLayer
 			cmb_taxInfo.Items.Clear();
 			Utility utility = new Utility();
 			List<Tax> list = utility.GetTaxes();
-			for (int i = 0;i < list.Count;i++)
+			for (int i = 0; i < list.Count; i++)
 			{
 				cmb_taxInfo.Items.Add(list[i].Name);
 			}
 		}
+
 	}
 
 }

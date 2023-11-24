@@ -14,13 +14,17 @@ namespace DbProject.BusinessLogicLayer.Models
 		public string NutritionalInformation { get; set; }
 		public int LoyaltyPointsPrice { get; set; }
 		public int LoyaltyPointsReward { get; set; }
-		
-		public Item ()
+		public int Discount { get; set; }
+		public int Tax { get; set; }
+
+		public Item()
 		{ }
 
 		public string InsertMenuItemQuery()
 		{
-			return "";
+			return "INSERT INTO MenuItems (name, description, price, nutritionalInfo, loyaltyPointsPrice, layaltyPointsReward, discount, tax)" +
+					" VALUES ( '" + Name + "', '" + Description + "', '" + Price + "', '" + NutritionalInformation + "', '" + LoyaltyPointsPrice + 
+					"', '" + LoyaltyPointsReward + "', '" + Discount + "', '" + Tax + "');";
 		}
 	}
 }

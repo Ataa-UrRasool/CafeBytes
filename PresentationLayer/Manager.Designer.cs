@@ -67,6 +67,14 @@
 			btn_addTax = new Button();
 			txt_taxValue = new TextBox();
 			txt_taxName = new TextBox();
+			lbl_itemName = new Label();
+			lbl_itemDescript = new Label();
+			lbl_itemPrice = new Label();
+			lbl_nutritionalInfo = new Label();
+			lbl_lpPrice = new Label();
+			lbl_lpReward = new Label();
+			lbl_discountInfo = new Label();
+			lbl_taxInfo = new Label();
 			tab_ViewManager.SuspendLayout();
 			tab_createEmployeeProfile.SuspendLayout();
 			tab_addMenuItems.SuspendLayout();
@@ -119,14 +127,14 @@
 			// 
 			cmb_gender.FormattingEnabled = true;
 			cmb_gender.Items.AddRange(new object[] { "Male", "Female" });
-			cmb_gender.Location = new Point(567, 360);
+			cmb_gender.Location = new Point(567, 364);
 			cmb_gender.Name = "cmb_gender";
 			cmb_gender.Size = new Size(364, 31);
 			cmb_gender.TabIndex = 45;
 			// 
 			// txt_hourlyRate
 			// 
-			txt_hourlyRate.Location = new Point(567, 412);
+			txt_hourlyRate.Location = new Point(567, 421);
 			txt_hourlyRate.Name = "txt_hourlyRate";
 			txt_hourlyRate.PlaceholderText = "hourly rate";
 			txt_hourlyRate.Size = new Size(364, 30);
@@ -136,7 +144,7 @@
 			// 
 			lbl_hourlyRate.AutoSize = true;
 			lbl_hourlyRate.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_hourlyRate.Location = new Point(441, 408);
+			lbl_hourlyRate.Location = new Point(404, 411);
 			lbl_hourlyRate.Name = "lbl_hourlyRate";
 			lbl_hourlyRate.RightToLeft = RightToLeft.No;
 			lbl_hourlyRate.Size = new Size(119, 28);
@@ -146,7 +154,7 @@
 			// 
 			// txt_password
 			// 
-			txt_password.Location = new Point(567, 534);
+			txt_password.Location = new Point(567, 533);
 			txt_password.Name = "txt_password";
 			txt_password.PlaceholderText = "password";
 			txt_password.Size = new Size(364, 30);
@@ -156,7 +164,7 @@
 			// 
 			lbl_password.AutoSize = true;
 			lbl_password.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_password.Location = new Point(441, 530);
+			lbl_password.Location = new Point(415, 533);
 			lbl_password.Name = "lbl_password";
 			lbl_password.Size = new Size(97, 28);
 			lbl_password.TabIndex = 41;
@@ -165,7 +173,7 @@
 			// 
 			// txt_username
 			// 
-			txt_username.Location = new Point(567, 474);
+			txt_username.Location = new Point(567, 477);
 			txt_username.Name = "txt_username";
 			txt_username.PlaceholderText = "username";
 			txt_username.Size = new Size(364, 30);
@@ -175,7 +183,7 @@
 			// 
 			lbl_username.AutoSize = true;
 			lbl_username.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_username.Location = new Point(441, 470);
+			lbl_username.Location = new Point(411, 473);
 			lbl_username.Name = "lbl_username";
 			lbl_username.Size = new Size(104, 28);
 			lbl_username.TabIndex = 39;
@@ -186,7 +194,7 @@
 			// 
 			lbl_gender.AutoSize = true;
 			lbl_gender.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_gender.Location = new Point(441, 360);
+			lbl_gender.Location = new Point(424, 363);
 			lbl_gender.Name = "lbl_gender";
 			lbl_gender.Size = new Size(79, 28);
 			lbl_gender.TabIndex = 37;
@@ -206,7 +214,7 @@
 			// 
 			lbl_address.AutoSize = true;
 			lbl_address.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_address.Location = new Point(441, 301);
+			lbl_address.Location = new Point(421, 304);
 			lbl_address.Name = "lbl_address";
 			lbl_address.Size = new Size(85, 28);
 			lbl_address.TabIndex = 35;
@@ -217,7 +225,7 @@
 			// 
 			lbl_email.AutoSize = true;
 			lbl_email.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_email.Location = new Point(441, 230);
+			lbl_email.Location = new Point(433, 233);
 			lbl_email.Name = "lbl_email";
 			lbl_email.Size = new Size(60, 28);
 			lbl_email.TabIndex = 34;
@@ -228,7 +236,7 @@
 			// 
 			btn_createProfile.BackColor = Color.Transparent;
 			btn_createProfile.ForeColor = SystemColors.GrayText;
-			btn_createProfile.Location = new Point(671, 592);
+			btn_createProfile.Location = new Point(674, 592);
 			btn_createProfile.Name = "btn_createProfile";
 			btn_createProfile.Size = new Size(150, 40);
 			btn_createProfile.TabIndex = 33;
@@ -240,7 +248,7 @@
 			// 
 			lbl_phoneNo.AutoSize = true;
 			lbl_phoneNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_phoneNo.Location = new Point(441, 174);
+			lbl_phoneNo.Location = new Point(414, 177);
 			lbl_phoneNo.Name = "lbl_phoneNo";
 			lbl_phoneNo.Size = new Size(98, 28);
 			lbl_phoneNo.TabIndex = 31;
@@ -251,7 +259,7 @@
 			// 
 			lbl_name.AutoSize = true;
 			lbl_name.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_name.Location = new Point(441, 117);
+			lbl_name.Location = new Point(430, 120);
 			lbl_name.Name = "lbl_name";
 			lbl_name.Size = new Size(66, 28);
 			lbl_name.TabIndex = 32;
@@ -260,7 +268,7 @@
 			// 
 			// txt_email
 			// 
-			txt_email.Location = new Point(567, 231);
+			txt_email.Location = new Point(567, 230);
 			txt_email.Name = "txt_email";
 			txt_email.PlaceholderText = "email";
 			txt_email.Size = new Size(364, 30);
@@ -268,7 +276,7 @@
 			// 
 			// txt_phoneNo
 			// 
-			txt_phoneNo.Location = new Point(567, 175);
+			txt_phoneNo.Location = new Point(567, 174);
 			txt_phoneNo.Name = "txt_phoneNo";
 			txt_phoneNo.PlaceholderText = "phone no";
 			txt_phoneNo.Size = new Size(364, 30);
@@ -285,6 +293,14 @@
 			// tab_addMenuItems
 			// 
 			tab_addMenuItems.BackColor = Color.DarkGray;
+			tab_addMenuItems.Controls.Add(lbl_taxInfo);
+			tab_addMenuItems.Controls.Add(lbl_discountInfo);
+			tab_addMenuItems.Controls.Add(lbl_lpReward);
+			tab_addMenuItems.Controls.Add(lbl_lpPrice);
+			tab_addMenuItems.Controls.Add(lbl_nutritionalInfo);
+			tab_addMenuItems.Controls.Add(lbl_itemPrice);
+			tab_addMenuItems.Controls.Add(lbl_itemDescript);
+			tab_addMenuItems.Controls.Add(lbl_itemName);
 			tab_addMenuItems.Controls.Add(cmb_taxInfo);
 			tab_addMenuItems.Controls.Add(cmb_discountInfo);
 			tab_addMenuItems.Controls.Add(btn_addItem);
@@ -305,9 +321,9 @@
 			// cmb_taxInfo
 			// 
 			cmb_taxInfo.FormattingEnabled = true;
-			cmb_taxInfo.Location = new Point(566, 483);
+			cmb_taxInfo.Location = new Point(566, 520);
 			cmb_taxInfo.Name = "cmb_taxInfo";
-			cmb_taxInfo.Size = new Size(228, 31);
+			cmb_taxInfo.Size = new Size(380, 31);
 			cmb_taxInfo.TabIndex = 8;
 			cmb_taxInfo.Text = "tax info";
 			cmb_taxInfo.Click += cmb_taxInfo_Click;
@@ -315,9 +331,9 @@
 			// cmb_discountInfo
 			// 
 			cmb_discountInfo.FormattingEnabled = true;
-			cmb_discountInfo.Location = new Point(566, 429);
+			cmb_discountInfo.Location = new Point(566, 460);
 			cmb_discountInfo.Name = "cmb_discountInfo";
-			cmb_discountInfo.Size = new Size(228, 31);
+			cmb_discountInfo.Size = new Size(380, 31);
 			cmb_discountInfo.TabIndex = 7;
 			cmb_discountInfo.Text = "discount info";
 			cmb_discountInfo.Click += cmb_discountInfo_Click;
@@ -325,9 +341,10 @@
 			// btn_addItem
 			// 
 			btn_addItem.Cursor = Cursors.Hand;
-			btn_addItem.Location = new Point(586, 552);
+			btn_addItem.ForeColor = SystemColors.GrayText;
+			btn_addItem.Location = new Point(681, 580);
 			btn_addItem.Name = "btn_addItem";
-			btn_addItem.Size = new Size(94, 29);
+			btn_addItem.Size = new Size(150, 50);
 			btn_addItem.TabIndex = 6;
 			btn_addItem.Text = "Add Item";
 			btn_addItem.UseVisualStyleBackColor = true;
@@ -335,42 +352,43 @@
 			// 
 			// txt_itemLoyaltyPointsReward
 			// 
-			txt_itemLoyaltyPointsReward.Location = new Point(566, 378);
+			txt_itemLoyaltyPointsReward.Location = new Point(566, 401);
 			txt_itemLoyaltyPointsReward.Name = "txt_itemLoyaltyPointsReward";
-			txt_itemLoyaltyPointsReward.PlaceholderText = "LP rewards";
-			txt_itemLoyaltyPointsReward.Size = new Size(125, 30);
+			txt_itemLoyaltyPointsReward.PlaceholderText = "LP reward";
+			txt_itemLoyaltyPointsReward.Size = new Size(380, 30);
 			txt_itemLoyaltyPointsReward.TabIndex = 5;
 			// 
 			// txt_itemLoyaltyPointsPrice
 			// 
-			txt_itemLoyaltyPointsPrice.Location = new Point(566, 319);
+			txt_itemLoyaltyPointsPrice.Location = new Point(566, 342);
 			txt_itemLoyaltyPointsPrice.Name = "txt_itemLoyaltyPointsPrice";
 			txt_itemLoyaltyPointsPrice.PlaceholderText = "LP price";
-			txt_itemLoyaltyPointsPrice.Size = new Size(125, 30);
+			txt_itemLoyaltyPointsPrice.Size = new Size(380, 30);
 			txt_itemLoyaltyPointsPrice.TabIndex = 4;
 			// 
 			// txt_itemNutritionalInfo
 			// 
-			txt_itemNutritionalInfo.Location = new Point(566, 260);
+			txt_itemNutritionalInfo.Location = new Point(566, 283);
 			txt_itemNutritionalInfo.Name = "txt_itemNutritionalInfo";
 			txt_itemNutritionalInfo.PlaceholderText = "nutritional information";
-			txt_itemNutritionalInfo.Size = new Size(125, 30);
+			txt_itemNutritionalInfo.Size = new Size(380, 30);
 			txt_itemNutritionalInfo.TabIndex = 3;
 			// 
 			// txt_itemPrice
 			// 
-			txt_itemPrice.Location = new Point(566, 198);
+			txt_itemPrice.Location = new Point(566, 224);
 			txt_itemPrice.Name = "txt_itemPrice";
 			txt_itemPrice.PlaceholderText = "item price";
-			txt_itemPrice.Size = new Size(125, 30);
+			txt_itemPrice.Size = new Size(380, 30);
 			txt_itemPrice.TabIndex = 2;
 			// 
 			// txt_itemDescription
 			// 
-			txt_itemDescription.Location = new Point(566, 135);
+			txt_itemDescription.Location = new Point(566, 138);
+			txt_itemDescription.Multiline = true;
 			txt_itemDescription.Name = "txt_itemDescription";
 			txt_itemDescription.PlaceholderText = "item description";
-			txt_itemDescription.Size = new Size(125, 30);
+			txt_itemDescription.Size = new Size(380, 57);
 			txt_itemDescription.TabIndex = 1;
 			// 
 			// txt_itemName
@@ -378,7 +396,7 @@
 			txt_itemName.Location = new Point(566, 79);
 			txt_itemName.Name = "txt_itemName";
 			txt_itemName.PlaceholderText = "item name";
-			txt_itemName.Size = new Size(125, 30);
+			txt_itemName.Size = new Size(380, 30);
 			txt_itemName.TabIndex = 0;
 			// 
 			// tab_addDiscounts
@@ -489,6 +507,94 @@
 			txt_taxName.Size = new Size(166, 30);
 			txt_taxName.TabIndex = 4;
 			// 
+			// lbl_itemName
+			// 
+			lbl_itemName.AutoSize = true;
+			lbl_itemName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_itemName.Location = new Point(403, 77);
+			lbl_itemName.Name = "lbl_itemName";
+			lbl_itemName.Size = new Size(66, 28);
+			lbl_itemName.TabIndex = 33;
+			lbl_itemName.Text = "Name";
+			lbl_itemName.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_itemDescript
+			// 
+			lbl_itemDescript.AutoSize = true;
+			lbl_itemDescript.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_itemDescript.Location = new Point(379, 143);
+			lbl_itemDescript.Name = "lbl_itemDescript";
+			lbl_itemDescript.Size = new Size(115, 28);
+			lbl_itemDescript.TabIndex = 34;
+			lbl_itemDescript.Text = "Description";
+			lbl_itemDescript.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_itemPrice
+			// 
+			lbl_itemPrice.AutoSize = true;
+			lbl_itemPrice.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_itemPrice.Location = new Point(408, 219);
+			lbl_itemPrice.Name = "lbl_itemPrice";
+			lbl_itemPrice.Size = new Size(56, 28);
+			lbl_itemPrice.TabIndex = 35;
+			lbl_itemPrice.Text = "Price";
+			lbl_itemPrice.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_nutritionalInfo
+			// 
+			lbl_nutritionalInfo.AutoSize = true;
+			lbl_nutritionalInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_nutritionalInfo.Location = new Point(360, 285);
+			lbl_nutritionalInfo.Name = "lbl_nutritionalInfo";
+			lbl_nutritionalInfo.Size = new Size(152, 28);
+			lbl_nutritionalInfo.TabIndex = 36;
+			lbl_nutritionalInfo.Text = "Nutritional Info";
+			lbl_nutritionalInfo.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_lpPrice
+			// 
+			lbl_lpPrice.AutoSize = true;
+			lbl_lpPrice.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_lpPrice.Location = new Point(342, 342);
+			lbl_lpPrice.Name = "lbl_lpPrice";
+			lbl_lpPrice.Size = new Size(188, 28);
+			lbl_lpPrice.TabIndex = 37;
+			lbl_lpPrice.Text = "Loyalty Points Price";
+			lbl_lpPrice.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_lpReward
+			// 
+			lbl_lpReward.AutoSize = true;
+			lbl_lpReward.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_lpReward.Location = new Point(331, 403);
+			lbl_lpReward.Name = "lbl_lpReward";
+			lbl_lpReward.Size = new Size(210, 28);
+			lbl_lpReward.TabIndex = 38;
+			lbl_lpReward.Text = "Loyalty Points Reward";
+			lbl_lpReward.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_discountInfo
+			// 
+			lbl_discountInfo.AutoSize = true;
+			lbl_discountInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_discountInfo.Location = new Point(387, 463);
+			lbl_discountInfo.Name = "lbl_discountInfo";
+			lbl_discountInfo.Size = new Size(98, 28);
+			lbl_discountInfo.TabIndex = 39;
+			lbl_discountInfo.Text = "Discount ";
+			lbl_discountInfo.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_taxInfo
+			// 
+			lbl_taxInfo.AutoSize = true;
+			lbl_taxInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_taxInfo.Location = new Point(416, 523);
+			lbl_taxInfo.Name = "lbl_taxInfo";
+			lbl_taxInfo.Size = new Size(41, 28);
+			lbl_taxInfo.TabIndex = 40;
+			lbl_taxInfo.Text = "Tax";
+			lbl_taxInfo.TextAlign = ContentAlignment.MiddleCenter;
+			// 
 			// Manager
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
@@ -551,5 +657,13 @@
 		private ComboBox cmb_taxStatus;
 		private ComboBox cmb_taxInfo;
 		private ComboBox cmb_discountInfo;
+		private Label lbl_itemDescript;
+		private Label lbl_itemName;
+		private Label lbl_discountInfo;
+		private Label lbl_lpReward;
+		private Label lbl_lpPrice;
+		private Label lbl_nutritionalInfo;
+		private Label lbl_itemPrice;
+		private Label lbl_taxInfo;
 	}
 }
