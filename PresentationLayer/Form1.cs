@@ -12,6 +12,13 @@ namespace DbProject
 
 		private void signInBtn_Click(object sender, EventArgs e)
 		{
+			//if ()
+			//{
+			//	MessageBox.Show("Incomplete form");
+			//	return;
+			//}
+			//else
+			//{
 			Authentication authentication = new Authentication();
 			string role = authentication.Authenticate(this.usernameBox.Text, this.passwordBox.Text);
 
@@ -32,6 +39,9 @@ namespace DbProject
 			{
 				MessageBox.Show("Fuck oFF");
 			}
+
+			//}
+
 
 		}
 
