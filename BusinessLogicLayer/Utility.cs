@@ -3,9 +3,11 @@ using DbProject.DbContextLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace DbProject.BusinessLogicLayer
 {
@@ -72,6 +74,48 @@ namespace DbProject.BusinessLogicLayer
 			}
 
 			return list;
+		}
+
+		public List<Item> GetItems()
+		{
+			DAL dAL = new DAL();
+			DataTable dt = dAL.executeGetData(GetItemsQuery());
+
+			List<Item> itemsList = new List<Item>();
+
+			for (int i = 0; i < dt.Rows.Count; i++)
+			{
+				Item item = new Item();
+
+				item.Id = dt.Rows[i].Field<int>("ID");
+				item.Name = dt.Rows[i].Field<string>("name");
+				item.Description = dt.Rows[i].Field<string>("description");
+				//item.Price = dt.Rows[i].Field<float>("price");
+				string priceStr = dt.Rows[i]["price"].ToString();
+				if (float.TryParse(priceStr, out float price))
+				{
+					item.Price = price;
+				}
+				else
+				{
+					item.Price = float.Parse(priceStr);
+				}
+
+				item.NutritionalInformation = dt.Rows[i].Field<string>("nutritionalInfo");
+				item.LoyaltyPointsPrice = dt.Rows[i].Field<int>("loyaltyPointsPrice");
+				item.LoyaltyPointsReward = dt.Rows[i].Field<int>("layaltyPointsReward");
+				item.Discount = dt.Rows[i].Field<int>("discount");
+				item.Tax = dt.Rows[i].Field<int>("tax");
+
+				itemsList.Add(item);
+			}
+			return itemsList;
+		}
+
+
+		private string GetItemsQuery()
+		{
+			return "SELECT * FROM MenuItems;";
 		}
 
 		private string GetDiscountsQuery()

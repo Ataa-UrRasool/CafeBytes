@@ -48,6 +48,14 @@
 			txt_phoneNo = new TextBox();
 			txt_name = new TextBox();
 			tab_addMenuItems = new TabPage();
+			lbl_taxInfo = new Label();
+			lbl_discountInfo = new Label();
+			lbl_lpReward = new Label();
+			lbl_lpPrice = new Label();
+			lbl_nutritionalInfo = new Label();
+			lbl_itemPrice = new Label();
+			lbl_itemDescript = new Label();
+			lbl_itemName = new Label();
 			cmb_taxInfo = new ComboBox();
 			cmb_discountInfo = new ComboBox();
 			btn_addItem = new Button();
@@ -58,23 +66,21 @@
 			txt_itemDescription = new TextBox();
 			txt_itemName = new TextBox();
 			tab_addDiscounts = new TabPage();
+			lbl_discTabValue = new Label();
+			lbl_discTabStatus = new Label();
+			lbl_discTabName = new Label();
 			cmb_discountStatus = new ComboBox();
 			btn_addDiscount = new Button();
 			txt_dicountValue = new TextBox();
 			txt_discountName = new TextBox();
 			tab_addTaxes = new TabPage();
+			lbl_taxTabValue = new Label();
+			lbl_taxTabStatus = new Label();
+			lbl_taxTabName = new Label();
 			cmb_taxStatus = new ComboBox();
 			btn_addTax = new Button();
 			txt_taxValue = new TextBox();
 			txt_taxName = new TextBox();
-			lbl_itemName = new Label();
-			lbl_itemDescript = new Label();
-			lbl_itemPrice = new Label();
-			lbl_nutritionalInfo = new Label();
-			lbl_lpPrice = new Label();
-			lbl_lpReward = new Label();
-			lbl_discountInfo = new Label();
-			lbl_taxInfo = new Label();
 			tab_ViewManager.SuspendLayout();
 			tab_createEmployeeProfile.SuspendLayout();
 			tab_addMenuItems.SuspendLayout();
@@ -318,6 +324,94 @@
 			tab_addMenuItems.TabIndex = 1;
 			tab_addMenuItems.Text = "AddMenuItems";
 			// 
+			// lbl_taxInfo
+			// 
+			lbl_taxInfo.AutoSize = true;
+			lbl_taxInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_taxInfo.Location = new Point(416, 523);
+			lbl_taxInfo.Name = "lbl_taxInfo";
+			lbl_taxInfo.Size = new Size(41, 28);
+			lbl_taxInfo.TabIndex = 40;
+			lbl_taxInfo.Text = "Tax";
+			lbl_taxInfo.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_discountInfo
+			// 
+			lbl_discountInfo.AutoSize = true;
+			lbl_discountInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_discountInfo.Location = new Point(387, 463);
+			lbl_discountInfo.Name = "lbl_discountInfo";
+			lbl_discountInfo.Size = new Size(98, 28);
+			lbl_discountInfo.TabIndex = 39;
+			lbl_discountInfo.Text = "Discount ";
+			lbl_discountInfo.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_lpReward
+			// 
+			lbl_lpReward.AutoSize = true;
+			lbl_lpReward.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_lpReward.Location = new Point(331, 403);
+			lbl_lpReward.Name = "lbl_lpReward";
+			lbl_lpReward.Size = new Size(210, 28);
+			lbl_lpReward.TabIndex = 38;
+			lbl_lpReward.Text = "Loyalty Points Reward";
+			lbl_lpReward.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_lpPrice
+			// 
+			lbl_lpPrice.AutoSize = true;
+			lbl_lpPrice.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_lpPrice.Location = new Point(342, 342);
+			lbl_lpPrice.Name = "lbl_lpPrice";
+			lbl_lpPrice.Size = new Size(188, 28);
+			lbl_lpPrice.TabIndex = 37;
+			lbl_lpPrice.Text = "Loyalty Points Price";
+			lbl_lpPrice.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_nutritionalInfo
+			// 
+			lbl_nutritionalInfo.AutoSize = true;
+			lbl_nutritionalInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_nutritionalInfo.Location = new Point(360, 285);
+			lbl_nutritionalInfo.Name = "lbl_nutritionalInfo";
+			lbl_nutritionalInfo.Size = new Size(152, 28);
+			lbl_nutritionalInfo.TabIndex = 36;
+			lbl_nutritionalInfo.Text = "Nutritional Info";
+			lbl_nutritionalInfo.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_itemPrice
+			// 
+			lbl_itemPrice.AutoSize = true;
+			lbl_itemPrice.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_itemPrice.Location = new Point(408, 219);
+			lbl_itemPrice.Name = "lbl_itemPrice";
+			lbl_itemPrice.Size = new Size(56, 28);
+			lbl_itemPrice.TabIndex = 35;
+			lbl_itemPrice.Text = "Price";
+			lbl_itemPrice.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_itemDescript
+			// 
+			lbl_itemDescript.AutoSize = true;
+			lbl_itemDescript.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_itemDescript.Location = new Point(379, 143);
+			lbl_itemDescript.Name = "lbl_itemDescript";
+			lbl_itemDescript.Size = new Size(115, 28);
+			lbl_itemDescript.TabIndex = 34;
+			lbl_itemDescript.Text = "Description";
+			lbl_itemDescript.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_itemName
+			// 
+			lbl_itemName.AutoSize = true;
+			lbl_itemName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_itemName.Location = new Point(403, 77);
+			lbl_itemName.Name = "lbl_itemName";
+			lbl_itemName.Size = new Size(66, 28);
+			lbl_itemName.TabIndex = 33;
+			lbl_itemName.Text = "Name";
+			lbl_itemName.TextAlign = ContentAlignment.MiddleCenter;
+			// 
 			// cmb_taxInfo
 			// 
 			cmb_taxInfo.FormattingEnabled = true;
@@ -402,6 +496,9 @@
 			// tab_addDiscounts
 			// 
 			tab_addDiscounts.BackColor = Color.DarkGray;
+			tab_addDiscounts.Controls.Add(lbl_discTabValue);
+			tab_addDiscounts.Controls.Add(lbl_discTabStatus);
+			tab_addDiscounts.Controls.Add(lbl_discTabName);
 			tab_addDiscounts.Controls.Add(cmb_discountStatus);
 			tab_addDiscounts.Controls.Add(btn_addDiscount);
 			tab_addDiscounts.Controls.Add(txt_dicountValue);
@@ -414,22 +511,55 @@
 			tab_addDiscounts.TabIndex = 2;
 			tab_addDiscounts.Text = "AddDiscounts";
 			// 
+			// lbl_discTabValue
+			// 
+			lbl_discTabValue.AutoSize = true;
+			lbl_discTabValue.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_discTabValue.Location = new Point(447, 323);
+			lbl_discTabValue.Name = "lbl_discTabValue";
+			lbl_discTabValue.Size = new Size(62, 28);
+			lbl_discTabValue.TabIndex = 36;
+			lbl_discTabValue.Text = "Value";
+			lbl_discTabValue.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_discTabStatus
+			// 
+			lbl_discTabStatus.AutoSize = true;
+			lbl_discTabStatus.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_discTabStatus.Location = new Point(447, 258);
+			lbl_discTabStatus.Name = "lbl_discTabStatus";
+			lbl_discTabStatus.Size = new Size(67, 28);
+			lbl_discTabStatus.TabIndex = 35;
+			lbl_discTabStatus.Text = "Status";
+			lbl_discTabStatus.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_discTabName
+			// 
+			lbl_discTabName.AutoSize = true;
+			lbl_discTabName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_discTabName.Location = new Point(447, 188);
+			lbl_discTabName.Name = "lbl_discTabName";
+			lbl_discTabName.Size = new Size(66, 28);
+			lbl_discTabName.TabIndex = 34;
+			lbl_discTabName.Text = "Name";
+			lbl_discTabName.TextAlign = ContentAlignment.MiddleCenter;
+			// 
 			// cmb_discountStatus
 			// 
 			cmb_discountStatus.Cursor = Cursors.Hand;
 			cmb_discountStatus.DisplayMember = "(none)";
 			cmb_discountStatus.FormattingEnabled = true;
 			cmb_discountStatus.Items.AddRange(new object[] { "Active", "Inactive" });
-			cmb_discountStatus.Location = new Point(513, 165);
+			cmb_discountStatus.Location = new Point(589, 255);
 			cmb_discountStatus.Name = "cmb_discountStatus";
-			cmb_discountStatus.Size = new Size(166, 31);
+			cmb_discountStatus.Size = new Size(380, 31);
 			cmb_discountStatus.TabIndex = 4;
 			cmb_discountStatus.Tag = "";
 			// 
 			// btn_addDiscount
 			// 
 			btn_addDiscount.Cursor = Cursors.Hand;
-			btn_addDiscount.Location = new Point(534, 296);
+			btn_addDiscount.Location = new Point(719, 394);
 			btn_addDiscount.Name = "btn_addDiscount";
 			btn_addDiscount.RightToLeft = RightToLeft.No;
 			btn_addDiscount.Size = new Size(121, 29);
@@ -440,23 +570,26 @@
 			// 
 			// txt_dicountValue
 			// 
-			txt_dicountValue.Location = new Point(513, 231);
+			txt_dicountValue.Location = new Point(589, 325);
 			txt_dicountValue.Name = "txt_dicountValue";
 			txt_dicountValue.PlaceholderText = "discount value";
-			txt_dicountValue.Size = new Size(166, 30);
+			txt_dicountValue.Size = new Size(380, 30);
 			txt_dicountValue.TabIndex = 2;
 			// 
 			// txt_discountName
 			// 
-			txt_discountName.Location = new Point(513, 99);
+			txt_discountName.Location = new Point(589, 186);
 			txt_discountName.Name = "txt_discountName";
 			txt_discountName.PlaceholderText = "discount name";
-			txt_discountName.Size = new Size(166, 30);
+			txt_discountName.Size = new Size(380, 30);
 			txt_discountName.TabIndex = 0;
 			// 
 			// tab_addTaxes
 			// 
 			tab_addTaxes.BackColor = Color.DarkGray;
+			tab_addTaxes.Controls.Add(lbl_taxTabValue);
+			tab_addTaxes.Controls.Add(lbl_taxTabStatus);
+			tab_addTaxes.Controls.Add(lbl_taxTabName);
 			tab_addTaxes.Controls.Add(cmb_taxStatus);
 			tab_addTaxes.Controls.Add(btn_addTax);
 			tab_addTaxes.Controls.Add(txt_taxValue);
@@ -469,20 +602,53 @@
 			tab_addTaxes.TabIndex = 3;
 			tab_addTaxes.Text = "AddTaxes";
 			// 
+			// lbl_taxTabValue
+			// 
+			lbl_taxTabValue.AutoSize = true;
+			lbl_taxTabValue.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_taxTabValue.Location = new Point(435, 338);
+			lbl_taxTabValue.Name = "lbl_taxTabValue";
+			lbl_taxTabValue.Size = new Size(62, 28);
+			lbl_taxTabValue.TabIndex = 37;
+			lbl_taxTabValue.Text = "Value";
+			lbl_taxTabValue.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_taxTabStatus
+			// 
+			lbl_taxTabStatus.AutoSize = true;
+			lbl_taxTabStatus.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_taxTabStatus.Location = new Point(433, 271);
+			lbl_taxTabStatus.Name = "lbl_taxTabStatus";
+			lbl_taxTabStatus.Size = new Size(67, 28);
+			lbl_taxTabStatus.TabIndex = 36;
+			lbl_taxTabStatus.Text = "Status";
+			lbl_taxTabStatus.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_taxTabName
+			// 
+			lbl_taxTabName.AutoSize = true;
+			lbl_taxTabName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_taxTabName.Location = new Point(433, 204);
+			lbl_taxTabName.Name = "lbl_taxTabName";
+			lbl_taxTabName.Size = new Size(66, 28);
+			lbl_taxTabName.TabIndex = 35;
+			lbl_taxTabName.Text = "Name";
+			lbl_taxTabName.TextAlign = ContentAlignment.MiddleCenter;
+			// 
 			// cmb_taxStatus
 			// 
 			cmb_taxStatus.Cursor = Cursors.Hand;
 			cmb_taxStatus.FormattingEnabled = true;
 			cmb_taxStatus.Items.AddRange(new object[] { "Active", "Inactive" });
-			cmb_taxStatus.Location = new Point(580, 247);
+			cmb_taxStatus.Location = new Point(568, 274);
 			cmb_taxStatus.Name = "cmb_taxStatus";
-			cmb_taxStatus.Size = new Size(166, 31);
+			cmb_taxStatus.Size = new Size(380, 31);
 			cmb_taxStatus.TabIndex = 8;
 			// 
 			// btn_addTax
 			// 
 			btn_addTax.Cursor = Cursors.Hand;
-			btn_addTax.Location = new Point(597, 386);
+			btn_addTax.Location = new Point(698, 419);
 			btn_addTax.Name = "btn_addTax";
 			btn_addTax.RightToLeft = RightToLeft.No;
 			btn_addTax.Size = new Size(121, 29);
@@ -493,112 +659,25 @@
 			// 
 			// txt_taxValue
 			// 
-			txt_taxValue.Location = new Point(580, 318);
+			txt_taxValue.Location = new Point(568, 347);
 			txt_taxValue.Name = "txt_taxValue";
 			txt_taxValue.PlaceholderText = "tax value";
-			txt_taxValue.Size = new Size(166, 30);
+			txt_taxValue.Size = new Size(380, 30);
 			txt_taxValue.TabIndex = 6;
 			// 
 			// txt_taxName
 			// 
-			txt_taxName.Location = new Point(580, 183);
+			txt_taxName.Location = new Point(568, 202);
 			txt_taxName.Name = "txt_taxName";
 			txt_taxName.PlaceholderText = "tax name";
-			txt_taxName.Size = new Size(166, 30);
+			txt_taxName.Size = new Size(380, 30);
 			txt_taxName.TabIndex = 4;
-			// 
-			// lbl_itemName
-			// 
-			lbl_itemName.AutoSize = true;
-			lbl_itemName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_itemName.Location = new Point(403, 77);
-			lbl_itemName.Name = "lbl_itemName";
-			lbl_itemName.Size = new Size(66, 28);
-			lbl_itemName.TabIndex = 33;
-			lbl_itemName.Text = "Name";
-			lbl_itemName.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// lbl_itemDescript
-			// 
-			lbl_itemDescript.AutoSize = true;
-			lbl_itemDescript.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_itemDescript.Location = new Point(379, 143);
-			lbl_itemDescript.Name = "lbl_itemDescript";
-			lbl_itemDescript.Size = new Size(115, 28);
-			lbl_itemDescript.TabIndex = 34;
-			lbl_itemDescript.Text = "Description";
-			lbl_itemDescript.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// lbl_itemPrice
-			// 
-			lbl_itemPrice.AutoSize = true;
-			lbl_itemPrice.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_itemPrice.Location = new Point(408, 219);
-			lbl_itemPrice.Name = "lbl_itemPrice";
-			lbl_itemPrice.Size = new Size(56, 28);
-			lbl_itemPrice.TabIndex = 35;
-			lbl_itemPrice.Text = "Price";
-			lbl_itemPrice.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// lbl_nutritionalInfo
-			// 
-			lbl_nutritionalInfo.AutoSize = true;
-			lbl_nutritionalInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_nutritionalInfo.Location = new Point(360, 285);
-			lbl_nutritionalInfo.Name = "lbl_nutritionalInfo";
-			lbl_nutritionalInfo.Size = new Size(152, 28);
-			lbl_nutritionalInfo.TabIndex = 36;
-			lbl_nutritionalInfo.Text = "Nutritional Info";
-			lbl_nutritionalInfo.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// lbl_lpPrice
-			// 
-			lbl_lpPrice.AutoSize = true;
-			lbl_lpPrice.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_lpPrice.Location = new Point(342, 342);
-			lbl_lpPrice.Name = "lbl_lpPrice";
-			lbl_lpPrice.Size = new Size(188, 28);
-			lbl_lpPrice.TabIndex = 37;
-			lbl_lpPrice.Text = "Loyalty Points Price";
-			lbl_lpPrice.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// lbl_lpReward
-			// 
-			lbl_lpReward.AutoSize = true;
-			lbl_lpReward.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_lpReward.Location = new Point(331, 403);
-			lbl_lpReward.Name = "lbl_lpReward";
-			lbl_lpReward.Size = new Size(210, 28);
-			lbl_lpReward.TabIndex = 38;
-			lbl_lpReward.Text = "Loyalty Points Reward";
-			lbl_lpReward.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// lbl_discountInfo
-			// 
-			lbl_discountInfo.AutoSize = true;
-			lbl_discountInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_discountInfo.Location = new Point(387, 463);
-			lbl_discountInfo.Name = "lbl_discountInfo";
-			lbl_discountInfo.Size = new Size(98, 28);
-			lbl_discountInfo.TabIndex = 39;
-			lbl_discountInfo.Text = "Discount ";
-			lbl_discountInfo.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// lbl_taxInfo
-			// 
-			lbl_taxInfo.AutoSize = true;
-			lbl_taxInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_taxInfo.Location = new Point(416, 523);
-			lbl_taxInfo.Name = "lbl_taxInfo";
-			lbl_taxInfo.Size = new Size(41, 28);
-			lbl_taxInfo.TabIndex = 40;
-			lbl_taxInfo.Text = "Tax";
-			lbl_taxInfo.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// Manager
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = SystemColors.Desktop;
 			ClientSize = new Size(1382, 753);
 			Controls.Add(tab_ViewManager);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -665,5 +744,11 @@
 		private Label lbl_nutritionalInfo;
 		private Label lbl_itemPrice;
 		private Label lbl_taxInfo;
+		private Label lbl_discTabValue;
+		private Label lbl_discTabStatus;
+		private Label lbl_discTabName;
+		private Label lbl_taxTabValue;
+		private Label lbl_taxTabStatus;
+		private Label lbl_taxTabName;
 	}
 }

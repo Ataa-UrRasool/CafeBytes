@@ -33,8 +33,15 @@ namespace DbProject.BusinessLogicLayer
 		public void CreateCustomer(Customer customer)
 		{
 			DAL dAL = new DAL();
-			dAL.Insert(customer.CreateInsertQuery());
-
+			int x = dAL.Insert(customer.CreateInsertQuery());
+			if (x > 0)
+			{
+				MessageBox.Show("Employee created...");
+			}
+			else
+			{
+				MessageBox.Show("Error while creating the employee...");
+			}
 
 		}
 	}

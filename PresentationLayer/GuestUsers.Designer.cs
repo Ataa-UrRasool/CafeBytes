@@ -28,18 +28,30 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			pnl_MenuItems = new Panel();
 			SuspendLayout();
+			// 
+			// pnl_MenuItems
+			// 
+			pnl_MenuItems.BackColor = SystemColors.GradientInactiveCaption;
+			pnl_MenuItems.Location = new Point(12, 12);
+			pnl_MenuItems.Name = "pnl_MenuItems";
+			pnl_MenuItems.Size = new Size(930, 729);
+			pnl_MenuItems.TabIndex = 0;
 			// 
 			// GuestUsers
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(1382, 753);
+			Controls.Add(pnl_MenuItems);
 			Name = "GuestUsers";
 			Text = "GuestUsers";
 			ResumeLayout(false);
 		}
 
 		#endregion
+
+		private Panel pnl_MenuItems;
 	}
 }
