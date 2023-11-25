@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,12 +27,15 @@ namespace DbProject.PresentationLayer
         {
             const int buttonHeight = 150;
             const int buttonWidth = 150;
+            const int spaceBetweenButtons = 20;
 
             int panelHeight = pnl_MenuItems.Height;
             int panelWidth = pnl_MenuItems.Width;
 
             List<Button> menuItemButtons = new List<Button>();
             List<Item> menuItems = new Utility().GetItems();
+
+            int maxButtonsInRow = (panelWidth - (buttonWidth + spaceBetweenButtons)) / (buttonWidth + (spaceBetweenButtons * 2));
 
             for (int i = 0; i < menuItems.Count; i++)
             {
@@ -41,8 +45,21 @@ namespace DbProject.PresentationLayer
                 menuItemButtons.Add(menuItemButton);
             }
 
-            for
-            
+            for (int i = 0; i < menuItems.Count; i++)
+            {
+                for (int j = 0; j < maxButtonsInRow; j++)
+                {
+                    if (j == 0)
+                    {
+                        menuItemButtons[i].Location = new Point(20, 0);
+                    }
+                    else
+                    {
+                        menuItemButtons[i].Location = new Point((20 + buttonWidth) * i, 0);
+                    }
+                }
+            }
+
         }
     }
 }
