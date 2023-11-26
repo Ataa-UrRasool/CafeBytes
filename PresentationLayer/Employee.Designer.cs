@@ -62,7 +62,7 @@
 			// 
 			// tab_createCustomer
 			// 
-			tab_createCustomer.BackColor = Color.DarkGray;
+			tab_createCustomer.BackColor = Color.LightBlue;
 			tab_createCustomer.Controls.Add(cmb_gender);
 			tab_createCustomer.Controls.Add(txt_password);
 			tab_createCustomer.Controls.Add(lbl_password);
@@ -90,14 +90,14 @@
 			// 
 			cmb_gender.FormattingEnabled = true;
 			cmb_gender.Items.AddRange(new object[] { "Male", "Female" });
-			cmb_gender.Location = new Point(559, 363);
+			cmb_gender.Location = new Point(559, 387);
 			cmb_gender.Name = "cmb_gender";
 			cmb_gender.Size = new Size(364, 28);
 			cmb_gender.TabIndex = 28;
 			// 
 			// txt_password
 			// 
-			txt_password.Location = new Point(559, 493);
+			txt_password.Location = new Point(559, 517);
 			txt_password.Name = "txt_password";
 			txt_password.PlaceholderText = "password";
 			txt_password.Size = new Size(364, 27);
@@ -107,7 +107,7 @@
 			// 
 			lbl_password.AutoSize = true;
 			lbl_password.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_password.Location = new Point(433, 489);
+			lbl_password.Location = new Point(433, 513);
 			lbl_password.Name = "lbl_password";
 			lbl_password.Size = new Size(97, 28);
 			lbl_password.TabIndex = 26;
@@ -116,7 +116,7 @@
 			// 
 			// txt_username
 			// 
-			txt_username.Location = new Point(559, 433);
+			txt_username.Location = new Point(559, 457);
 			txt_username.Name = "txt_username";
 			txt_username.PlaceholderText = "username";
 			txt_username.Size = new Size(364, 27);
@@ -126,7 +126,7 @@
 			// 
 			lbl_username.AutoSize = true;
 			lbl_username.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_username.Location = new Point(433, 429);
+			lbl_username.Location = new Point(429, 453);
 			lbl_username.Name = "lbl_username";
 			lbl_username.Size = new Size(104, 28);
 			lbl_username.TabIndex = 24;
@@ -137,7 +137,7 @@
 			// 
 			lbl_gender.AutoSize = true;
 			lbl_gender.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_gender.Location = new Point(433, 363);
+			lbl_gender.Location = new Point(442, 387);
 			lbl_gender.Name = "lbl_gender";
 			lbl_gender.Size = new Size(79, 28);
 			lbl_gender.TabIndex = 22;
@@ -150,14 +150,14 @@
 			txt_address.Multiline = true;
 			txt_address.Name = "txt_address";
 			txt_address.PlaceholderText = "address";
-			txt_address.Size = new Size(364, 52);
+			txt_address.Size = new Size(364, 80);
 			txt_address.TabIndex = 21;
 			// 
 			// lbl_address
 			// 
 			lbl_address.AutoSize = true;
 			lbl_address.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_address.Location = new Point(433, 296);
+			lbl_address.Location = new Point(439, 296);
 			lbl_address.Name = "lbl_address";
 			lbl_address.Size = new Size(85, 28);
 			lbl_address.TabIndex = 20;
@@ -168,7 +168,7 @@
 			// 
 			lbl_email.AutoSize = true;
 			lbl_email.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_email.Location = new Point(433, 222);
+			lbl_email.Location = new Point(451, 222);
 			lbl_email.Name = "lbl_email";
 			lbl_email.Size = new Size(60, 28);
 			lbl_email.TabIndex = 19;
@@ -179,7 +179,7 @@
 			// 
 			btn_createProfile.BackColor = Color.Transparent;
 			btn_createProfile.ForeColor = SystemColors.GrayText;
-			btn_createProfile.Location = new Point(675, 556);
+			btn_createProfile.Location = new Point(666, 580);
 			btn_createProfile.Name = "btn_createProfile";
 			btn_createProfile.Size = new Size(150, 40);
 			btn_createProfile.TabIndex = 18;
@@ -191,7 +191,7 @@
 			// 
 			lbl_phoneNo.AutoSize = true;
 			lbl_phoneNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_phoneNo.Location = new Point(433, 169);
+			lbl_phoneNo.Location = new Point(432, 169);
 			lbl_phoneNo.Name = "lbl_phoneNo";
 			lbl_phoneNo.Size = new Size(98, 28);
 			lbl_phoneNo.TabIndex = 16;
@@ -202,7 +202,7 @@
 			// 
 			lbl_name.AutoSize = true;
 			lbl_name.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_name.Location = new Point(433, 112);
+			lbl_name.Location = new Point(448, 112);
 			lbl_name.Name = "lbl_name";
 			lbl_name.Size = new Size(66, 28);
 			lbl_name.TabIndex = 17;
@@ -235,13 +235,13 @@
 			// 
 			// tabPage2
 			// 
+			tabPage2.BackColor = Color.LightBlue;
 			tabPage2.Location = new Point(4, 29);
 			tabPage2.Name = "tabPage2";
 			tabPage2.Padding = new Padding(3);
 			tabPage2.Size = new Size(1372, 719);
 			tabPage2.TabIndex = 1;
 			tabPage2.Text = "tabPage2";
-			tabPage2.UseVisualStyleBackColor = true;
 			// 
 			// Employee
 			// 

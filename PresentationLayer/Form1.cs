@@ -12,35 +12,36 @@ namespace DbProject
 
 		private void signInBtn_Click(object sender, EventArgs e)
 		{
-			//if ()
-			//{
-			//	MessageBox.Show("Incomplete form");
-			//	return;
-			//}
-			//else
-			//{
-			Authentication authentication = new Authentication();
-			string role = authentication.Authenticate(this.usernameBox.Text, this.passwordBox.Text);
-
-			if (role == Constants.ROLE_MANAGER)
+			if (usernameBox.Text == String.Empty || passwordBox.Text == String.Empty)
 			{
-				Manager manager = new Manager();
-				manager.Visible = true;
-				this.Visible = false;
+				MessageBox.Show("Incomplete form");
 
-			}
-			else if (role == Constants.ROLE_EMPLOYEES)
-			{
-				Employee customerByEmployee = new Employee();
-				customerByEmployee.Visible = true;
-				this.Visible = false;
+				return;
 			}
 			else
 			{
-				MessageBox.Show("Fuck oFF");
-			}
+				Authentication authentication = new Authentication();
+				string role = authentication.Authenticate(this.usernameBox.Text, this.passwordBox.Text);
 
-			//}
+				if (role == Constants.ROLE_MANAGER)
+				{
+					Manager manager = new Manager();
+					manager.Visible = true;
+					this.Visible = false;
+
+				}
+				else if (role == Constants.ROLE_EMPLOYEES)
+				{
+					Employee customerByEmployee = new Employee();
+					customerByEmployee.Visible = true;
+					this.Visible = false;
+				}
+				else
+				{
+					MessageBox.Show("Bug Off");
+				}
+
+			}
 
 
 		}
@@ -51,5 +52,7 @@ namespace DbProject
 			GuestUsers guestUsers = new GuestUsers();
 			guestUsers.Visible = true;
 		}
+
+
 	}
 }

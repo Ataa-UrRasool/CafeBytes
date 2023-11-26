@@ -103,7 +103,7 @@
 			// 
 			// tab_createEmployeeProfile
 			// 
-			tab_createEmployeeProfile.BackColor = Color.DarkGray;
+			tab_createEmployeeProfile.BackColor = Color.LightBlue;
 			tab_createEmployeeProfile.Controls.Add(cmb_gender);
 			tab_createEmployeeProfile.Controls.Add(txt_hourlyRate);
 			tab_createEmployeeProfile.Controls.Add(lbl_hourlyRate);
@@ -123,6 +123,7 @@
 			tab_createEmployeeProfile.Controls.Add(txt_name);
 			tab_createEmployeeProfile.Font = new Font("Segoe UI", 10F);
 			tab_createEmployeeProfile.Location = new Point(4, 37);
+			tab_createEmployeeProfile.Margin = new Padding(0);
 			tab_createEmployeeProfile.Name = "tab_createEmployeeProfile";
 			tab_createEmployeeProfile.Padding = new Padding(3);
 			tab_createEmployeeProfile.Size = new Size(1372, 710);
@@ -133,14 +134,14 @@
 			// 
 			cmb_gender.FormattingEnabled = true;
 			cmb_gender.Items.AddRange(new object[] { "Male", "Female" });
-			cmb_gender.Location = new Point(567, 364);
+			cmb_gender.Location = new Point(567, 377);
 			cmb_gender.Name = "cmb_gender";
 			cmb_gender.Size = new Size(364, 31);
 			cmb_gender.TabIndex = 45;
 			// 
 			// txt_hourlyRate
 			// 
-			txt_hourlyRate.Location = new Point(567, 421);
+			txt_hourlyRate.Location = new Point(567, 434);
 			txt_hourlyRate.Name = "txt_hourlyRate";
 			txt_hourlyRate.PlaceholderText = "hourly rate";
 			txt_hourlyRate.Size = new Size(364, 30);
@@ -150,7 +151,7 @@
 			// 
 			lbl_hourlyRate.AutoSize = true;
 			lbl_hourlyRate.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_hourlyRate.Location = new Point(404, 411);
+			lbl_hourlyRate.Location = new Point(404, 424);
 			lbl_hourlyRate.Name = "lbl_hourlyRate";
 			lbl_hourlyRate.RightToLeft = RightToLeft.No;
 			lbl_hourlyRate.Size = new Size(119, 28);
@@ -160,7 +161,7 @@
 			// 
 			// txt_password
 			// 
-			txt_password.Location = new Point(567, 533);
+			txt_password.Location = new Point(567, 546);
 			txt_password.Name = "txt_password";
 			txt_password.PlaceholderText = "password";
 			txt_password.Size = new Size(364, 30);
@@ -170,7 +171,7 @@
 			// 
 			lbl_password.AutoSize = true;
 			lbl_password.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_password.Location = new Point(415, 533);
+			lbl_password.Location = new Point(415, 546);
 			lbl_password.Name = "lbl_password";
 			lbl_password.Size = new Size(97, 28);
 			lbl_password.TabIndex = 41;
@@ -179,7 +180,7 @@
 			// 
 			// txt_username
 			// 
-			txt_username.Location = new Point(567, 477);
+			txt_username.Location = new Point(567, 490);
 			txt_username.Name = "txt_username";
 			txt_username.PlaceholderText = "username";
 			txt_username.Size = new Size(364, 30);
@@ -189,7 +190,7 @@
 			// 
 			lbl_username.AutoSize = true;
 			lbl_username.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_username.Location = new Point(411, 473);
+			lbl_username.Location = new Point(411, 486);
 			lbl_username.Name = "lbl_username";
 			lbl_username.Size = new Size(104, 28);
 			lbl_username.TabIndex = 39;
@@ -200,7 +201,7 @@
 			// 
 			lbl_gender.AutoSize = true;
 			lbl_gender.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_gender.Location = new Point(424, 363);
+			lbl_gender.Location = new Point(424, 376);
 			lbl_gender.Name = "lbl_gender";
 			lbl_gender.Size = new Size(79, 28);
 			lbl_gender.TabIndex = 37;
@@ -209,11 +210,11 @@
 			// 
 			// txt_address
 			// 
-			txt_address.Location = new Point(567, 286);
+			txt_address.Location = new Point(567, 282);
 			txt_address.Multiline = true;
 			txt_address.Name = "txt_address";
 			txt_address.PlaceholderText = "address";
-			txt_address.Size = new Size(364, 52);
+			txt_address.Size = new Size(364, 80);
 			txt_address.TabIndex = 36;
 			// 
 			// lbl_address
@@ -242,7 +243,7 @@
 			// 
 			btn_createProfile.BackColor = Color.Transparent;
 			btn_createProfile.ForeColor = SystemColors.GrayText;
-			btn_createProfile.Location = new Point(674, 592);
+			btn_createProfile.Location = new Point(674, 605);
 			btn_createProfile.Name = "btn_createProfile";
 			btn_createProfile.Size = new Size(150, 40);
 			btn_createProfile.TabIndex = 33;
@@ -298,7 +299,7 @@
 			// 
 			// tab_addMenuItems
 			// 
-			tab_addMenuItems.BackColor = Color.DarkGray;
+			tab_addMenuItems.BackColor = Color.LightBlue;
 			tab_addMenuItems.Controls.Add(lbl_taxInfo);
 			tab_addMenuItems.Controls.Add(lbl_discountInfo);
 			tab_addMenuItems.Controls.Add(lbl_lpReward);
@@ -495,7 +496,7 @@
 			// 
 			// tab_addDiscounts
 			// 
-			tab_addDiscounts.BackColor = Color.DarkGray;
+			tab_addDiscounts.BackColor = Color.LightBlue;
 			tab_addDiscounts.Controls.Add(lbl_discTabValue);
 			tab_addDiscounts.Controls.Add(lbl_discTabStatus);
 			tab_addDiscounts.Controls.Add(lbl_discTabName);
@@ -515,7 +516,7 @@
 			// 
 			lbl_discTabValue.AutoSize = true;
 			lbl_discTabValue.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_discTabValue.Location = new Point(447, 323);
+			lbl_discTabValue.Location = new Point(403, 337);
 			lbl_discTabValue.Name = "lbl_discTabValue";
 			lbl_discTabValue.Size = new Size(62, 28);
 			lbl_discTabValue.TabIndex = 36;
@@ -526,7 +527,7 @@
 			// 
 			lbl_discTabStatus.AutoSize = true;
 			lbl_discTabStatus.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_discTabStatus.Location = new Point(447, 258);
+			lbl_discTabStatus.Location = new Point(403, 272);
 			lbl_discTabStatus.Name = "lbl_discTabStatus";
 			lbl_discTabStatus.Size = new Size(67, 28);
 			lbl_discTabStatus.TabIndex = 35;
@@ -537,7 +538,7 @@
 			// 
 			lbl_discTabName.AutoSize = true;
 			lbl_discTabName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_discTabName.Location = new Point(447, 188);
+			lbl_discTabName.Location = new Point(403, 202);
 			lbl_discTabName.Name = "lbl_discTabName";
 			lbl_discTabName.Size = new Size(66, 28);
 			lbl_discTabName.TabIndex = 34;
@@ -550,7 +551,7 @@
 			cmb_discountStatus.DisplayMember = "(none)";
 			cmb_discountStatus.FormattingEnabled = true;
 			cmb_discountStatus.Items.AddRange(new object[] { "Active", "Inactive" });
-			cmb_discountStatus.Location = new Point(589, 255);
+			cmb_discountStatus.Location = new Point(545, 269);
 			cmb_discountStatus.Name = "cmb_discountStatus";
 			cmb_discountStatus.Size = new Size(380, 31);
 			cmb_discountStatus.TabIndex = 4;
@@ -559,7 +560,7 @@
 			// btn_addDiscount
 			// 
 			btn_addDiscount.Cursor = Cursors.Hand;
-			btn_addDiscount.Location = new Point(719, 394);
+			btn_addDiscount.Location = new Point(675, 408);
 			btn_addDiscount.Name = "btn_addDiscount";
 			btn_addDiscount.RightToLeft = RightToLeft.No;
 			btn_addDiscount.Size = new Size(121, 29);
@@ -570,7 +571,7 @@
 			// 
 			// txt_dicountValue
 			// 
-			txt_dicountValue.Location = new Point(589, 325);
+			txt_dicountValue.Location = new Point(545, 339);
 			txt_dicountValue.Name = "txt_dicountValue";
 			txt_dicountValue.PlaceholderText = "discount value";
 			txt_dicountValue.Size = new Size(380, 30);
@@ -578,7 +579,7 @@
 			// 
 			// txt_discountName
 			// 
-			txt_discountName.Location = new Point(589, 186);
+			txt_discountName.Location = new Point(545, 200);
 			txt_discountName.Name = "txt_discountName";
 			txt_discountName.PlaceholderText = "discount name";
 			txt_discountName.Size = new Size(380, 30);
@@ -586,7 +587,7 @@
 			// 
 			// tab_addTaxes
 			// 
-			tab_addTaxes.BackColor = Color.DarkGray;
+			tab_addTaxes.BackColor = Color.LightBlue;
 			tab_addTaxes.Controls.Add(lbl_taxTabValue);
 			tab_addTaxes.Controls.Add(lbl_taxTabStatus);
 			tab_addTaxes.Controls.Add(lbl_taxTabName);
@@ -596,8 +597,8 @@
 			tab_addTaxes.Controls.Add(txt_taxName);
 			tab_addTaxes.Font = new Font("Segoe UI", 10F);
 			tab_addTaxes.Location = new Point(4, 37);
+			tab_addTaxes.Margin = new Padding(0);
 			tab_addTaxes.Name = "tab_addTaxes";
-			tab_addTaxes.Padding = new Padding(3);
 			tab_addTaxes.Size = new Size(1372, 710);
 			tab_addTaxes.TabIndex = 3;
 			tab_addTaxes.Text = "AddTaxes";
@@ -606,7 +607,7 @@
 			// 
 			lbl_taxTabValue.AutoSize = true;
 			lbl_taxTabValue.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_taxTabValue.Location = new Point(435, 338);
+			lbl_taxTabValue.Location = new Point(401, 345);
 			lbl_taxTabValue.Name = "lbl_taxTabValue";
 			lbl_taxTabValue.Size = new Size(62, 28);
 			lbl_taxTabValue.TabIndex = 37;
@@ -617,7 +618,7 @@
 			// 
 			lbl_taxTabStatus.AutoSize = true;
 			lbl_taxTabStatus.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_taxTabStatus.Location = new Point(433, 271);
+			lbl_taxTabStatus.Location = new Point(399, 278);
 			lbl_taxTabStatus.Name = "lbl_taxTabStatus";
 			lbl_taxTabStatus.Size = new Size(67, 28);
 			lbl_taxTabStatus.TabIndex = 36;
@@ -628,7 +629,7 @@
 			// 
 			lbl_taxTabName.AutoSize = true;
 			lbl_taxTabName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_taxTabName.Location = new Point(433, 204);
+			lbl_taxTabName.Location = new Point(399, 211);
 			lbl_taxTabName.Name = "lbl_taxTabName";
 			lbl_taxTabName.Size = new Size(66, 28);
 			lbl_taxTabName.TabIndex = 35;
@@ -640,7 +641,7 @@
 			cmb_taxStatus.Cursor = Cursors.Hand;
 			cmb_taxStatus.FormattingEnabled = true;
 			cmb_taxStatus.Items.AddRange(new object[] { "Active", "Inactive" });
-			cmb_taxStatus.Location = new Point(568, 274);
+			cmb_taxStatus.Location = new Point(537, 284);
 			cmb_taxStatus.Name = "cmb_taxStatus";
 			cmb_taxStatus.Size = new Size(380, 31);
 			cmb_taxStatus.TabIndex = 8;
@@ -648,7 +649,7 @@
 			// btn_addTax
 			// 
 			btn_addTax.Cursor = Cursors.Hand;
-			btn_addTax.Location = new Point(698, 419);
+			btn_addTax.Location = new Point(667, 429);
 			btn_addTax.Name = "btn_addTax";
 			btn_addTax.RightToLeft = RightToLeft.No;
 			btn_addTax.Size = new Size(121, 29);
@@ -659,7 +660,7 @@
 			// 
 			// txt_taxValue
 			// 
-			txt_taxValue.Location = new Point(568, 347);
+			txt_taxValue.Location = new Point(537, 357);
 			txt_taxValue.Name = "txt_taxValue";
 			txt_taxValue.PlaceholderText = "tax value";
 			txt_taxValue.Size = new Size(380, 30);
@@ -667,7 +668,7 @@
 			// 
 			// txt_taxName
 			// 
-			txt_taxName.Location = new Point(568, 202);
+			txt_taxName.Location = new Point(537, 212);
 			txt_taxName.Name = "txt_taxName";
 			txt_taxName.PlaceholderText = "tax name";
 			txt_taxName.Size = new Size(380, 30);

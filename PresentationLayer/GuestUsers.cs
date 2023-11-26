@@ -13,40 +13,106 @@ using System.Windows.Forms;
 
 namespace DbProject.PresentationLayer
 {
-    public partial class GuestUsers : Form
-    {
-        public GuestUsers()
-        {
-            InitializeComponent();
-            //Button bu = new Button();
-            //Controls.Add(bu)
-            PopulateMenuPanel();
-        }
+	public partial class GuestUsers : Form
+	{
+		public GuestUsers()
+		{
+			InitializeComponent();
 
-        public void PopulateMenuPanel()
-        {
-            const int buttonHeight = 150;
-            const int buttonWidth = 150;
-            const int spaceBetweenButtons = 20;
+			PopulateMenuPanel();
+		}
 
-            int panelHeight = pnl_MenuItems.Height;
-            int panelWidth = pnl_MenuItems.Width;
+		public void PopulateMenuPanel()
+		{
+			const int buttonHeight = 150;
+			const int buttonWidth = 150;
 
-            List<Button> menuItemButtons = new List<Button>();
-            List<Item> menuItems = new Utility().GetItems();
+			const int xOffset = 25;
+			const int yOffset = 25;
 
-            int maxButtonsInRow = (panelWidth - (buttonWidth + spaceBetweenButtons)) / (buttonWidth + (spaceBetweenButtons * 2));
+			int panelHeight = pnl_MenuItems.Height;
+			int panelWidth = pnl_MenuItems.Width;
 
-            for (int i = 0; i < menuItems.Count; i++)
-            {
-                Button menuItemButton = new Button();
-                menuItemButton.Text = menuItems[i].Name;
+			int maxButtonsInRow = (panelWidth - (buttonWidth + xOffset)) / (buttonWidth + xOffset);
 
-                menuItemButtons.Add(menuItemButton);
-            }
+			List<Button> buttons = new List<Button>();
+			List<Item> itemsList = new Utility().GetItems();
 
-            for
-            
-        }
-    }
+			for (int i = 0; i < itemsList.Count; i++)
+			{
+				Button button = new Button();
+
+				button.Text = "Name: " + itemsList[i].Name + "\n\nPrice: " + itemsList[i].Price;
+				button.Size = new Size(buttonWidth, buttonHeight);
+
+				pnl_MenuItems.Controls.Add(button);
+				buttons.Add(button);
+			}
+
+			int numRows = 0;
+
+			if (buttons.Count % maxButtonsInRow == 0)
+			{
+				numRows = buttons.Count / maxButtonsInRow;
+			}
+			else
+			{
+				numRows = (buttons.Count / maxButtonsInRow) + 1;
+
+			}
+
+			int horizontalOffset = xOffset;
+			int verticalOffset = yOffset + buttonHeight;
+
+			int counter = 0;
+
+			for (int i = 0; i < numRows; i++)
+			{
+				horizontalOffset = xOffset;
+
+				for (int j = 0; j < maxButtonsInRow; j++)
+				{
+					if (counter == buttons.Count)
+					{
+						break;
+					}
+
+					if (i == 0 && j == 0)
+					{
+						buttons[counter].Location = new Point(horizontalOffset, 0);
+						horizontalOffset += buttonWidth + xOffset;
+
+						counter++;
+					}
+					else if (i == 0 && j > 0)
+					{
+						buttons[counter].Location = new Point(horizontalOffset, 0);
+						horizontalOffset += buttonWidth + xOffset;
+
+						counter++;
+					}
+					else if (i > 0 && j == 0)
+					{
+						if (i > 1)
+						{
+							verticalOffset += buttonHeight + yOffset;
+						}
+
+						buttons[counter].Location = new Point(horizontalOffset, verticalOffset);
+						horizontalOffset += buttonWidth + xOffset;
+
+						counter++;
+					}
+					else if (i > 0 && j > 0)
+					{
+						buttons[counter].Location = new Point(horizontalOffset, verticalOffset);
+						horizontalOffset += buttonWidth + xOffset;
+
+						counter++;
+					}
+				}
+			}
+		}
+
+	}
 }
