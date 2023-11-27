@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			tabControl1 = new TabControl();
+			tab_ManageOrder = new TabControl();
 			tab_createCustomer = new TabPage();
 			cmb_gender = new ComboBox();
 			txt_password = new TextBox();
@@ -45,20 +45,24 @@
 			txt_email = new TextBox();
 			txt_phoneNo = new TextBox();
 			txt_name = new TextBox();
-			tabPage2 = new TabPage();
-			tabControl1.SuspendLayout();
+			tab_orderManager = new TabPage();
+			button1 = new Button();
+			listView2 = new ListView();
+			listView1 = new ListView();
+			tab_ManageOrder.SuspendLayout();
 			tab_createCustomer.SuspendLayout();
+			tab_orderManager.SuspendLayout();
 			SuspendLayout();
 			// 
-			// tabControl1
+			// tab_ManageOrder
 			// 
-			tabControl1.Controls.Add(tab_createCustomer);
-			tabControl1.Controls.Add(tabPage2);
-			tabControl1.Location = new Point(2, 2);
-			tabControl1.Name = "tabControl1";
-			tabControl1.SelectedIndex = 0;
-			tabControl1.Size = new Size(1380, 752);
-			tabControl1.TabIndex = 0;
+			tab_ManageOrder.Controls.Add(tab_createCustomer);
+			tab_ManageOrder.Controls.Add(tab_orderManager);
+			tab_ManageOrder.Location = new Point(2, 2);
+			tab_ManageOrder.Name = "tab_ManageOrder";
+			tab_ManageOrder.SelectedIndex = 0;
+			tab_ManageOrder.Size = new Size(1380, 752);
+			tab_ManageOrder.TabIndex = 0;
 			// 
 			// tab_createCustomer
 			// 
@@ -233,36 +237,68 @@
 			txt_name.Size = new Size(364, 27);
 			txt_name.TabIndex = 13;
 			// 
-			// tabPage2
+			// tab_orderManager
 			// 
-			tabPage2.BackColor = Color.LightBlue;
-			tabPage2.Location = new Point(4, 29);
-			tabPage2.Name = "tabPage2";
-			tabPage2.Padding = new Padding(3);
-			tabPage2.Size = new Size(1372, 719);
-			tabPage2.TabIndex = 1;
-			tabPage2.Text = "tabPage2";
+			tab_orderManager.BackColor = SystemColors.Desktop;
+			tab_orderManager.Controls.Add(button1);
+			tab_orderManager.Controls.Add(listView2);
+			tab_orderManager.Controls.Add(listView1);
+			tab_orderManager.Location = new Point(4, 29);
+			tab_orderManager.Name = "tab_orderManager";
+			tab_orderManager.Padding = new Padding(3);
+			tab_orderManager.Size = new Size(1372, 719);
+			tab_orderManager.TabIndex = 1;
+			tab_orderManager.Text = "Orders Manager";
+			tab_orderManager.Enter += tab_orderManager_Enter;
+			// 
+			// button1
+			// 
+			button1.Location = new Point(947, 681);
+			button1.Name = "button1";
+			button1.Size = new Size(417, 29);
+			button1.TabIndex = 2;
+			button1.Text = "Refresh";
+			button1.UseVisualStyleBackColor = true;
+			// 
+			// listView2
+			// 
+			listView2.BackColor = Color.LightBlue;
+			listView2.Location = new Point(18, 19);
+			listView2.Name = "listView2";
+			listView2.Size = new Size(912, 592);
+			listView2.TabIndex = 1;
+			listView2.UseCompatibleStateImageBehavior = false;
+			// 
+			// listView1
+			// 
+			listView1.BackColor = Color.LightBlue;
+			listView1.Location = new Point(947, 19);
+			listView1.Name = "listView1";
+			listView1.Size = new Size(417, 656);
+			listView1.TabIndex = 0;
+			listView1.UseCompatibleStateImageBehavior = false;
 			// 
 			// Employee
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(1382, 753);
-			Controls.Add(tabControl1);
+			Controls.Add(tab_ManageOrder);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			Name = "Employee";
 			Text = "Employee View";
-			tabControl1.ResumeLayout(false);
+			tab_ManageOrder.ResumeLayout(false);
 			tab_createCustomer.ResumeLayout(false);
 			tab_createCustomer.PerformLayout();
+			tab_orderManager.ResumeLayout(false);
 			ResumeLayout(false);
 		}
 
 		#endregion
 
-		private TabControl tabControl1;
+		private TabControl tab_ManageOrder;
 		private TabPage tab_createCustomer;
-		private TabPage tabPage2;
+		private TabPage tab_orderManager;
 		private Label lbl_gender;
 		private TextBox txt_address;
 		private Label lbl_address;
@@ -278,5 +314,8 @@
 		private TextBox txt_password;
 		private Label lbl_password;
 		private ComboBox cmb_gender;
+		private Button button1;
+		private ListView listView2;
+		private ListView listView1;
 	}
 }

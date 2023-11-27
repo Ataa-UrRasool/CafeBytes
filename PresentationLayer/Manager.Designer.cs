@@ -81,11 +81,35 @@
 			btn_addTax = new Button();
 			txt_taxValue = new TextBox();
 			txt_taxName = new TextBox();
+			tab_updateMenuItems = new TabPage();
+			pnl_updateMenuitems = new Panel();
+			btn_menuUpdate_update = new Button();
+			label9 = new Label();
+			txt_menuUpdateID = new TextBox();
+			label1 = new Label();
+			label2 = new Label();
+			label3 = new Label();
+			label4 = new Label();
+			label5 = new Label();
+			label6 = new Label();
+			label7 = new Label();
+			label8 = new Label();
+			cmb_menuUpdateTaxInfo = new ComboBox();
+			cmb_menuUpdateDiscountInfo = new ComboBox();
+			txt_menuUpdateLpReward = new TextBox();
+			txt_menuUpdateLpPrice = new TextBox();
+			txt_menuUpdateNutriInfo = new TextBox();
+			txt_menuUpdatePrice = new TextBox();
+			txt_menuUpdateDescrip = new TextBox();
+			txt_menuUpdateName = new TextBox();
+			flp_menuDisplayUpdateMenu = new FlowLayoutPanel();
 			tab_ViewManager.SuspendLayout();
 			tab_createEmployeeProfile.SuspendLayout();
 			tab_addMenuItems.SuspendLayout();
 			tab_addDiscounts.SuspendLayout();
 			tab_addTaxes.SuspendLayout();
+			tab_updateMenuItems.SuspendLayout();
+			pnl_updateMenuitems.SuspendLayout();
 			SuspendLayout();
 			// 
 			// tab_ViewManager
@@ -94,6 +118,7 @@
 			tab_ViewManager.Controls.Add(tab_addMenuItems);
 			tab_ViewManager.Controls.Add(tab_addDiscounts);
 			tab_ViewManager.Controls.Add(tab_addTaxes);
+			tab_ViewManager.Controls.Add(tab_updateMenuItems);
 			tab_ViewManager.Font = new Font("Segoe UI", 12F);
 			tab_ViewManager.Location = new Point(1, 2);
 			tab_ViewManager.Name = "tab_ViewManager";
@@ -128,7 +153,7 @@
 			tab_createEmployeeProfile.Padding = new Padding(3);
 			tab_createEmployeeProfile.Size = new Size(1372, 710);
 			tab_createEmployeeProfile.TabIndex = 0;
-			tab_createEmployeeProfile.Text = "CreateEmployee";
+			tab_createEmployeeProfile.Text = "Create Employee";
 			// 
 			// cmb_gender
 			// 
@@ -323,7 +348,7 @@
 			tab_addMenuItems.Padding = new Padding(3);
 			tab_addMenuItems.Size = new Size(1372, 710);
 			tab_addMenuItems.TabIndex = 1;
-			tab_addMenuItems.Text = "AddMenuItems";
+			tab_addMenuItems.Text = "Add MenuItems";
 			// 
 			// lbl_taxInfo
 			// 
@@ -479,11 +504,11 @@
 			// 
 			// txt_itemDescription
 			// 
-			txt_itemDescription.Location = new Point(566, 138);
+			txt_itemDescription.Location = new Point(566, 133);
 			txt_itemDescription.Multiline = true;
 			txt_itemDescription.Name = "txt_itemDescription";
 			txt_itemDescription.PlaceholderText = "item description";
-			txt_itemDescription.Size = new Size(380, 57);
+			txt_itemDescription.Size = new Size(380, 66);
 			txt_itemDescription.TabIndex = 1;
 			// 
 			// txt_itemName
@@ -510,7 +535,7 @@
 			tab_addDiscounts.Padding = new Padding(3);
 			tab_addDiscounts.Size = new Size(1372, 710);
 			tab_addDiscounts.TabIndex = 2;
-			tab_addDiscounts.Text = "AddDiscounts";
+			tab_addDiscounts.Text = "Add Discounts";
 			// 
 			// lbl_discTabValue
 			// 
@@ -601,7 +626,7 @@
 			tab_addTaxes.Name = "tab_addTaxes";
 			tab_addTaxes.Size = new Size(1372, 710);
 			tab_addTaxes.TabIndex = 3;
-			tab_addTaxes.Text = "AddTaxes";
+			tab_addTaxes.Text = "Add Taxes";
 			// 
 			// lbl_taxTabValue
 			// 
@@ -674,11 +699,244 @@
 			txt_taxName.Size = new Size(380, 30);
 			txt_taxName.TabIndex = 4;
 			// 
+			// tab_updateMenuItems
+			// 
+			tab_updateMenuItems.BackColor = SystemColors.Control;
+			tab_updateMenuItems.Controls.Add(pnl_updateMenuitems);
+			tab_updateMenuItems.Controls.Add(flp_menuDisplayUpdateMenu);
+			tab_updateMenuItems.Location = new Point(4, 37);
+			tab_updateMenuItems.Name = "tab_updateMenuItems";
+			tab_updateMenuItems.Padding = new Padding(3);
+			tab_updateMenuItems.Size = new Size(1372, 710);
+			tab_updateMenuItems.TabIndex = 4;
+			tab_updateMenuItems.Text = "Update MenuItems";
+			tab_updateMenuItems.Enter += tab_updateMenuItems_Enter;
+			// 
+			// pnl_updateMenuitems
+			// 
+			pnl_updateMenuitems.BackColor = Color.LightBlue;
+			pnl_updateMenuitems.Controls.Add(btn_menuUpdate_update);
+			pnl_updateMenuitems.Controls.Add(label9);
+			pnl_updateMenuitems.Controls.Add(txt_menuUpdateID);
+			pnl_updateMenuitems.Controls.Add(label1);
+			pnl_updateMenuitems.Controls.Add(label2);
+			pnl_updateMenuitems.Controls.Add(label3);
+			pnl_updateMenuitems.Controls.Add(label4);
+			pnl_updateMenuitems.Controls.Add(label5);
+			pnl_updateMenuitems.Controls.Add(label6);
+			pnl_updateMenuitems.Controls.Add(label7);
+			pnl_updateMenuitems.Controls.Add(label8);
+			pnl_updateMenuitems.Controls.Add(cmb_menuUpdateTaxInfo);
+			pnl_updateMenuitems.Controls.Add(cmb_menuUpdateDiscountInfo);
+			pnl_updateMenuitems.Controls.Add(txt_menuUpdateLpReward);
+			pnl_updateMenuitems.Controls.Add(txt_menuUpdateLpPrice);
+			pnl_updateMenuitems.Controls.Add(txt_menuUpdateNutriInfo);
+			pnl_updateMenuitems.Controls.Add(txt_menuUpdatePrice);
+			pnl_updateMenuitems.Controls.Add(txt_menuUpdateDescrip);
+			pnl_updateMenuitems.Controls.Add(txt_menuUpdateName);
+			pnl_updateMenuitems.Location = new Point(792, 6);
+			pnl_updateMenuitems.Name = "pnl_updateMenuitems";
+			pnl_updateMenuitems.Size = new Size(574, 698);
+			pnl_updateMenuitems.TabIndex = 1;
+			// 
+			// btn_menuUpdate_update
+			// 
+			btn_menuUpdate_update.Location = new Point(305, 610);
+			btn_menuUpdate_update.Name = "btn_menuUpdate_update";
+			btn_menuUpdate_update.Size = new Size(123, 35);
+			btn_menuUpdate_update.TabIndex = 59;
+			btn_menuUpdate_update.Text = "Update";
+			btn_menuUpdate_update.UseVisualStyleBackColor = true;
+			btn_menuUpdate_update.Click += btn_menuUpdate_update_Click;
+			// 
+			// label9
+			// 
+			label9.AutoSize = true;
+			label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label9.Location = new Point(117, 69);
+			label9.Name = "label9";
+			label9.Size = new Size(32, 28);
+			label9.TabIndex = 58;
+			label9.Text = "ID";
+			label9.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// txt_menuUpdateID
+			// 
+			txt_menuUpdateID.Location = new Point(215, 63);
+			txt_menuUpdateID.Name = "txt_menuUpdateID";
+			txt_menuUpdateID.PlaceholderText = "item id";
+			txt_menuUpdateID.ReadOnly = true;
+			txt_menuUpdateID.Size = new Size(303, 34);
+			txt_menuUpdateID.TabIndex = 57;
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label1.Location = new Point(117, 548);
+			label1.Name = "label1";
+			label1.Size = new Size(41, 28);
+			label1.TabIndex = 56;
+			label1.Text = "Tax";
+			label1.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label2.Location = new Point(84, 497);
+			label2.Name = "label2";
+			label2.Size = new Size(98, 28);
+			label2.TabIndex = 55;
+			label2.Text = "Discount ";
+			label2.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label3
+			// 
+			label3.AutoSize = true;
+			label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label3.Location = new Point(80, 440);
+			label3.Name = "label3";
+			label3.Size = new Size(106, 28);
+			label3.TabIndex = 54;
+			label3.Text = "LP Reward";
+			label3.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label4.Location = new Point(91, 381);
+			label4.Name = "label4";
+			label4.Size = new Size(84, 28);
+			label4.TabIndex = 53;
+			label4.Text = "LP Price";
+			label4.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label5
+			// 
+			label5.AutoSize = true;
+			label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label5.Location = new Point(57, 322);
+			label5.Name = "label5";
+			label5.Size = new Size(152, 28);
+			label5.TabIndex = 52;
+			label5.Text = "Nutritional Info";
+			label5.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label6
+			// 
+			label6.AutoSize = true;
+			label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label6.Location = new Point(105, 266);
+			label6.Name = "label6";
+			label6.Size = new Size(56, 28);
+			label6.TabIndex = 51;
+			label6.Text = "Price";
+			label6.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label7
+			// 
+			label7.AutoSize = true;
+			label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label7.Location = new Point(71, 197);
+			label7.Name = "label7";
+			label7.Size = new Size(115, 28);
+			label7.TabIndex = 50;
+			label7.Text = "Description";
+			label7.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label8
+			// 
+			label8.AutoSize = true;
+			label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label8.Location = new Point(100, 118);
+			label8.Name = "label8";
+			label8.Size = new Size(66, 28);
+			label8.TabIndex = 49;
+			label8.Text = "Name";
+			label8.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// cmb_menuUpdateTaxInfo
+			// 
+			cmb_menuUpdateTaxInfo.FormattingEnabled = true;
+			cmb_menuUpdateTaxInfo.Location = new Point(215, 540);
+			cmb_menuUpdateTaxInfo.Name = "cmb_menuUpdateTaxInfo";
+			cmb_menuUpdateTaxInfo.Size = new Size(303, 36);
+			cmb_menuUpdateTaxInfo.TabIndex = 48;
+			cmb_menuUpdateTaxInfo.Text = "tax info";
+			// 
+			// cmb_menuUpdateDiscountInfo
+			// 
+			cmb_menuUpdateDiscountInfo.FormattingEnabled = true;
+			cmb_menuUpdateDiscountInfo.Location = new Point(215, 489);
+			cmb_menuUpdateDiscountInfo.Name = "cmb_menuUpdateDiscountInfo";
+			cmb_menuUpdateDiscountInfo.Size = new Size(303, 36);
+			cmb_menuUpdateDiscountInfo.TabIndex = 47;
+			cmb_menuUpdateDiscountInfo.Text = "discount info";
+			// 
+			// txt_menuUpdateLpReward
+			// 
+			txt_menuUpdateLpReward.Location = new Point(215, 434);
+			txt_menuUpdateLpReward.Name = "txt_menuUpdateLpReward";
+			txt_menuUpdateLpReward.PlaceholderText = "LP reward";
+			txt_menuUpdateLpReward.Size = new Size(303, 34);
+			txt_menuUpdateLpReward.TabIndex = 46;
+			// 
+			// txt_menuUpdateLpPrice
+			// 
+			txt_menuUpdateLpPrice.Location = new Point(215, 375);
+			txt_menuUpdateLpPrice.Name = "txt_menuUpdateLpPrice";
+			txt_menuUpdateLpPrice.PlaceholderText = "LP price";
+			txt_menuUpdateLpPrice.Size = new Size(303, 34);
+			txt_menuUpdateLpPrice.TabIndex = 45;
+			// 
+			// txt_menuUpdateNutriInfo
+			// 
+			txt_menuUpdateNutriInfo.Location = new Point(215, 316);
+			txt_menuUpdateNutriInfo.Name = "txt_menuUpdateNutriInfo";
+			txt_menuUpdateNutriInfo.PlaceholderText = "nutritional information";
+			txt_menuUpdateNutriInfo.Size = new Size(303, 34);
+			txt_menuUpdateNutriInfo.TabIndex = 44;
+			// 
+			// txt_menuUpdatePrice
+			// 
+			txt_menuUpdatePrice.Location = new Point(215, 260);
+			txt_menuUpdatePrice.Name = "txt_menuUpdatePrice";
+			txt_menuUpdatePrice.PlaceholderText = "item price";
+			txt_menuUpdatePrice.Size = new Size(303, 34);
+			txt_menuUpdatePrice.TabIndex = 43;
+			// 
+			// txt_menuUpdateDescrip
+			// 
+			txt_menuUpdateDescrip.Location = new Point(215, 166);
+			txt_menuUpdateDescrip.Multiline = true;
+			txt_menuUpdateDescrip.Name = "txt_menuUpdateDescrip";
+			txt_menuUpdateDescrip.PlaceholderText = "item description";
+			txt_menuUpdateDescrip.Size = new Size(303, 85);
+			txt_menuUpdateDescrip.TabIndex = 42;
+			// 
+			// txt_menuUpdateName
+			// 
+			txt_menuUpdateName.Location = new Point(215, 112);
+			txt_menuUpdateName.Name = "txt_menuUpdateName";
+			txt_menuUpdateName.PlaceholderText = "item name";
+			txt_menuUpdateName.Size = new Size(303, 34);
+			txt_menuUpdateName.TabIndex = 41;
+			// 
+			// flp_menuDisplayUpdateMenu
+			// 
+			flp_menuDisplayUpdateMenu.BackColor = Color.LightBlue;
+			flp_menuDisplayUpdateMenu.Location = new Point(-4, 6);
+			flp_menuDisplayUpdateMenu.Name = "flp_menuDisplayUpdateMenu";
+			flp_menuDisplayUpdateMenu.Size = new Size(764, 698);
+			flp_menuDisplayUpdateMenu.TabIndex = 0;
+			// 
 			// Manager
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = SystemColors.Desktop;
+			BackColor = SystemColors.Control;
 			ClientSize = new Size(1382, 753);
 			Controls.Add(tab_ViewManager);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -693,6 +951,9 @@
 			tab_addDiscounts.PerformLayout();
 			tab_addTaxes.ResumeLayout(false);
 			tab_addTaxes.PerformLayout();
+			tab_updateMenuItems.ResumeLayout(false);
+			pnl_updateMenuitems.ResumeLayout(false);
+			pnl_updateMenuitems.PerformLayout();
 			ResumeLayout(false);
 		}
 
@@ -751,5 +1012,27 @@
 		private Label lbl_taxTabValue;
 		private Label lbl_taxTabStatus;
 		private Label lbl_taxTabName;
+		private TabPage tab_updateMenuItems;
+		private FlowLayoutPanel flp_menuDisplayUpdateMenu;
+		private Panel pnl_updateMenuitems;
+		private Label label1;
+		private Label label2;
+		private Label label3;
+		private Label label4;
+		private Label label5;
+		private Label label6;
+		private Label label7;
+		private Label label8;
+		private ComboBox cmb_menuUpdateTaxInfo;
+		private ComboBox cmb_menuUpdateDiscountInfo;
+		private TextBox txt_menuUpdateLpReward;
+		private TextBox txt_menuUpdateLpPrice;
+		private TextBox txt_menuUpdateNutriInfo;
+		private TextBox txt_menuUpdatePrice;
+		private TextBox txt_menuUpdateDescrip;
+		private TextBox txt_menuUpdateName;
+		private Label label9;
+		private TextBox txt_menuUpdateID;
+		private Button btn_menuUpdate_update;
 	}
 }

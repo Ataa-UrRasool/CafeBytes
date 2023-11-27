@@ -1,5 +1,6 @@
 ﻿using DbProject.BusinessLogicLayer;
 using DbProject.BusinessLogicLayer.Models;
+using DbProject.DbContextLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace DbProject.PresentationLayer
 {
 	public partial class Manager : Form
 	{
+		List<Item> menuItemsList = new List<Item>();
 		public Manager()
 		{
 			InitializeComponent();
@@ -131,6 +133,105 @@ namespace DbProject.PresentationLayer
 				cmb_taxInfo.Items.Add(list[i].Name);
 			}
 		}
+
+
+		private void DisplayMenuItemsForUpdation()
+		{
+			Utility utility = new Utility();
+			menuItemsList = utility.GetItems();
+			List<Button> btnsList = new List<Button>();
+
+			flp_menuDisplayUpdateMenu.Controls.Clear();
+			for (int i = 0; i < menuItemsList.Count; i++)
+			{
+				Button btn = new Button();
+				btn.Text = menuItemsList[i].Name;
+				btn.Size = new Size(150, 150);
+
+				btn.Tag = i;
+
+				btnsList.Add(btn);
+				btn.Click += new EventHandler(buttonClickedEvent);
+				flp_menuDisplayUpdateMenu.Controls.Add(btn);
+			}
+
+		}
+
+		private void buttonClickedEvent(object sender, EventArgs e)
+		{
+			Button clickedButton = (Button)sender;
+			int clickedButtonIndex = (int)clickedButton.Tag;
+
+			List<Discount> discounts = new Utility().GetDiscounts();
+			List<Tax> taxes = new Utility().GetTaxes();
+
+			txt_menuUpdateID.Text = menuItemsList[clickedButtonIndex].Id.ToString();
+			txt_menuUpdateName.Text = menuItemsList[clickedButtonIndex].Name.ToString();
+			txt_menuUpdatePrice.Text = menuItemsList[clickedButtonIndex].Price.ToString();
+			txt_menuUpdateDescrip.Text = menuItemsList[clickedButtonIndex].Description.ToString();
+			txt_menuUpdateNutriInfo.Text = menuItemsList[clickedButtonIndex].NutritionalInformation.ToString();
+			txt_menuUpdateLpPrice.Text = menuItemsList[clickedButtonIndex].LoyaltyPointsPrice.ToString();
+			txt_menuUpdateLpReward.Text = menuItemsList[clickedButtonIndex].LoyaltyPointsReward.ToString();
+			cmb_menuUpdateDiscountInfo.Items.Clear();
+			for (int i = 0; i < discounts.Count; i++)
+			{
+				cmb_menuUpdateDiscountInfo.Items.Add(discounts[i].Name);
+			}
+			cmb_menuUpdateTaxInfo.Items.Clear();
+			for (int i = 0; i < taxes.Count; i++)
+			{
+				cmb_menuUpdateTaxInfo.Items.Add(taxes[i].Name);
+			}
+
+		}
+
+		private void btn_menuUpdate_update_Click(object sender, EventArgs e)
+		{
+			string newID = txt_menuUpdateID.Text;
+			string newName = txt_menuUpdateName.Text;
+			string newDesc = txt_menuUpdateDescrip.Text;
+			string newPrice = txt_menuUpdatePrice.Text;
+			string newNutriInfo = txt_menuUpdateNutriInfo.Text;
+			string newLpPrice = txt_menuUpdateLpPrice.Text;
+			string newLpReward = txt_menuUpdateLpReward.Text;
+			int newDiscount = cmb_menuUpdateDiscountInfo.SelectedIndex;
+			newDiscount += 1;
+			string strNewDiscount = newDiscount.ToString();
+			int newTax = cmb_menuUpdateTaxInfo.SelectedIndex;
+			newTax += 1;
+			string strNewTax = newTax.ToString();
+
+			if (string.IsNullOrWhiteSpace(newID) || string.IsNullOrWhiteSpace(newName) || string.IsNullOrWhiteSpace(newDesc) || string.IsNullOrWhiteSpace(newPrice) || string.IsNullOrWhiteSpace(newNutriInfo)
+				|| string.IsNullOrWhiteSpace(newLpPrice) || string.IsNullOrWhiteSpace(newLpReward) || string.IsNullOrWhiteSpace(strNewDiscount) || string.IsNullOrWhiteSpace(strNewTax))
+			{
+				MessageBox.Show("Input fields cannot be empty.");
+				return;
+
+			}
+			else
+			{
+				Utility utility = new Utility();
+				DAL dal = new DAL();
+				int x = dal.Insert(utility.UpdateMenuItems(int.Parse(newID), newName, newPrice, newNutriInfo, newDesc, newLpPrice, newLpReward, strNewDiscount, strNewTax));
+				if (x > 0)
+				{
+					MessageBox.Show("Item Updated.");
+					DisplayMenuItemsForUpdation();
+				}
+				else
+				{
+					MessageBox.Show("Error while updating the item.");
+				}
+			}
+
+		}
+
+
+		private void tab_updateMenuItems_Enter(object sender, EventArgs e)
+		{
+			DisplayMenuItemsForUpdation();
+		}
+
 
 	}
 

@@ -10,16 +10,29 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DbProject.PresentationLayer
 {
 	public partial class GuestUsers : Form
 	{
+		private List<Item> itemsList;
+		List<System.Windows.Forms.Button> MenuItemButtons;
+		Order CustomerOrder;
+
 		public GuestUsers()
 		{
 			InitializeComponent();
 
 			PopulateMenuPanel();
+
+			CustomerOrder = new Order();
+			CustomerOrder.ItemsList = new List<Item>();
+			CustomerOrder.Quantity = new List<int>();
+
+			lv_guestUser.Columns.Add("Name");
+			lv_guestUser.Columns.Add("Price");
+			lv_guestUser.Columns.Add("Quantity");
 		}
 
 		public void PopulateMenuPanel()
@@ -27,92 +40,162 @@ namespace DbProject.PresentationLayer
 			const int buttonHeight = 150;
 			const int buttonWidth = 150;
 
-			const int xOffset = 25;
-			const int yOffset = 25;
+			const int verticalSpacing = 25;
+			const int horizontalSpacing = 25;
 
 			int panelHeight = pnl_MenuItems.Height;
 			int panelWidth = pnl_MenuItems.Width;
 
-			int maxButtonsInRow = (panelWidth - (buttonWidth + xOffset)) / (buttonWidth + xOffset);
+			//Some magic formula only God knows how I came up with.
+			int maxButtonsInRow = (panelWidth - (buttonWidth + horizontalSpacing)) / (buttonWidth + horizontalSpacing);
 
-			List<Button> buttons = new List<Button>();
-			List<Item> itemsList = new Utility().GetItems();
+			MenuItemButtons = new List<System.Windows.Forms.Button>();
+			itemsList = new Utility().GetItems();
 
 			for (int i = 0; i < itemsList.Count; i++)
 			{
-				Button button = new Button();
+				System.Windows.Forms.Button MenuItemButton = new System.Windows.Forms.Button();
 
-				button.Text = "Name: " + itemsList[i].Name + "\n\nPrice: " + itemsList[i].Price;
-				button.Size = new Size(buttonWidth, buttonHeight);
+				MenuItemButton.Size = new Size(buttonWidth, buttonHeight);
+				MenuItemButton.Text = "Name: " + itemsList[i].Name + "\n\nPrice: " + itemsList[i].Price;
+				MenuItemButton.Click += new EventHandler(buttonClickedEvent);
 
-				pnl_MenuItems.Controls.Add(button);
-				buttons.Add(button);
+				pnl_MenuItems.Controls.Add(MenuItemButton);
+				MenuItemButtons.Add(MenuItemButton);
+
+				MenuItemButton.Tag = i;
 			}
 
 			int numRows = 0;
-
-			if (buttons.Count % maxButtonsInRow == 0)
+			if (MenuItemButtons.Count % maxButtonsInRow == 0)
 			{
-				numRows = buttons.Count / maxButtonsInRow;
+				numRows = MenuItemButtons.Count / maxButtonsInRow;
 			}
 			else
 			{
-				numRows = (buttons.Count / maxButtonsInRow) + 1;
-
+				numRows = (MenuItemButtons.Count / maxButtonsInRow) + 1;
 			}
 
-			int horizontalOffset = xOffset;
-			int verticalOffset = yOffset + buttonHeight;
+			int horizontalOffset = horizontalSpacing;
+			int verticalOffset = verticalSpacing + buttonHeight;
 
-			int counter = 0;
-
+			int numberOfButtonsPopulated = 0;
 			for (int i = 0; i < numRows; i++)
 			{
-				horizontalOffset = xOffset;
+				horizontalOffset = horizontalSpacing;
 
 				for (int j = 0; j < maxButtonsInRow; j++)
 				{
-					if (counter == buttons.Count)
+					//Break if all buttons have been populated. We dont care about if the loops have finished.
+					//The loops will always >= number of buttons
+					if (numberOfButtonsPopulated == MenuItemButtons.Count)
 					{
 						break;
 					}
 
 					if (i == 0 && j == 0)
 					{
-						buttons[counter].Location = new Point(horizontalOffset, 0);
-						horizontalOffset += buttonWidth + xOffset;
+						MenuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, 0);
+						horizontalOffset += buttonWidth + horizontalSpacing;
 
-						counter++;
+						numberOfButtonsPopulated++;
 					}
 					else if (i == 0 && j > 0)
 					{
-						buttons[counter].Location = new Point(horizontalOffset, 0);
-						horizontalOffset += buttonWidth + xOffset;
+						MenuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, 0);
+						horizontalOffset += buttonWidth + horizontalSpacing;
 
-						counter++;
+						numberOfButtonsPopulated++;
 					}
 					else if (i > 0 && j == 0)
 					{
 						if (i > 1)
 						{
-							verticalOffset += buttonHeight + yOffset;
+							verticalOffset += buttonHeight + verticalSpacing;
 						}
 
-						buttons[counter].Location = new Point(horizontalOffset, verticalOffset);
-						horizontalOffset += buttonWidth + xOffset;
+						MenuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, verticalOffset);
+						horizontalOffset += buttonWidth + horizontalSpacing;
 
-						counter++;
+						numberOfButtonsPopulated++;
 					}
 					else if (i > 0 && j > 0)
 					{
-						buttons[counter].Location = new Point(horizontalOffset, verticalOffset);
-						horizontalOffset += buttonWidth + xOffset;
+						MenuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, verticalOffset);
+						horizontalOffset += buttonWidth + horizontalSpacing;
 
-						counter++;
+						numberOfButtonsPopulated++;
 					}
 				}
 			}
 		}
 
+		private void buttonClickedEvent(object sender, EventArgs e)
+		{
+			System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
+			int clickedButtonIndex = (int)clickedButton.Tag;
+
+			CustomerOrder.ItemsList.Add(itemsList[clickedButtonIndex]);
+			CustomerOrder.Quantity.Add(1);
+
+			string[] orderDetails = { CustomerOrder.ItemsList.Last().Name.ToString(), CustomerOrder.ItemsList.Last().Price.ToString(), CustomerOrder.Quantity.Last().ToString() };
+
+			var listViewItem = new ListViewItem(orderDetails);
+			lv_guestUser.View = View.Details;
+
+			if (lv_guestUser.Items.Count == 0)
+			{
+				lv_guestUser.Items.Add(listViewItem);
+			}
+			else
+			{
+				bool inserted = false;
+				for (int i = 0; i < lv_guestUser.Items.Count; i++)
+				{
+					if (lv_guestUser.Items[i].Text == itemsList[clickedButtonIndex].Name)
+					{
+						ListViewItem myItem = lv_guestUser.Items[i];
+						string[] mySubItems = { myItem.SubItems[0].Text, myItem.SubItems[1].Text, myItem.SubItems[2].Text };
+
+						int quantity = int.Parse(mySubItems[2]);
+
+						quantity++;
+						mySubItems[2] = quantity.ToString();
+
+						lv_guestUser.Items[i].Remove();
+						listViewItem = new ListViewItem(mySubItems);
+						lv_guestUser.Items.Add(listViewItem);
+
+						inserted = true;
+						break;
+					}
+				}
+
+				if (!inserted)
+				{
+					lv_guestUser.Items.Add(listViewItem);
+				}
+			}
+
+		}
+
+		private void btn_placeOrder_Click(object sender, EventArgs e)
+		{
+			bool validID = new Utility().VerifyID(int.Parse(txt_custoID.Text));
+
+			if (validID)
+			{
+				CustomerOrder.customer.Id = int.Parse(txt_custoID.Text);
+				OrderManagement order = new OrderManagement();
+				order.CreateOrder(CustomerOrder);
+			}
+			else
+			{
+				CustomerOrder.customer.Id = 0;
+				OrderManagement order = new OrderManagement();
+				order.CreateOrder(CustomerOrder);
+
+			}
+		}
 	}
 }

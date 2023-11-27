@@ -17,7 +17,14 @@ namespace DbProject.PresentationLayer
 		public Employee()
 		{
 			InitializeComponent();
+
 		}
+
+		public void GetOrdersForOrderManager()
+		{
+
+		}
+
 
 		private void btn_createProfile_Click(object sender, EventArgs e)
 		{
@@ -33,6 +40,12 @@ namespace DbProject.PresentationLayer
 
 			UserCreation userCreation = new UserCreation();
 			userCreation.CreateCustomer(customer);
+		}
+
+		private void tab_orderManager_Enter(object sender, EventArgs e)
+		{
+			Utility utility = new Utility();
+			utility.GetOrdersFromDB();
 		}
 	}
 }
