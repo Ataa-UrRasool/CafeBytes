@@ -1,6 +1,6 @@
 ﻿namespace DbProject.PresentationLayer
 {
-	partial class Manager
+	partial class ManagerScreen
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -103,6 +103,9 @@
 			txt_menuUpdateDescrip = new TextBox();
 			txt_menuUpdateName = new TextBox();
 			flp_menuDisplayUpdateMenu = new FlowLayoutPanel();
+			tab_updateEmployeeMgr = new TabPage();
+			pnl_updateEmployeeInfo = new Panel();
+			flp_updateEmployeeMgr = new FlowLayoutPanel();
 			tab_ViewManager.SuspendLayout();
 			tab_createEmployeeProfile.SuspendLayout();
 			tab_addMenuItems.SuspendLayout();
@@ -110,6 +113,7 @@
 			tab_addTaxes.SuspendLayout();
 			tab_updateMenuItems.SuspendLayout();
 			pnl_updateMenuitems.SuspendLayout();
+			tab_updateEmployeeMgr.SuspendLayout();
 			SuspendLayout();
 			// 
 			// tab_ViewManager
@@ -119,6 +123,7 @@
 			tab_ViewManager.Controls.Add(tab_addDiscounts);
 			tab_ViewManager.Controls.Add(tab_addTaxes);
 			tab_ViewManager.Controls.Add(tab_updateMenuItems);
+			tab_ViewManager.Controls.Add(tab_updateEmployeeMgr);
 			tab_ViewManager.Font = new Font("Segoe UI", 12F);
 			tab_ViewManager.Location = new Point(1, 2);
 			tab_ViewManager.Name = "tab_ViewManager";
@@ -176,7 +181,7 @@
 			// 
 			lbl_hourlyRate.AutoSize = true;
 			lbl_hourlyRate.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_hourlyRate.Location = new Point(404, 424);
+			lbl_hourlyRate.Location = new Point(411, 434);
 			lbl_hourlyRate.Name = "lbl_hourlyRate";
 			lbl_hourlyRate.RightToLeft = RightToLeft.No;
 			lbl_hourlyRate.Size = new Size(119, 28);
@@ -734,9 +739,9 @@
 			pnl_updateMenuitems.Controls.Add(txt_menuUpdatePrice);
 			pnl_updateMenuitems.Controls.Add(txt_menuUpdateDescrip);
 			pnl_updateMenuitems.Controls.Add(txt_menuUpdateName);
-			pnl_updateMenuitems.Location = new Point(792, 6);
+			pnl_updateMenuitems.Location = new Point(792, 0);
 			pnl_updateMenuitems.Name = "pnl_updateMenuitems";
-			pnl_updateMenuitems.Size = new Size(574, 698);
+			pnl_updateMenuitems.Size = new Size(574, 710);
 			pnl_updateMenuitems.TabIndex = 1;
 			// 
 			// btn_menuUpdate_update
@@ -927,12 +932,41 @@
 			// flp_menuDisplayUpdateMenu
 			// 
 			flp_menuDisplayUpdateMenu.BackColor = Color.LightBlue;
-			flp_menuDisplayUpdateMenu.Location = new Point(-4, 6);
+			flp_menuDisplayUpdateMenu.Location = new Point(0, 0);
 			flp_menuDisplayUpdateMenu.Name = "flp_menuDisplayUpdateMenu";
-			flp_menuDisplayUpdateMenu.Size = new Size(764, 698);
+			flp_menuDisplayUpdateMenu.Size = new Size(766, 710);
 			flp_menuDisplayUpdateMenu.TabIndex = 0;
 			// 
-			// Manager
+			// tab_updateEmployeeMgr
+			// 
+			tab_updateEmployeeMgr.BackColor = Color.Transparent;
+			tab_updateEmployeeMgr.Controls.Add(pnl_updateEmployeeInfo);
+			tab_updateEmployeeMgr.Controls.Add(flp_updateEmployeeMgr);
+			tab_updateEmployeeMgr.Location = new Point(4, 37);
+			tab_updateEmployeeMgr.Name = "tab_updateEmployeeMgr";
+			tab_updateEmployeeMgr.Padding = new Padding(3);
+			tab_updateEmployeeMgr.Size = new Size(1372, 710);
+			tab_updateEmployeeMgr.TabIndex = 5;
+			tab_updateEmployeeMgr.Text = "Update Employee";
+			tab_updateEmployeeMgr.Enter += tab_updateEmployeeMgr_Enter;
+			// 
+			// pnl_updateEmployeeInfo
+			// 
+			pnl_updateEmployeeInfo.BackColor = Color.LightBlue;
+			pnl_updateEmployeeInfo.Location = new Point(819, 0);
+			pnl_updateEmployeeInfo.Name = "pnl_updateEmployeeInfo";
+			pnl_updateEmployeeInfo.Size = new Size(553, 710);
+			pnl_updateEmployeeInfo.TabIndex = 1;
+			// 
+			// flp_updateEmployeeMgr
+			// 
+			flp_updateEmployeeMgr.BackColor = Color.LightBlue;
+			flp_updateEmployeeMgr.Location = new Point(0, 0);
+			flp_updateEmployeeMgr.Name = "flp_updateEmployeeMgr";
+			flp_updateEmployeeMgr.Size = new Size(777, 710);
+			flp_updateEmployeeMgr.TabIndex = 0;
+			// 
+			// ManagerScreen
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
@@ -940,7 +974,7 @@
 			ClientSize = new Size(1382, 753);
 			Controls.Add(tab_ViewManager);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
-			Name = "Manager";
+			Name = "ManagerScreen";
 			Text = "Manager View";
 			tab_ViewManager.ResumeLayout(false);
 			tab_createEmployeeProfile.ResumeLayout(false);
@@ -954,6 +988,7 @@
 			tab_updateMenuItems.ResumeLayout(false);
 			pnl_updateMenuitems.ResumeLayout(false);
 			pnl_updateMenuitems.PerformLayout();
+			tab_updateEmployeeMgr.ResumeLayout(false);
 			ResumeLayout(false);
 		}
 
@@ -1034,5 +1069,8 @@
 		private Label label9;
 		private TextBox txt_menuUpdateID;
 		private Button btn_menuUpdate_update;
+		private TabPage tab_updateEmployeeMgr;
+		private FlowLayoutPanel flp_updateEmployeeMgr;
+		private Panel pnl_updateEmployeeInfo;
 	}
 }

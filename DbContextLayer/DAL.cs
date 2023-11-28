@@ -29,7 +29,7 @@ namespace DbProject.DbContextLayer
 			sqlDataAdapter.Fill(dt);
 
 
-			sqlConnection.Close();
+		sqlConnection.Close();
 			sqlDataAdapter.Dispose();
 			return dt;
 		}

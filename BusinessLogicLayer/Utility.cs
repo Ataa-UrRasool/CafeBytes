@@ -6,37 +6,91 @@ namespace DbProject.BusinessLogicLayer
 {
 	internal class Utility
 	{
+
+		public List<Employee> GetAllEmployees()
+		{
+			string query = "SELECT * FROM Employees";
+			DAL dAL = new DAL();
+			DataTable dt = dAL.executeGetData(query);
+
+			List<Employee> employeesList = new List<Employee>();
+
+			for (int i = 0; i < dt.Rows.Count; i++)
+			{
+				Employee employee = new Employee();
+				employee.ID = dt.Rows[i].Field<int>("ID");
+				employee.Name = dt.Rows[i].Field<string>("name");
+				employee.PhoneNumber = dt.Rows[i].Field<string>("phoneNo");
+				employee.Email = dt.Rows[i].Field<string>("email");
+				employee.Gender = dt.Rows[i].Field<int>("gender").ToString();
+				employee.Address = dt.Rows[i].Field<string>("address");
+				string hourlyRateStr = dt.Rows[i]["hourlyRate"].ToString();
+				if (float.TryParse(hourlyRateStr, out float hrly))
+				{
+					employee.HourlyRate = hrly;
+				}
+				else
+				{
+					employee.HourlyRate = float.Parse(hourlyRateStr);
+				}
+
+				employee.Role = dt.Rows[i].Field<int>("role").ToString();
+				employee.CredentialID = dt.Rows[i].Field<int>("credential");
+				employeesList.Add(employee);
+			}
+
+			return employeesList;
+		}
+
+		public string GetCustomerNameFromOrder(int cID)
+		{
+			DAL dAL = new DAL();
+			DataTable dt = dAL.executeGetData(GetCustomerNameFromOrderQuery(cID));
+			return dt.Rows[0].Field<string>("name");
+		}
+
+
 		public List<Order> GetOrdersFromDB()
 		{
 			DAL dAL = new DAL();
 			DataTable dt = dAL.executeGetData(GetOrdersQuery());
 
 			List<Order> orders = new List<Order>();
-
 			for (int i = 0; i < dt.Rows.Count; i++)
 			{
+				string query = "SELECT menuItem, quantity FROM Orders WHERE orderID = '" + dt.Rows[i].Field<int>("orderID") + "'";
+				DataTable itemDT = dAL.executeGetData(query);
+
 				Order order = new Order();
 				order.Id = dt.Rows[i].Field<int>("orderID");
-				order.ItemsList = GetOrderItems(order.Id);
 
-				//				order.TotalAmount = dt.Rows[i].Field<float>("totalAmount");
-				string totalPrice = dt.Rows[i]["totalAmount"].ToString();
-				if (float.TryParse(totalPrice, out float price))
+				string customerIdFromOrderIdQuery = "SELECT DISTINCT customerID FROM Orders WHERE orderID = '" + order.Id + "'";
+				DataTable customerIdFromOrderIdDT = dAL.executeGetData(customerIdFromOrderIdQuery);
+
+				order.customer.Id = customerIdFromOrderIdDT.Rows[0].Field<int>("customerID");
+
+				for (int j = 0; j < itemDT.Rows.Count; j++)
 				{
-					order.TotalAmount = price;
-				}
-				else
-				{
-					order.TotalAmount = float.Parse(totalPrice);
-				}
+					string menuItemsQuery = "SELECT * FROM MenuItems WHERE ID = '" + itemDT.Rows[j].Field<int>("menuItem") + "'";
+					DataTable menuDTall = dAL.executeGetData(menuItemsQuery);
 
-				order.Status = dt.Rows[i].Field<int>("status");
-				order.customer.Id = dt.Rows[i].Field<int>("customerID");
+					for (int k = 0; k < menuDTall.Rows.Count; k++)
+					{
+						Item item = new Item();
+						item.Id = menuDTall.Rows[k].Field<int>("ID");
+						item.Name = menuDTall.Rows[k].Field<string>("name");
 
+						order.ItemsList.Add(item);
+						order.Quantity.Add(itemDT.Rows[j].Field<int>("quantity"));
+					}
+				}
+				orders.Add(order);
 			}
+
 
 			return orders;
 		}
+
 		//private List<Item> GetOrdersQuantity()
 		//{
 		//	string query = "SELECT quantity FROM Orders";
@@ -45,50 +99,34 @@ namespace DbProject.BusinessLogicLayer
 		//	DataTable dt = dAL.executeGetData(query);
 
 		//	List<Item> ordersList = new List<Item>();
-		//	for (int i = 0; i<dt.Rows.Count; i++)
+		//	for (int i = 0; i < dt.Rows.Count; i++)
 		//	{
 		//		Order order = new Order();
-		//		order.Quantity[i] = dt.Rows[i].Field<int>("quantity");	
+		//		order.Quantity[i] = dt.Rows[i].Field<int>("quantity");
 		//		ordersList.Add
 		//	}
 
-		//	return null;
+		//	return ordersList;
 		//}
 
-		private List<Item> GetOrderItems(int orderID)
+		public Customer GetCustomerInfoByID(int cID)
 		{
-			string query = "SELECT * FROM MenuItems INNER JOIN Orders ON orders.menuItem = MenuItems.ID";
-			DAL dAL = new DAL();
+			string query = "SELECT * FROM Customers WHERE ID = '" + cID + "'";
+			
+			DAL dAL = new DAL();	
 			DataTable dt = dAL.executeGetData(query);
 
-			List<Item> listItems = new List<Item>();
-			for (int i = 0; i < dt.Rows.Count; i++)
-			{
-				Item newItem = new Item();
-				newItem.Id = dt.Rows[i].Field<int>("ID");
-				newItem.Name = dt.Rows[i].Field<string>("name");
-				newItem.Description = dt.Rows[i].Field<string>("description");
-				//newItem.Price = float.Parse( dt.Rows[i].Field<float>("price"));
-				string priceStr = dt.Rows[i]["price"].ToString();
-				if (float.TryParse(priceStr, out float price))
-				{
-					newItem.Price = price;
-				}
-				else
-				{
-					newItem.Price = float.Parse(priceStr);
-				}
+			Customer customer = new Customer();
+			customer.Id = cID;
+			customer.Name = dt.Rows[0].Field<string>("name");
+			customer.PhoneNumber = dt.Rows[0].Field<string>("phoneNo");
+			customer.Email = dt.Rows[0].Field<string>("email");
+			customer.Address = dt.Rows[0].Field<string>("address");
+			customer.Gender = dt.Rows[0].Field<int>("gender").ToString();
+			customer.LoyaltyPoints = dt.Rows[0].Field<int>("loyaltyPoints");
 
-				newItem.LoyaltyPointsPrice = dt.Rows[i].Field<int>("loyaltyPointsPrice");
-				newItem.LoyaltyPointsReward = dt.Rows[i].Field<int>("layaltyPointsReward");
-				newItem.Tax = dt.Rows[i].Field<int>("tax");
-				newItem.Discount = dt.Rows[i].Field<int>("discount");
-				listItems.Add(newItem);
-			}
-
-			return listItems;
+			return customer;
 		}
-
 		public bool VerifyID(int ID)
 		{
 			DAL dAL = new DAL();
@@ -118,7 +156,6 @@ namespace DbProject.BusinessLogicLayer
 		{
 			return "SELECT COUNT(ID) FROM Credentials WHERE username = '" + username + "';";
 		}
-
 
 		public List<Discount> GetDiscounts()
 		{
@@ -215,8 +252,14 @@ namespace DbProject.BusinessLogicLayer
 		}
 		private string GetOrdersQuery()
 		{
-			return "SELECT * FROM Orders";
+			return "SELECT DISTINCT orderID FROM Orders";
 		}
+
+		private string GetCustomerNameFromOrderQuery(int customerID)
+		{
+			return "SELECT name FROM customers c INNER JOIN orders o ON c.'" + customerID + "' = o.customerID";
+		}
+
 		public string UpdateMenuItems(int passedMenuID, string passedName, string passedPrice, string passedNutriInfo, string passedDesc, string passedLpPrice, string passedLpReward, string passedDiscount, string passedTax)
 		{
 			return "UPDATE MenuItems SET name = '" + passedName + "', description = '" + passedDesc + "', price = '" + passedPrice + "', nutritionalInfo = '" + passedNutriInfo + "', loyaltyPointsPrice = '" + passedLpPrice + "', layaltyPointsReward = '" + passedLpReward + "', discount = '" + passedDiscount + "', tax = '" + passedTax + "' WHERE ID = '" + passedMenuID + "';";

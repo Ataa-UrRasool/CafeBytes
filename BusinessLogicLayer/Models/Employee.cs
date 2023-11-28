@@ -9,6 +9,7 @@ namespace DbProject.BusinessLogicLayer.Models
 {
 	internal class Employee : Person
 	{
+		public int ID { get; set; }	
 		public float HourlyRate { get; set; }
 		public string Role { get; set; }
 

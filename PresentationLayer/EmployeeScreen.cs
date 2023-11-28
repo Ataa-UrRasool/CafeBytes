@@ -12,16 +12,24 @@ using System.Windows.Forms;
 
 namespace DbProject.PresentationLayer
 {
-	public partial class Employee : Form
+	public partial class EmployeeScreen : Form
 	{
-		public Employee()
+		private List<Order> ordersList = new List<Order>();
+		private Customer customer = new Customer();
+		public EmployeeScreen()
 		{
 			InitializeComponent();
+
+
+
+			lv_allOrdersPanel.Columns.Add("Order ID");
+			lv_allOrdersPanel.Columns.Add("Customer Name");
 
 		}
 
 		public void GetOrdersForOrderManager()
 		{
+
 
 		}
 
@@ -45,7 +53,22 @@ namespace DbProject.PresentationLayer
 		private void tab_orderManager_Enter(object sender, EventArgs e)
 		{
 			Utility utility = new Utility();
-			utility.GetOrdersFromDB();
+			ordersList = utility.GetOrdersFromDB();
+
+			lv_allOrdersPanel.View = View.Details;
+
+			for (int i = 0; i < ordersList.Count; i++)
+			{
+				int oId = ordersList[i].Id;
+				Customer customer = new Utility().GetCustomerInfoByID(oId);
+				
+
+				string[] values = { oId.ToString(), customer.Name.ToString() };
+				var listViewItem = new ListViewItem(values);
+				lv_allOrdersPanel.Items.Add(listViewItem);
+			}
+
 		}
+
 	}
 }

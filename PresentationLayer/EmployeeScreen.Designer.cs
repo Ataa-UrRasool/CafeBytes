@@ -1,6 +1,6 @@
 ﻿namespace DbProject.PresentationLayer
 {
-	partial class Employee
+	partial class EmployeeScreen
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -47,8 +47,7 @@
 			txt_name = new TextBox();
 			tab_orderManager = new TabPage();
 			button1 = new Button();
-			listView2 = new ListView();
-			listView1 = new ListView();
+			lv_allOrdersPanel = new ListView();
 			tab_ManageOrder.SuspendLayout();
 			tab_createCustomer.SuspendLayout();
 			tab_orderManager.SuspendLayout();
@@ -241,8 +240,7 @@
 			// 
 			tab_orderManager.BackColor = SystemColors.Desktop;
 			tab_orderManager.Controls.Add(button1);
-			tab_orderManager.Controls.Add(listView2);
-			tab_orderManager.Controls.Add(listView1);
+			tab_orderManager.Controls.Add(lv_allOrdersPanel);
 			tab_orderManager.Location = new Point(4, 29);
 			tab_orderManager.Name = "tab_orderManager";
 			tab_orderManager.Padding = new Padding(3);
@@ -260,32 +258,23 @@
 			button1.Text = "Refresh";
 			button1.UseVisualStyleBackColor = true;
 			// 
-			// listView2
+			// lv_allOrdersPanel
 			// 
-			listView2.BackColor = Color.LightBlue;
-			listView2.Location = new Point(18, 19);
-			listView2.Name = "listView2";
-			listView2.Size = new Size(912, 592);
-			listView2.TabIndex = 1;
-			listView2.UseCompatibleStateImageBehavior = false;
+			lv_allOrdersPanel.BackColor = Color.LightBlue;
+			lv_allOrdersPanel.Location = new Point(947, 6);
+			lv_allOrdersPanel.Name = "lv_allOrdersPanel";
+			lv_allOrdersPanel.Size = new Size(417, 669);
+			lv_allOrdersPanel.TabIndex = 0;
+			lv_allOrdersPanel.UseCompatibleStateImageBehavior = false;
 			// 
-			// listView1
-			// 
-			listView1.BackColor = Color.LightBlue;
-			listView1.Location = new Point(947, 19);
-			listView1.Name = "listView1";
-			listView1.Size = new Size(417, 656);
-			listView1.TabIndex = 0;
-			listView1.UseCompatibleStateImageBehavior = false;
-			// 
-			// Employee
+			// EmployeeScreen
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(1382, 753);
 			Controls.Add(tab_ManageOrder);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
-			Name = "Employee";
+			Name = "EmployeeScreen";
 			Text = "Employee View";
 			tab_ManageOrder.ResumeLayout(false);
 			tab_createCustomer.ResumeLayout(false);
@@ -315,7 +304,6 @@
 		private Label lbl_password;
 		private ComboBox cmb_gender;
 		private Button button1;
-		private ListView listView2;
-		private ListView listView1;
+		private ListView lv_allOrdersPanel;
 	}
 }

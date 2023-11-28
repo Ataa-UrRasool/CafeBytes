@@ -25,14 +25,14 @@ namespace DbProject
 
 				if (role == Constants.ROLE_MANAGER)
 				{
-					Manager manager = new Manager();
+					ManagerScreen manager = new ManagerScreen();
 					manager.Visible = true;
 					this.Visible = false;
 
 				}
 				else if (role == Constants.ROLE_EMPLOYEES)
 				{
-					Employee customerByEmployee = new Employee();
+					EmployeeScreen customerByEmployee = new EmployeeScreen();
 					customerByEmployee.Visible = true;
 					this.Visible = false;
 				}
@@ -49,7 +49,7 @@ namespace DbProject
 		private void lbl_guestScreen_Click(object sender, EventArgs e)
 		{
 			this.Visible = false;
-			GuestUsers guestUsers = new GuestUsers();
+			GuestUsersScreen guestUsers = new GuestUsersScreen();
 			guestUsers.Visible = true;
 		}
 

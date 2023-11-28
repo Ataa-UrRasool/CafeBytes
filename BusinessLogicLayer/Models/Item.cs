@@ -23,9 +23,9 @@ namespace DbProject.BusinessLogicLayer.Models
 
 		public string InsertMenuItemQuery()
 		{
-			return "INSERT INTO MenuItems (name, description, price, nutritionalInfo, loyaltyPointsPrice, layaltyPointsReward, discount, tax)" +
+			return "INSERT INTO MenuItems (name, description, price, nutritionalInfo, loyaltyPointsPrice, layaltyPointsReward, discount, tax) " +
 					" VALUES ( '" + Name + "', '" + Description + "', '" + Price + "', '" + NutritionalInformation + "', '" + LoyaltyPointsPrice + 
-					"', '" + LoyaltyPointsReward + "', '" + Discount + "', '" + Tax + "');";
+					"', '" + LoyaltyPointsReward + "', '" + Discount + "', '" + Tax + "')";
 		}
 	}
 }

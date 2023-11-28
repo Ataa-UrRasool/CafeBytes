@@ -1,6 +1,6 @@
 ﻿namespace DbProject.PresentationLayer
 {
-	partial class GuestUsers
+	partial class GuestUsersScreen
 	{
 		/// <summary>
 		/// Required designer variable.

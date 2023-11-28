@@ -85,6 +85,7 @@
 			// 
 			// signInBtn
 			// 
+			signInBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			signInBtn.BackColor = Color.White;
 			signInBtn.Cursor = Cursors.Hand;
 			signInBtn.FlatAppearance.BorderSize = 10;

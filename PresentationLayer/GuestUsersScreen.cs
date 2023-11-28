@@ -14,13 +14,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DbProject.PresentationLayer
 {
-	public partial class GuestUsers : Form
+	public partial class GuestUsersScreen : Form
 	{
 		private List<Item> itemsList;
 		List<System.Windows.Forms.Button> MenuItemButtons;
 		Order CustomerOrder;
 
-		public GuestUsers()
+		public GuestUsersScreen()
 		{
 			InitializeComponent();
 

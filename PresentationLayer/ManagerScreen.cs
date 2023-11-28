@@ -13,10 +13,11 @@ using System.Windows.Forms;
 
 namespace DbProject.PresentationLayer
 {
-	public partial class Manager : Form
+	public partial class ManagerScreen : Form
 	{
 		List<Item> menuItemsList = new List<Item>();
-		public Manager()
+		List<Employee> employeesList = new List<Employee>();
+		public ManagerScreen()
 		{
 			InitializeComponent();
 		}
@@ -63,6 +64,8 @@ namespace DbProject.PresentationLayer
 			};
 			MenuCreation menuCreation = new MenuCreation();
 			menuCreation.AddMenuItem(item);
+			tab_addMenuItems.Refresh();
+
 		}
 
 		private void btn_addDiscount_Click(object sender, EventArgs e)
@@ -226,12 +229,36 @@ namespace DbProject.PresentationLayer
 
 		}
 
-
 		private void tab_updateMenuItems_Enter(object sender, EventArgs e)
 		{
 			DisplayMenuItemsForUpdation();
 		}
 
+
+
+		private void DisplayEmployeesForUpdation()
+		{
+			Utility utility = new Utility();
+			employeesList = utility.GetAllEmployees();
+			List<Button> btnsList = new List<Button>();
+
+			flp_updateEmployeeMgr.Controls.Clear();
+
+			for (int i = 0; i < employeesList.Count; i++)
+			{
+				Button btn = new Button();
+				btn.Size = new Size(150, 150);
+				btn.Text = employeesList[i].Name;
+				btn.Tag = i;
+				btnsList.Add(btn);
+				flp_updateEmployeeMgr.Controls.Add(btn);
+			}
+		}
+
+		private void tab_updateEmployeeMgr_Enter(object sender, EventArgs e)
+		{
+			DisplayEmployeesForUpdation();
+		}
 
 	}
 
