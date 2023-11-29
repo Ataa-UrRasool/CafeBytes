@@ -28,7 +28,8 @@ namespace DbProject
 					ManagerScreen manager = new ManagerScreen();
 					manager.Visible = true;
 					this.Visible = false;
-
+					
+					//Constants.USER_NAME = 
 				}
 				else if (role == Constants.ROLE_EMPLOYEES)
 				{

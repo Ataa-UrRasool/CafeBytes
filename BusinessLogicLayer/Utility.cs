@@ -1,6 +1,9 @@
 ﻿using DbProject.BusinessLogicLayer.Models;
 using DbProject.DbContextLayer;
 using System.Data;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Xml.Linq;
+using System.Security.Cryptography;
 
 namespace DbProject.BusinessLogicLayer
 {
@@ -41,15 +44,16 @@ namespace DbProject.BusinessLogicLayer
 
 			return employeesList;
 		}
-
 		public string GetCustomerNameFromOrder(int cID)
 		{
 			DAL dAL = new DAL();
 			DataTable dt = dAL.executeGetData(GetCustomerNameFromOrderQuery(cID));
 			return dt.Rows[0].Field<string>("name");
 		}
-
-
+		public string GetItemsQuantityFromOrdersQuery(int oID)
+		{
+			return "SELECT MenuItems.name, orders.quantity FROM Orders JOIN MenuItems ON Orders.menuItem = MenuItems.ID WHERE Orders.orderID = '" + oID + "'";
+		}
 		public List<Order> GetOrdersFromDB()
 		{
 			DAL dAL = new DAL();
@@ -91,23 +95,24 @@ namespace DbProject.BusinessLogicLayer
 			return orders;
 		}
 
-		//private List<Item> GetOrdersQuantity()
-		//{
-		//	string query = "SELECT quantity FROM Orders";
+		public List<(string, double, int)> GetItemNamePriceQauntity(int oID)
+		{
+			DAL dAL = new DAL();
+			DataTable dt = dAL.executeGetData(GetItemNamePriceQauntityQuery(oID));
 
-		//	DAL dAL = new DAL();
-		//	DataTable dt = dAL.executeGetData(query);
+			List<(string, double, int)> list = new List<(string, double, int)>();
+			for (int i = 0; i < dt.Rows.Count; i++)
+			{
+				string name = dt.Rows[i].Field<string>("name");
+				double price = dt.Rows[i].Field<double>("price");
+				int quantity = dt.Rows[i].Field<int>("quantity");
 
-		//	List<Item> ordersList = new List<Item>();
-		//	for (int i = 0; i < dt.Rows.Count; i++)
-		//	{
-		//		Order order = new Order();
-		//		order.Quantity[i] = dt.Rows[i].Field<int>("quantity");
-		//		ordersList.Add
-		//	}
+				//List<(string, int, int)> list = new List<(string, int, int)>();
+				list.Add((name, price, quantity));
 
-		//	return ordersList;
-		//}
+			}
+			return list;
+		}
 
 		public string GetCustomerName(int cID)
 		{
@@ -117,8 +122,6 @@ namespace DbProject.BusinessLogicLayer
 
 			return dt.Rows[0].Field<string>("name");
 		}
-
-
 		public Customer GetCustomerInfoByID(int cID)
 		{
 			string query = "SELECT * FROM Customers WHERE ID = '" + cID + "'";
@@ -162,11 +165,17 @@ namespace DbProject.BusinessLogicLayer
 				return false;
 			}
 		}
-		public string query(string username)
+		public string[] GetDiscountTaxNames(int dID, int tID)
 		{
-			return "SELECT COUNT(ID) FROM Credentials WHERE username = '" + username + "';";
-		}
+			DAL dAL = new DAL();
+			string[] names = dAL.GetTaxDiscountNames(GetDiscountTaxNameQuery(dID, tID));
+			//string name = dt.Rows[0].Field<string>("name");
 
+			//string[] discountTaxNames = { dt.Rows[0].Field<string>("dName"), dt.Rows[0].Field<string>("tName") };
+
+			//return discountTaxNames;
+			return null;
+		}
 		public List<Discount> GetDiscounts()
 		{
 			DAL dAL = new DAL();
@@ -244,6 +253,12 @@ namespace DbProject.BusinessLogicLayer
 			}
 			return itemsList;
 		}
+
+
+		public string query(string username)
+		{
+			return "SELECT COUNT(ID) FROM Credentials WHERE username = '" + username + "';";
+		}
 		private string GetItemsQuery()
 		{
 			return "SELECT * FROM MenuItems;";
@@ -264,15 +279,22 @@ namespace DbProject.BusinessLogicLayer
 		{
 			return "SELECT DISTINCT orderID FROM Orders";
 		}
-
 		private string GetCustomerNameFromOrderQuery(int customerID)
 		{
 			return "SELECT name FROM customers c INNER JOIN orders o ON c.'" + customerID + "' = o.customerID";
 		}
-
 		public string UpdateMenuItems(int passedMenuID, string passedName, string passedPrice, string passedNutriInfo, string passedDesc, string passedLpPrice, string passedLpReward, string passedDiscount, string passedTax)
 		{
 			return "UPDATE MenuItems SET name = '" + passedName + "', description = '" + passedDesc + "', price = '" + passedPrice + "', nutritionalInfo = '" + passedNutriInfo + "', loyaltyPointsPrice = '" + passedLpPrice + "', layaltyPointsReward = '" + passedLpReward + "', discount = '" + passedDiscount + "', tax = '" + passedTax + "' WHERE ID = '" + passedMenuID + "';";
 		}
+		private string GetDiscountTaxNameQuery(int dID, int tID)
+		{
+			return "SELECT d.name AS dName, t.name AS tName FROM Discounts d JOIN Taxes t ON d.ID = t.ID WHERE d.ID = '" + dID + "' AND t.ID = '" + tID + "' ";
+		}
+		private string GetItemNamePriceQauntityQuery(int oID)
+		{
+			return "SELECT MenuItems.name, MenuItems.price, orders.quantity FROM Orders JOIN MenuItems ON Orders.menuItem = MenuItems.ID WHERE Orders.orderID = '" + oID + "'";
+		}
+
 	}
 }

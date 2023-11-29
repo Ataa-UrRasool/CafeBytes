@@ -32,9 +32,9 @@
 			lbl_guestUserHeading = new Label();
 			lv_guestUser = new ListView();
 			pnl_2_guestUser = new Panel();
-			lbl_customerIdGU = new Label();
-			txt_custoID = new TextBox();
 			btn_placeOrder = new Button();
+			txt_custoID = new TextBox();
+			lbl_customerIdGU = new Label();
 			pnl_2_guestUser.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -79,23 +79,6 @@
 			pnl_2_guestUser.Size = new Size(410, 222);
 			pnl_2_guestUser.TabIndex = 3;
 			// 
-			// lbl_customerIdGU
-			// 
-			lbl_customerIdGU.AutoSize = true;
-			lbl_customerIdGU.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_customerIdGU.Location = new Point(128, 47);
-			lbl_customerIdGU.Name = "lbl_customerIdGU";
-			lbl_customerIdGU.Size = new Size(175, 38);
-			lbl_customerIdGU.TabIndex = 0;
-			lbl_customerIdGU.Text = "Customer ID";
-			// 
-			// txt_custoID
-			// 
-			txt_custoID.Location = new Point(54, 97);
-			txt_custoID.Name = "txt_custoID";
-			txt_custoID.Size = new Size(323, 27);
-			txt_custoID.TabIndex = 1;
-			// 
 			// btn_placeOrder
 			// 
 			btn_placeOrder.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -107,7 +90,24 @@
 			btn_placeOrder.UseVisualStyleBackColor = true;
 			btn_placeOrder.Click += btn_placeOrder_Click;
 			// 
-			// GuestUsers
+			// txt_custoID
+			// 
+			txt_custoID.Location = new Point(54, 97);
+			txt_custoID.Name = "txt_custoID";
+			txt_custoID.Size = new Size(323, 27);
+			txt_custoID.TabIndex = 1;
+			// 
+			// lbl_customerIdGU
+			// 
+			lbl_customerIdGU.AutoSize = true;
+			lbl_customerIdGU.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_customerIdGU.Location = new Point(128, 47);
+			lbl_customerIdGU.Name = "lbl_customerIdGU";
+			lbl_customerIdGU.Size = new Size(175, 38);
+			lbl_customerIdGU.TabIndex = 0;
+			lbl_customerIdGU.Text = "Customer ID";
+			// 
+			// GuestUsersScreen
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
@@ -118,7 +118,7 @@
 			Controls.Add(lbl_guestUserHeading);
 			Controls.Add(pnl_MenuItems);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
-			Name = "GuestUsers";
+			Name = "GuestUsersScreen";
 			Text = "GuestUsers";
 			pnl_2_guestUser.ResumeLayout(false);
 			pnl_2_guestUser.PerformLayout();

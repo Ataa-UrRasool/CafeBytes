@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DbProject.BusinessLogicLayer
 {
-	internal class Constants
+	static class Constants
 	{
 		public static string ROLE_MANAGER = "MANAGER";
 		public static string ROLE_EMPLOYEES = "EMPLOYEE";
@@ -19,5 +19,7 @@ namespace DbProject.BusinessLogicLayer
 
 		public static string STATUS_ACTIVE = "ACTIVE";
 		public static string STATUS_INACTIVE = "INACTIVE";
+
+		public static string USER_NAME = string.Empty;
 	}
 }

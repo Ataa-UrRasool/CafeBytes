@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Windows.Forms;
 
 namespace DbProject.DbContextLayer
 {
@@ -51,6 +53,42 @@ namespace DbProject.DbContextLayer
 			sqlConnection.Open();
 			int n = (int)sqlCommand.ExecuteScalar();
 			return n;
+		}
+
+		public string[] GetTaxDiscountNames(string query)
+		{
+
+			sqlConnection = new SqlConnection(connectionString);
+			sqlCommand = new SqlCommand(query, sqlConnection);
+			sqlConnection.Open();
+
+			string[] names = new string[2];
+
+
+			DataTable dataTable = new DataTable();
+
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			{
+				connection.Open();
+
+				using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+				{
+					adapter.Fill(dataTable);
+				}
+			}
+
+			foreach (DataRow row in dataTable.Rows)
+			{
+				string value1 = row.IsNull(0) ? null : row[0].ToString();
+				string value2 = row.IsNull(1) ? null : row[1].ToString();
+
+				names[0] = value1;
+				names[1] = value2;
+
+			}
+
+
+			return names;
 		}
 	}
 }

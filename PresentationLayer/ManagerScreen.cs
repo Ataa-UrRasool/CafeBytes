@@ -114,7 +114,6 @@ namespace DbProject.PresentationLayer
 			rulesCreation.CreateTaxRule(tax);
 		}
 
-
 		private void cmb_discountInfo_Click(object sender, EventArgs e)
 		{
 			cmb_discountInfo.Items.Clear();
@@ -136,7 +135,6 @@ namespace DbProject.PresentationLayer
 				cmb_taxInfo.Items.Add(list[i].Name);
 			}
 		}
-
 
 		private void DisplayMenuItemsForUpdation()
 		{

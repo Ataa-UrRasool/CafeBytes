@@ -54,7 +54,7 @@
 			txt_employeeNameBox = new TextBox();
 			txt_customerNameBox = new TextBox();
 			txt_orderIDbox = new TextBox();
-			button1 = new Button();
+			btn_orderMgrRefresh = new Button();
 			lv_allOrdersPanel = new ListView();
 			tab_ViewMenuEmp = new TabPage();
 			panel1 = new Panel();
@@ -265,7 +265,7 @@
 			// 
 			tab_orderManager.BackColor = SystemColors.Desktop;
 			tab_orderManager.Controls.Add(pnl_orderInfoDisplay);
-			tab_orderManager.Controls.Add(button1);
+			tab_orderManager.Controls.Add(btn_orderMgrRefresh);
 			tab_orderManager.Controls.Add(lv_allOrdersPanel);
 			tab_orderManager.Location = new Point(4, 29);
 			tab_orderManager.Name = "tab_orderManager";
@@ -292,11 +292,11 @@
 			// 
 			// flp_orderView
 			// 
-			flp_orderView.BackColor = Color.Gray;
+			flp_orderView.BackColor = Color.LightBlue;
 			flp_orderView.FlowDirection = FlowDirection.TopDown;
-			flp_orderView.Location = new Point(2, 89);
+			flp_orderView.Location = new Point(217, 64);
 			flp_orderView.Name = "flp_orderView";
-			flp_orderView.Size = new Size(574, 462);
+			flp_orderView.Size = new Size(480, 419);
 			flp_orderView.TabIndex = 6;
 			// 
 			// lbl_employeeName
@@ -356,14 +356,15 @@
 			txt_orderIDbox.Size = new Size(232, 27);
 			txt_orderIDbox.TabIndex = 0;
 			// 
-			// button1
+			// btn_orderMgrRefresh
 			// 
-			button1.Location = new Point(947, 681);
-			button1.Name = "button1";
-			button1.Size = new Size(417, 29);
-			button1.TabIndex = 2;
-			button1.Text = "Refresh";
-			button1.UseVisualStyleBackColor = true;
+			btn_orderMgrRefresh.Location = new Point(947, 681);
+			btn_orderMgrRefresh.Name = "btn_orderMgrRefresh";
+			btn_orderMgrRefresh.Size = new Size(417, 29);
+			btn_orderMgrRefresh.TabIndex = 2;
+			btn_orderMgrRefresh.Text = "Refresh";
+			btn_orderMgrRefresh.UseVisualStyleBackColor = true;
+			btn_orderMgrRefresh.Click += btn_orderMgrRefresh_Click;
 			// 
 			// lv_allOrdersPanel
 			// 
@@ -422,9 +423,9 @@
 			lbl_taxEmp.Font = new Font("Segoe UI", 12F);
 			lbl_taxEmp.Location = new Point(114, 641);
 			lbl_taxEmp.Name = "lbl_taxEmp";
-			lbl_taxEmp.Size = new Size(65, 28);
+			lbl_taxEmp.Size = new Size(39, 28);
 			lbl_taxEmp.TabIndex = 8;
-			lbl_taxEmp.Text = "label9";
+			lbl_taxEmp.Text = "Tax";
 			lbl_taxEmp.TextAlign = ContentAlignment.MiddleCenter;
 			lbl_taxEmp.UseMnemonic = false;
 			// 
@@ -434,9 +435,9 @@
 			lbl_discountEmp.Font = new Font("Segoe UI", 12F);
 			lbl_discountEmp.Location = new Point(114, 572);
 			lbl_discountEmp.Name = "lbl_discountEmp";
-			lbl_discountEmp.Size = new Size(65, 28);
+			lbl_discountEmp.Size = new Size(89, 28);
 			lbl_discountEmp.TabIndex = 7;
-			lbl_discountEmp.Text = "label8";
+			lbl_discountEmp.Text = "Discount";
 			lbl_discountEmp.TextAlign = ContentAlignment.MiddleCenter;
 			lbl_discountEmp.UseMnemonic = false;
 			// 
@@ -446,9 +447,9 @@
 			lbl_itemLpReward.Font = new Font("Segoe UI", 12F);
 			lbl_itemLpReward.Location = new Point(114, 503);
 			lbl_itemLpReward.Name = "lbl_itemLpReward";
-			lbl_itemLpReward.Size = new Size(65, 28);
+			lbl_itemLpReward.Size = new Size(101, 28);
 			lbl_itemLpReward.TabIndex = 6;
-			lbl_itemLpReward.Text = "label7";
+			lbl_itemLpReward.Text = "LP Reward";
 			lbl_itemLpReward.TextAlign = ContentAlignment.MiddleCenter;
 			lbl_itemLpReward.UseMnemonic = false;
 			// 
@@ -458,9 +459,9 @@
 			lbl_itemLpPrice.Font = new Font("Segoe UI", 12F);
 			lbl_itemLpPrice.Location = new Point(114, 434);
 			lbl_itemLpPrice.Name = "lbl_itemLpPrice";
-			lbl_itemLpPrice.Size = new Size(65, 28);
+			lbl_itemLpPrice.Size = new Size(79, 28);
 			lbl_itemLpPrice.TabIndex = 5;
-			lbl_itemLpPrice.Text = "label6";
+			lbl_itemLpPrice.Text = "LP Price";
 			lbl_itemLpPrice.TextAlign = ContentAlignment.MiddleCenter;
 			lbl_itemLpPrice.UseMnemonic = false;
 			// 
@@ -573,7 +574,7 @@
 		private TextBox txt_password;
 		private Label lbl_password;
 		private ComboBox cmb_gender;
-		private Button button1;
+		private Button btn_orderMgrRefresh;
 		private ListView lv_allOrdersPanel;
 		private Panel pnl_orderInfoDisplay;
 		private TextBox txt_customerNameBox;
