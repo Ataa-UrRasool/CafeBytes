@@ -234,8 +234,6 @@ namespace DbProject.PresentationLayer
 			DisplayMenuItemsForUpdation();
 		}
 
-
-
 		private void DisplayEmployeesForUpdation()
 		{
 			Utility utility = new Utility();

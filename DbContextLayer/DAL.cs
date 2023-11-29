@@ -28,8 +28,6 @@ namespace DbProject.DbContextLayer
 			DataTable dt = new DataTable();
 			sqlDataAdapter.Fill(dt);
 
-
-		sqlConnection.Close();
 			sqlDataAdapter.Dispose();
 			return dt;
 		}

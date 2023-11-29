@@ -181,17 +181,26 @@ namespace DbProject.PresentationLayer
 
 		private void btn_placeOrder_Click(object sender, EventArgs e)
 		{
-			bool validID = new Utility().VerifyID(int.Parse(txt_custoID.Text));
 
-			if (validID)
+			if (!string.IsNullOrWhiteSpace(txt_custoID.Text))
 			{
-				CustomerOrder.customer.Id = int.Parse(txt_custoID.Text);
-				OrderManagement order = new OrderManagement();
-				order.CreateOrder(CustomerOrder);
+				bool validID = new Utility().VerifyID(int.Parse(txt_custoID.Text));
+				if (!validID)
+				{
+					MessageBox.Show("Invalid ID");
+					txt_custoID.Refresh();
+				}
+				else
+				{
+					CustomerOrder.customer.Id = int.Parse(txt_custoID.Text);
+					OrderManagement order = new OrderManagement();
+					order.CreateOrder(CustomerOrder);
+				}
+
 			}
 			else
 			{
-				CustomerOrder.customer.Id = 0;
+				CustomerOrder.customer.Id = 6; //walk in
 				OrderManagement order = new OrderManagement();
 				order.CreateOrder(CustomerOrder);
 

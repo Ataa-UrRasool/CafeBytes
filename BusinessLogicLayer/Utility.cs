@@ -109,11 +109,21 @@ namespace DbProject.BusinessLogicLayer
 		//	return ordersList;
 		//}
 
+		public string GetCustomerName(int cID)
+		{
+			string query = "SELECT name FROM customers WHERE ID = '" + cID + "'";
+			DAL dAL = new DAL();
+			DataTable dt = dAL.executeGetData(query);
+
+			return dt.Rows[0].Field<string>("name");
+		}
+
+
 		public Customer GetCustomerInfoByID(int cID)
 		{
 			string query = "SELECT * FROM Customers WHERE ID = '" + cID + "'";
-			
-			DAL dAL = new DAL();	
+
+			DAL dAL = new DAL();
 			DataTable dt = dAL.executeGetData(query);
 
 			Customer customer = new Customer();
