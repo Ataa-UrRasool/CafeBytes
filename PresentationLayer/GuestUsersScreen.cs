@@ -17,8 +17,8 @@ namespace DbProject.PresentationLayer
 	public partial class GuestUsersScreen : Form
 	{
 		private List<Item> itemsList;
-		List<System.Windows.Forms.Button> MenuItemButtons;
-		Order CustomerOrder;
+		List<System.Windows.Forms.Button> menuItemButtons;
+		Order customerOrder;
 
 		public GuestUsersScreen()
 		{
@@ -26,9 +26,9 @@ namespace DbProject.PresentationLayer
 
 			PopulateMenuPanel();
 
-			CustomerOrder = new Order();
-			CustomerOrder.ItemsList = new List<Item>();
-			CustomerOrder.Quantity = new List<int>();
+			customerOrder = new Order();
+			customerOrder.ItemsList = new List<Item>();
+			customerOrder.Quantity = new List<int>();
 
 			lv_guestUser.Columns.Add("Name");
 			lv_guestUser.Columns.Add("Price");
@@ -49,7 +49,7 @@ namespace DbProject.PresentationLayer
 			//Some magic formula only God knows how I came up with.
 			int maxButtonsInRow = (panelWidth - (buttonWidth + horizontalSpacing)) / (buttonWidth + horizontalSpacing);
 
-			MenuItemButtons = new List<System.Windows.Forms.Button>();
+			menuItemButtons = new List<System.Windows.Forms.Button>();
 			itemsList = new Utility().GetItems();
 
 			for (int i = 0; i < itemsList.Count; i++)
@@ -58,22 +58,22 @@ namespace DbProject.PresentationLayer
 
 				MenuItemButton.Size = new Size(buttonWidth, buttonHeight);
 				MenuItemButton.Text = "Name: " + itemsList[i].Name + "\n\nPrice: " + itemsList[i].Price;
-				MenuItemButton.Click += new EventHandler(buttonClickedEvent);
+				MenuItemButton.Click += new EventHandler(menuItemButtonClickedEvent);
 
 				pnl_MenuItems.Controls.Add(MenuItemButton);
-				MenuItemButtons.Add(MenuItemButton);
+				menuItemButtons.Add(MenuItemButton);
 
 				MenuItemButton.Tag = i;
 			}
 
 			int numRows = 0;
-			if (MenuItemButtons.Count % maxButtonsInRow == 0)
+			if (menuItemButtons.Count % maxButtonsInRow == 0)
 			{
-				numRows = MenuItemButtons.Count / maxButtonsInRow;
+				numRows = menuItemButtons.Count / maxButtonsInRow;
 			}
 			else
 			{
-				numRows = (MenuItemButtons.Count / maxButtonsInRow) + 1;
+				numRows = (menuItemButtons.Count / maxButtonsInRow) + 1;
 			}
 
 			int horizontalOffset = horizontalSpacing;
@@ -88,21 +88,21 @@ namespace DbProject.PresentationLayer
 				{
 					//Break if all buttons have been populated. We dont care about if the loops have finished.
 					//The loops will always >= number of buttons
-					if (numberOfButtonsPopulated == MenuItemButtons.Count)
+					if (numberOfButtonsPopulated == menuItemButtons.Count)
 					{
 						break;
 					}
 
 					if (i == 0 && j == 0)
 					{
-						MenuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, 0);
+						menuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, 0);
 						horizontalOffset += buttonWidth + horizontalSpacing;
 
 						numberOfButtonsPopulated++;
 					}
 					else if (i == 0 && j > 0)
 					{
-						MenuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, 0);
+						menuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, 0);
 						horizontalOffset += buttonWidth + horizontalSpacing;
 
 						numberOfButtonsPopulated++;
@@ -114,14 +114,14 @@ namespace DbProject.PresentationLayer
 							verticalOffset += buttonHeight + verticalSpacing;
 						}
 
-						MenuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, verticalOffset);
+						menuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, verticalOffset);
 						horizontalOffset += buttonWidth + horizontalSpacing;
 
 						numberOfButtonsPopulated++;
 					}
 					else if (i > 0 && j > 0)
 					{
-						MenuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, verticalOffset);
+						menuItemButtons[numberOfButtonsPopulated].Location = new Point(horizontalOffset, verticalOffset);
 						horizontalOffset += buttonWidth + horizontalSpacing;
 
 						numberOfButtonsPopulated++;
@@ -130,15 +130,15 @@ namespace DbProject.PresentationLayer
 			}
 		}
 
-		private void buttonClickedEvent(object sender, EventArgs e)
+		private void menuItemButtonClickedEvent(object sender, EventArgs e)
 		{
 			System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
 			int clickedButtonIndex = (int)clickedButton.Tag;
 
-			CustomerOrder.ItemsList.Add(itemsList[clickedButtonIndex]);
-			CustomerOrder.Quantity.Add(1);
+			customerOrder.ItemsList.Add(itemsList[clickedButtonIndex]);
+			customerOrder.Quantity.Add(1);
 
-			string[] orderDetails = { CustomerOrder.ItemsList.Last().Name.ToString(), CustomerOrder.ItemsList.Last().Price.ToString(), CustomerOrder.Quantity.Last().ToString() };
+			string[] orderDetails = { customerOrder.ItemsList.Last().Name.ToString(), customerOrder.ItemsList.Last().Price.ToString(), customerOrder.Quantity.Last().ToString() };
 
 			var listViewItem = new ListViewItem(orderDetails);
 			lv_guestUser.View = View.Details;
@@ -146,6 +146,8 @@ namespace DbProject.PresentationLayer
 			if (lv_guestUser.Items.Count == 0)
 			{
 				lv_guestUser.Items.Add(listViewItem);
+				customerOrder.ItemsList.Add(itemsList[clickedButtonIndex]);
+				customerOrder.Quantity.Add(1);
 			}
 			else
 			{
@@ -166,6 +168,8 @@ namespace DbProject.PresentationLayer
 						listViewItem = new ListViewItem(mySubItems);
 						lv_guestUser.Items.Add(listViewItem);
 
+						customerOrder.Quantity[i] = quantity;
+
 						inserted = true;
 						break;
 					}
@@ -174,6 +178,8 @@ namespace DbProject.PresentationLayer
 				if (!inserted)
 				{
 					lv_guestUser.Items.Add(listViewItem);
+					customerOrder.ItemsList.Add(itemsList[clickedButtonIndex]);
+					customerOrder.Quantity.Add(1);
 				}
 			}
 
@@ -192,18 +198,25 @@ namespace DbProject.PresentationLayer
 				}
 				else
 				{
-					CustomerOrder.customer.Id = int.Parse(txt_custoID.Text);
+					customerOrder.customer.Id = int.Parse(txt_custoID.Text);
 					OrderManagement order = new OrderManagement();
-					order.CreateOrder(CustomerOrder);
+					order.CreateOrder(customerOrder);
+					MessageBox.Show("Order Placed Successfully");
+					Form1 form1 = new Form1();
+					form1.Visible = true;
+					this.Visible = false;
 				}
 
 			}
 			else
 			{
-				CustomerOrder.customer.Id = 6; //walk in
+				customerOrder.customer.Id = 6; //walk in
 				OrderManagement order = new OrderManagement();
-				order.CreateOrder(CustomerOrder);
-
+				order.CreateOrder(customerOrder);
+				MessageBox.Show("Order Placed Successfully");
+				Form1 form1 = new Form1();
+				form1.Visible = true;
+				this.Visible = false;
 			}
 		}
 	}

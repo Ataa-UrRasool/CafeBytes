@@ -94,7 +94,6 @@ namespace DbProject.BusinessLogicLayer
 
 			return orders;
 		}
-
 		public List<(string, double, int)> GetItemNamePriceQauntity(int oID)
 		{
 			DAL dAL = new DAL();
@@ -113,7 +112,6 @@ namespace DbProject.BusinessLogicLayer
 			}
 			return list;
 		}
-
 		public string GetCustomerName(int cID)
 		{
 			string query = "SELECT name FROM customers WHERE ID = '" + cID + "'";

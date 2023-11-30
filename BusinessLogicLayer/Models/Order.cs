@@ -30,7 +30,7 @@ namespace DbProject.BusinessLogicLayer.Models
 			for (int i = 0; i < ItemsList.Count; i++)
 			{
 				string query = "INSERT INTO Orders (orderID, menuItem, quantity, totalAmount, customerID, status) VALUES " +
-					"('" + Id + "', '" + ItemsList[i].Id + "', '" + Quantity[i] + "', '" + calculateTotal() + "', '" + customer.Id + "', '" + 1 + "');";
+					"('" + Id + "', '" + ItemsList[i].Id + "', '" + Quantity[i] + "', '" + ItemsList[i].Price + "', '" + customer.Id + "', '" + 1 + "');";
 
 
 				queries.Add(query);
