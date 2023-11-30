@@ -49,9 +49,9 @@
 			logInPanel.Controls.Add(passwordBox);
 			logInPanel.Controls.Add(usernameLbl);
 			logInPanel.Controls.Add(usernameBox);
-			logInPanel.Location = new Point(2, 1);
+			logInPanel.Location = new Point(-2, -2);
 			logInPanel.Name = "logInPanel";
-			logInPanel.Size = new Size(1380, 751);
+			logInPanel.Size = new Size(1384, 761);
 			logInPanel.TabIndex = 0;
 			// 
 			// lbl_guestScreen
@@ -61,11 +61,11 @@
 			lbl_guestScreen.BorderStyle = BorderStyle.Fixed3D;
 			lbl_guestScreen.Cursor = Cursors.Hand;
 			lbl_guestScreen.FlatStyle = FlatStyle.Popup;
-			lbl_guestScreen.Font = new Font("Times New Roman", 18F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+			lbl_guestScreen.Font = new Font("Times New Roman", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
 			lbl_guestScreen.ForeColor = SystemColors.Desktop;
-			lbl_guestScreen.Location = new Point(596, 706);
+			lbl_guestScreen.Location = new Point(566, 714);
 			lbl_guestScreen.Name = "lbl_guestScreen";
-			lbl_guestScreen.Size = new Size(156, 37);
+			lbl_guestScreen.Size = new Size(208, 47);
 			lbl_guestScreen.TabIndex = 5;
 			lbl_guestScreen.Text = "For Guests";
 			lbl_guestScreen.TextAlign = ContentAlignment.MiddleCenter;
@@ -76,7 +76,7 @@
 			title.BackColor = Color.Transparent;
 			title.Font = new Font("Times New Roman", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			title.ForeColor = SystemColors.Desktop;
-			title.Location = new Point(476, 29);
+			title.Location = new Point(472, 29);
 			title.Name = "title";
 			title.Size = new Size(397, 105);
 			title.TabIndex = 1;
@@ -91,9 +91,9 @@
 			signInBtn.FlatAppearance.BorderSize = 10;
 			signInBtn.FlatStyle = FlatStyle.Popup;
 			signInBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			signInBtn.Location = new Point(526, 484);
+			signInBtn.Location = new Point(520, 484);
 			signInBtn.Name = "signInBtn";
-			signInBtn.Size = new Size(297, 36);
+			signInBtn.Size = new Size(301, 46);
 			signInBtn.TabIndex = 4;
 			signInBtn.Text = "Sign In";
 			signInBtn.UseVisualStyleBackColor = false;
@@ -104,7 +104,7 @@
 			passwordLbl.AutoSize = true;
 			passwordLbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			passwordLbl.ForeColor = SystemColors.Desktop;
-			passwordLbl.Location = new Point(614, 358);
+			passwordLbl.Location = new Point(610, 356);
 			passwordLbl.Name = "passwordLbl";
 			passwordLbl.Size = new Size(120, 31);
 			passwordLbl.TabIndex = 3;
@@ -112,7 +112,7 @@
 			// 
 			// passwordBox
 			// 
-			passwordBox.Location = new Point(507, 402);
+			passwordBox.Location = new Point(503, 402);
 			passwordBox.Name = "passwordBox";
 			passwordBox.PlaceholderText = "password";
 			passwordBox.Size = new Size(335, 27);
@@ -123,7 +123,7 @@
 			usernameLbl.AutoSize = true;
 			usernameLbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			usernameLbl.ForeColor = SystemColors.Desktop;
-			usernameLbl.Location = new Point(611, 268);
+			usernameLbl.Location = new Point(607, 268);
 			usernameLbl.Name = "usernameLbl";
 			usernameLbl.Size = new Size(127, 31);
 			usernameLbl.TabIndex = 1;
@@ -134,7 +134,7 @@
 			// 
 			usernameBox.BackColor = SystemColors.Control;
 			usernameBox.ForeColor = SystemColors.InfoText;
-			usernameBox.Location = new Point(507, 311);
+			usernameBox.Location = new Point(503, 314);
 			usernameBox.Multiline = true;
 			usernameBox.Name = "usernameBox";
 			usernameBox.PlaceholderText = "username";
@@ -145,7 +145,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.Gray;
+			BackColor = Color.White;
 			ClientSize = new Size(1382, 753);
 			Controls.Add(logInPanel);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;

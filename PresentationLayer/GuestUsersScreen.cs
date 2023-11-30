@@ -19,12 +19,23 @@ namespace DbProject.PresentationLayer
 		private List<Item> itemsList;
 		List<System.Windows.Forms.Button> menuItemButtons;
 		Order customerOrder;
+		string[] orderDetails;
+
+		ListViewItem listViewItem;
+
+		List<int> listQuantity = new List<int>();
+
 
 		public GuestUsersScreen()
 		{
 			InitializeComponent();
 
-			PopulateMenuPanel();
+			populateMenuPanel();
+
+			for (int i = 0; i < itemsList.Count; i++)
+			{
+				listQuantity.Add(0);
+			}
 
 			customerOrder = new Order();
 			customerOrder.ItemsList = new List<Item>();
@@ -33,9 +44,11 @@ namespace DbProject.PresentationLayer
 			lv_guestUser.Columns.Add("Name");
 			lv_guestUser.Columns.Add("Price");
 			lv_guestUser.Columns.Add("Quantity");
+
+			orderDetails = new string[3];
 		}
 
-		public void PopulateMenuPanel()
+		public void populateMenuPanel()
 		{
 			const int buttonHeight = 150;
 			const int buttonWidth = 150;
@@ -132,57 +145,45 @@ namespace DbProject.PresentationLayer
 
 		private void menuItemButtonClickedEvent(object sender, EventArgs e)
 		{
-			System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
-			int clickedButtonIndex = (int)clickedButton.Tag;
+			System.Windows.Forms.Button chosenButton = (System.Windows.Forms.Button)sender;
+			int clickedBtnIndex = (int)chosenButton.Tag;
 
-			customerOrder.ItemsList.Add(itemsList[clickedButtonIndex]);
-			customerOrder.Quantity.Add(1);
+			string selectedItem = itemsList[clickedBtnIndex].Name.ToString();
 
-			string[] orderDetails = { customerOrder.ItemsList.Last().Name.ToString(), customerOrder.ItemsList.Last().Price.ToString(), customerOrder.Quantity.Last().ToString() };
+			listViewItem = new ListViewItem(orderDetails);
 
-			var listViewItem = new ListViewItem(orderDetails);
 			lv_guestUser.View = View.Details;
 
-			if (lv_guestUser.Items.Count == 0)
+			if (customerOrder.ItemsList.Count == 0)
 			{
-				lv_guestUser.Items.Add(listViewItem);
-				customerOrder.ItemsList.Add(itemsList[clickedButtonIndex]);
-				customerOrder.Quantity.Add(1);
+				listQuantity[clickedBtnIndex]++;
+				customerOrder.ItemsList.Add(itemsList[clickedBtnIndex]);
+				customerOrder.Quantity.Add(listQuantity[clickedBtnIndex]);
 			}
 			else
 			{
-				bool inserted = false;
-				for (int i = 0; i < lv_guestUser.Items.Count; i++)
+				for (int i = 0; i < customerOrder.ItemsList.Count; i++)
 				{
-					if (lv_guestUser.Items[i].Text == itemsList[clickedButtonIndex].Name)
+					if (customerOrder.ItemsList[i].Name == selectedItem)
 					{
-						ListViewItem myItem = lv_guestUser.Items[i];
-						string[] mySubItems = { myItem.SubItems[0].Text, myItem.SubItems[1].Text, myItem.SubItems[2].Text };
-
-						int quantity = int.Parse(mySubItems[2]);
-
-						quantity++;
-						mySubItems[2] = quantity.ToString();
-
-						lv_guestUser.Items[i].Remove();
-						listViewItem = new ListViewItem(mySubItems);
-						lv_guestUser.Items.Add(listViewItem);
-
-						customerOrder.Quantity[i] = quantity;
-
-						inserted = true;
+						listQuantity[clickedBtnIndex]++;
+						customerOrder.Quantity.Add(listQuantity[clickedBtnIndex]);
+					}
+					else
+					{
+						customerOrder.ItemsList.Add(itemsList[clickedBtnIndex]);
+						listQuantity[clickedBtnIndex]++;
+						customerOrder.Quantity.Add(listQuantity[clickedBtnIndex]);
 						break;
 					}
 				}
 
-				if (!inserted)
-				{
-					lv_guestUser.Items.Add(listViewItem);
-					customerOrder.ItemsList.Add(itemsList[clickedButtonIndex]);
-					customerOrder.Quantity.Add(1);
-				}
 			}
-
+			orderDetails[0] = customerOrder.ItemsList[clickedBtnIndex].Name;
+			orderDetails[1] = customerOrder.ItemsList[clickedBtnIndex].Price.ToString();
+			orderDetails[2] = listQuantity[clickedBtnIndex].ToString();
+			//orderDetails[2] = customerOrder.Quantity[clickedBtnIndex].ToString();
+			lv_guestUser.Items.Add(listViewItem);
 		}
 
 		private void btn_placeOrder_Click(object sender, EventArgs e)

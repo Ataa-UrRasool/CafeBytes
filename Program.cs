@@ -1,3 +1,5 @@
+using DbProject.PresentationLayer;
+
 namespace DbProject
 {
 	internal static class Program
@@ -11,8 +13,9 @@ namespace DbProject
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.
 			ApplicationConfiguration.Initialize();
-			Application.Run(new Form1());
+			//Application.Run(new Form1());
 			//Application.Run(new EmployeeScreen());
+			Application.Run(new GuestUsersScreen());	
 		}
 	}
 }
