@@ -82,6 +82,8 @@
 			txt_taxValue = new TextBox();
 			txt_taxName = new TextBox();
 			tab_updateMenuItems = new TabPage();
+			label10 = new Label();
+			lbl_menuItemsUpdate = new Label();
 			pnl_updateMenuitems = new Panel();
 			btn_menuUpdate_update = new Button();
 			label9 = new Label();
@@ -104,8 +106,29 @@
 			txt_menuUpdateName = new TextBox();
 			flp_menuDisplayUpdateMenu = new FlowLayoutPanel();
 			tab_updateEmployeeMgr = new TabPage();
+			lbl_updateSelectedEm = new Label();
+			lbl_empListUpdate = new Label();
 			pnl_updateEmployeeInfo = new Panel();
+			btn_updateEmpBtn = new Button();
+			txt_updateEmpIdBox = new TextBox();
+			lbl_EmpIDupdate = new Label();
+			txt_updateEmpHrlyHrBox = new TextBox();
+			txt_updateEmpAddressBox = new TextBox();
+			txt_updateEmpEmailBox = new TextBox();
+			txt_updateEmpPhoneBox = new TextBox();
+			txt_updateEmpNameBox = new TextBox();
+			lbl_updateHrlyRate = new Label();
+			lbl_updateEmpAddress = new Label();
+			lbl_updateEmpEmail = new Label();
+			lbl_updateEmpPhone = new Label();
+			label17 = new Label();
 			flp_updateEmployeeMgr = new FlowLayoutPanel();
+			tab_reportsManager = new TabPage();
+			lbl_reportsTabSalesReport = new Label();
+			lbl_reportsTabOrderReports = new Label();
+			pnl_totalSalesReport = new Panel();
+			pnl_ordersReport = new Panel();
+			flp_ordersReportDisplay = new FlowLayoutPanel();
 			tab_ViewManager.SuspendLayout();
 			tab_createEmployeeProfile.SuspendLayout();
 			tab_addMenuItems.SuspendLayout();
@@ -114,6 +137,9 @@
 			tab_updateMenuItems.SuspendLayout();
 			pnl_updateMenuitems.SuspendLayout();
 			tab_updateEmployeeMgr.SuspendLayout();
+			pnl_updateEmployeeInfo.SuspendLayout();
+			tab_reportsManager.SuspendLayout();
+			pnl_ordersReport.SuspendLayout();
 			SuspendLayout();
 			// 
 			// tab_ViewManager
@@ -124,11 +150,12 @@
 			tab_ViewManager.Controls.Add(tab_addTaxes);
 			tab_ViewManager.Controls.Add(tab_updateMenuItems);
 			tab_ViewManager.Controls.Add(tab_updateEmployeeMgr);
+			tab_ViewManager.Controls.Add(tab_reportsManager);
 			tab_ViewManager.Font = new Font("Segoe UI", 12F);
-			tab_ViewManager.Location = new Point(1, 2);
+			tab_ViewManager.Location = new Point(-4, 2);
 			tab_ViewManager.Name = "tab_ViewManager";
 			tab_ViewManager.SelectedIndex = 0;
-			tab_ViewManager.Size = new Size(1380, 751);
+			tab_ViewManager.Size = new Size(1392, 751);
 			tab_ViewManager.TabIndex = 0;
 			// 
 			// tab_createEmployeeProfile
@@ -156,7 +183,7 @@
 			tab_createEmployeeProfile.Margin = new Padding(0);
 			tab_createEmployeeProfile.Name = "tab_createEmployeeProfile";
 			tab_createEmployeeProfile.Padding = new Padding(3);
-			tab_createEmployeeProfile.Size = new Size(1372, 710);
+			tab_createEmployeeProfile.Size = new Size(1384, 710);
 			tab_createEmployeeProfile.TabIndex = 0;
 			tab_createEmployeeProfile.Text = "Create Employee";
 			// 
@@ -181,7 +208,7 @@
 			// 
 			lbl_hourlyRate.AutoSize = true;
 			lbl_hourlyRate.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_hourlyRate.Location = new Point(411, 434);
+			lbl_hourlyRate.Location = new Point(422, 434);
 			lbl_hourlyRate.Name = "lbl_hourlyRate";
 			lbl_hourlyRate.RightToLeft = RightToLeft.No;
 			lbl_hourlyRate.Size = new Size(119, 28);
@@ -201,7 +228,7 @@
 			// 
 			lbl_password.AutoSize = true;
 			lbl_password.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_password.Location = new Point(415, 546);
+			lbl_password.Location = new Point(422, 546);
 			lbl_password.Name = "lbl_password";
 			lbl_password.Size = new Size(97, 28);
 			lbl_password.TabIndex = 41;
@@ -220,7 +247,7 @@
 			// 
 			lbl_username.AutoSize = true;
 			lbl_username.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_username.Location = new Point(411, 486);
+			lbl_username.Location = new Point(422, 486);
 			lbl_username.Name = "lbl_username";
 			lbl_username.Size = new Size(104, 28);
 			lbl_username.TabIndex = 39;
@@ -231,7 +258,7 @@
 			// 
 			lbl_gender.AutoSize = true;
 			lbl_gender.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_gender.Location = new Point(424, 376);
+			lbl_gender.Location = new Point(422, 376);
 			lbl_gender.Name = "lbl_gender";
 			lbl_gender.Size = new Size(79, 28);
 			lbl_gender.TabIndex = 37;
@@ -251,7 +278,7 @@
 			// 
 			lbl_address.AutoSize = true;
 			lbl_address.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_address.Location = new Point(421, 304);
+			lbl_address.Location = new Point(422, 304);
 			lbl_address.Name = "lbl_address";
 			lbl_address.Size = new Size(85, 28);
 			lbl_address.TabIndex = 35;
@@ -262,7 +289,7 @@
 			// 
 			lbl_email.AutoSize = true;
 			lbl_email.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_email.Location = new Point(433, 233);
+			lbl_email.Location = new Point(422, 233);
 			lbl_email.Name = "lbl_email";
 			lbl_email.Size = new Size(60, 28);
 			lbl_email.TabIndex = 34;
@@ -285,7 +312,7 @@
 			// 
 			lbl_phoneNo.AutoSize = true;
 			lbl_phoneNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_phoneNo.Location = new Point(414, 177);
+			lbl_phoneNo.Location = new Point(422, 177);
 			lbl_phoneNo.Name = "lbl_phoneNo";
 			lbl_phoneNo.Size = new Size(98, 28);
 			lbl_phoneNo.TabIndex = 31;
@@ -296,7 +323,7 @@
 			// 
 			lbl_name.AutoSize = true;
 			lbl_name.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lbl_name.Location = new Point(430, 120);
+			lbl_name.Location = new Point(422, 120);
 			lbl_name.Name = "lbl_name";
 			lbl_name.Size = new Size(66, 28);
 			lbl_name.TabIndex = 32;
@@ -351,7 +378,7 @@
 			tab_addMenuItems.Location = new Point(4, 37);
 			tab_addMenuItems.Name = "tab_addMenuItems";
 			tab_addMenuItems.Padding = new Padding(3);
-			tab_addMenuItems.Size = new Size(1372, 710);
+			tab_addMenuItems.Size = new Size(1384, 710);
 			tab_addMenuItems.TabIndex = 1;
 			tab_addMenuItems.Text = "Add MenuItems";
 			// 
@@ -538,7 +565,7 @@
 			tab_addDiscounts.Location = new Point(4, 37);
 			tab_addDiscounts.Name = "tab_addDiscounts";
 			tab_addDiscounts.Padding = new Padding(3);
-			tab_addDiscounts.Size = new Size(1372, 710);
+			tab_addDiscounts.Size = new Size(1384, 710);
 			tab_addDiscounts.TabIndex = 2;
 			tab_addDiscounts.Text = "Add Discounts";
 			// 
@@ -629,7 +656,7 @@
 			tab_addTaxes.Location = new Point(4, 37);
 			tab_addTaxes.Margin = new Padding(0);
 			tab_addTaxes.Name = "tab_addTaxes";
-			tab_addTaxes.Size = new Size(1372, 710);
+			tab_addTaxes.Size = new Size(1384, 710);
 			tab_addTaxes.TabIndex = 3;
 			tab_addTaxes.Text = "Add Taxes";
 			// 
@@ -706,16 +733,41 @@
 			// 
 			// tab_updateMenuItems
 			// 
-			tab_updateMenuItems.BackColor = SystemColors.Control;
+			tab_updateMenuItems.BackColor = SystemColors.Desktop;
+			tab_updateMenuItems.Controls.Add(label10);
+			tab_updateMenuItems.Controls.Add(lbl_menuItemsUpdate);
 			tab_updateMenuItems.Controls.Add(pnl_updateMenuitems);
 			tab_updateMenuItems.Controls.Add(flp_menuDisplayUpdateMenu);
 			tab_updateMenuItems.Location = new Point(4, 37);
 			tab_updateMenuItems.Name = "tab_updateMenuItems";
 			tab_updateMenuItems.Padding = new Padding(3);
-			tab_updateMenuItems.Size = new Size(1372, 710);
+			tab_updateMenuItems.Size = new Size(1384, 710);
 			tab_updateMenuItems.TabIndex = 4;
 			tab_updateMenuItems.Text = "Update MenuItems";
 			tab_updateMenuItems.Enter += tab_updateMenuItems_Enter;
+			// 
+			// label10
+			// 
+			label10.AutoSize = true;
+			label10.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label10.ForeColor = SystemColors.Control;
+			label10.Location = new Point(887, 8);
+			label10.Name = "label10";
+			label10.Size = new Size(389, 54);
+			label10.TabIndex = 3;
+			label10.Text = "Selected MenuItem";
+			label10.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_menuItemsUpdate
+			// 
+			lbl_menuItemsUpdate.AutoSize = true;
+			lbl_menuItemsUpdate.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_menuItemsUpdate.ForeColor = SystemColors.Control;
+			lbl_menuItemsUpdate.Location = new Point(228, 8);
+			lbl_menuItemsUpdate.Name = "lbl_menuItemsUpdate";
+			lbl_menuItemsUpdate.Size = new Size(323, 54);
+			lbl_menuItemsUpdate.TabIndex = 2;
+			lbl_menuItemsUpdate.Text = "MenuItem's List";
 			// 
 			// pnl_updateMenuitems
 			// 
@@ -739,16 +791,18 @@
 			pnl_updateMenuitems.Controls.Add(txt_menuUpdatePrice);
 			pnl_updateMenuitems.Controls.Add(txt_menuUpdateDescrip);
 			pnl_updateMenuitems.Controls.Add(txt_menuUpdateName);
-			pnl_updateMenuitems.Location = new Point(792, 0);
+			pnl_updateMenuitems.Location = new Point(792, 65);
 			pnl_updateMenuitems.Name = "pnl_updateMenuitems";
-			pnl_updateMenuitems.Size = new Size(574, 710);
+			pnl_updateMenuitems.Size = new Size(578, 637);
 			pnl_updateMenuitems.TabIndex = 1;
 			// 
 			// btn_menuUpdate_update
 			// 
-			btn_menuUpdate_update.Location = new Point(305, 610);
+			btn_menuUpdate_update.FlatStyle = FlatStyle.System;
+			btn_menuUpdate_update.Font = new Font("Times New Roman", 10.2F);
+			btn_menuUpdate_update.Location = new Point(282, 581);
 			btn_menuUpdate_update.Name = "btn_menuUpdate_update";
-			btn_menuUpdate_update.Size = new Size(123, 35);
+			btn_menuUpdate_update.Size = new Size(120, 40);
 			btn_menuUpdate_update.TabIndex = 59;
 			btn_menuUpdate_update.Text = "Update";
 			btn_menuUpdate_update.UseVisualStyleBackColor = true;
@@ -757,30 +811,31 @@
 			// label9
 			// 
 			label9.AutoSize = true;
-			label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label9.Location = new Point(117, 69);
+			label9.Font = new Font("Times New Roman", 10.2F);
+			label9.Location = new Point(73, 62);
 			label9.Name = "label9";
-			label9.Size = new Size(32, 28);
+			label9.Size = new Size(26, 19);
 			label9.TabIndex = 58;
 			label9.Text = "ID";
 			label9.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// txt_menuUpdateID
 			// 
-			txt_menuUpdateID.Location = new Point(215, 63);
+			txt_menuUpdateID.Font = new Font("Times New Roman", 10.2F);
+			txt_menuUpdateID.Location = new Point(204, 54);
 			txt_menuUpdateID.Name = "txt_menuUpdateID";
 			txt_menuUpdateID.PlaceholderText = "item id";
 			txt_menuUpdateID.ReadOnly = true;
-			txt_menuUpdateID.Size = new Size(303, 34);
+			txt_menuUpdateID.Size = new Size(303, 27);
 			txt_menuUpdateID.TabIndex = 57;
 			// 
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.Location = new Point(117, 548);
+			label1.Font = new Font("Times New Roman", 10.2F);
+			label1.Location = new Point(73, 541);
 			label1.Name = "label1";
-			label1.Size = new Size(41, 28);
+			label1.Size = new Size(32, 19);
 			label1.TabIndex = 56;
 			label1.Text = "Tax";
 			label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -788,10 +843,10 @@
 			// label2
 			// 
 			label2.AutoSize = true;
-			label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label2.Location = new Point(84, 497);
+			label2.Font = new Font("Times New Roman", 10.2F);
+			label2.Location = new Point(73, 490);
 			label2.Name = "label2";
-			label2.Size = new Size(98, 28);
+			label2.Size = new Size(75, 19);
 			label2.TabIndex = 55;
 			label2.Text = "Discount ";
 			label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -799,10 +854,10 @@
 			// label3
 			// 
 			label3.AutoSize = true;
-			label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label3.Location = new Point(80, 440);
+			label3.Font = new Font("Times New Roman", 10.2F);
+			label3.Location = new Point(73, 433);
 			label3.Name = "label3";
-			label3.Size = new Size(106, 28);
+			label3.Size = new Size(83, 19);
 			label3.TabIndex = 54;
 			label3.Text = "LP Reward";
 			label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -810,10 +865,10 @@
 			// label4
 			// 
 			label4.AutoSize = true;
-			label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label4.Location = new Point(91, 381);
+			label4.Font = new Font("Times New Roman", 10.2F);
+			label4.Location = new Point(73, 374);
 			label4.Name = "label4";
-			label4.Size = new Size(84, 28);
+			label4.Size = new Size(69, 19);
 			label4.TabIndex = 53;
 			label4.Text = "LP Price";
 			label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -821,10 +876,10 @@
 			// label5
 			// 
 			label5.AutoSize = true;
-			label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label5.Location = new Point(57, 322);
+			label5.Font = new Font("Times New Roman", 10.2F);
+			label5.Location = new Point(73, 315);
 			label5.Name = "label5";
-			label5.Size = new Size(152, 28);
+			label5.Size = new Size(116, 19);
 			label5.TabIndex = 52;
 			label5.Text = "Nutritional Info";
 			label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -832,10 +887,10 @@
 			// label6
 			// 
 			label6.AutoSize = true;
-			label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label6.Location = new Point(105, 266);
+			label6.Font = new Font("Times New Roman", 10.2F);
+			label6.Location = new Point(73, 259);
 			label6.Name = "label6";
-			label6.Size = new Size(56, 28);
+			label6.Size = new Size(46, 19);
 			label6.TabIndex = 51;
 			label6.Text = "Price";
 			label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -843,10 +898,10 @@
 			// label7
 			// 
 			label7.AutoSize = true;
-			label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label7.Location = new Point(71, 197);
+			label7.Font = new Font("Times New Roman", 10.2F);
+			label7.Location = new Point(73, 190);
 			label7.Name = "label7";
-			label7.Size = new Size(115, 28);
+			label7.Size = new Size(90, 19);
 			label7.TabIndex = 50;
 			label7.Text = "Description";
 			label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -854,67 +909,74 @@
 			// label8
 			// 
 			label8.AutoSize = true;
-			label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label8.Location = new Point(100, 118);
+			label8.Font = new Font("Times New Roman", 10.2F);
+			label8.Location = new Point(73, 111);
 			label8.Name = "label8";
-			label8.Size = new Size(66, 28);
+			label8.Size = new Size(49, 19);
 			label8.TabIndex = 49;
 			label8.Text = "Name";
 			label8.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// cmb_menuUpdateTaxInfo
 			// 
+			cmb_menuUpdateTaxInfo.Font = new Font("Times New Roman", 10.2F);
 			cmb_menuUpdateTaxInfo.FormattingEnabled = true;
-			cmb_menuUpdateTaxInfo.Location = new Point(215, 540);
+			cmb_menuUpdateTaxInfo.Location = new Point(204, 531);
 			cmb_menuUpdateTaxInfo.Name = "cmb_menuUpdateTaxInfo";
-			cmb_menuUpdateTaxInfo.Size = new Size(303, 36);
+			cmb_menuUpdateTaxInfo.Size = new Size(303, 27);
 			cmb_menuUpdateTaxInfo.TabIndex = 48;
 			cmb_menuUpdateTaxInfo.Text = "tax info";
 			// 
 			// cmb_menuUpdateDiscountInfo
 			// 
+			cmb_menuUpdateDiscountInfo.Font = new Font("Times New Roman", 10.2F);
 			cmb_menuUpdateDiscountInfo.FormattingEnabled = true;
-			cmb_menuUpdateDiscountInfo.Location = new Point(215, 489);
+			cmb_menuUpdateDiscountInfo.Location = new Point(204, 480);
 			cmb_menuUpdateDiscountInfo.Name = "cmb_menuUpdateDiscountInfo";
-			cmb_menuUpdateDiscountInfo.Size = new Size(303, 36);
+			cmb_menuUpdateDiscountInfo.Size = new Size(303, 27);
 			cmb_menuUpdateDiscountInfo.TabIndex = 47;
 			cmb_menuUpdateDiscountInfo.Text = "discount info";
 			// 
 			// txt_menuUpdateLpReward
 			// 
-			txt_menuUpdateLpReward.Location = new Point(215, 434);
+			txt_menuUpdateLpReward.Font = new Font("Times New Roman", 10.2F);
+			txt_menuUpdateLpReward.Location = new Point(204, 425);
 			txt_menuUpdateLpReward.Name = "txt_menuUpdateLpReward";
 			txt_menuUpdateLpReward.PlaceholderText = "LP reward";
-			txt_menuUpdateLpReward.Size = new Size(303, 34);
+			txt_menuUpdateLpReward.Size = new Size(303, 27);
 			txt_menuUpdateLpReward.TabIndex = 46;
 			// 
 			// txt_menuUpdateLpPrice
 			// 
-			txt_menuUpdateLpPrice.Location = new Point(215, 375);
+			txt_menuUpdateLpPrice.Font = new Font("Times New Roman", 10.2F);
+			txt_menuUpdateLpPrice.Location = new Point(204, 366);
 			txt_menuUpdateLpPrice.Name = "txt_menuUpdateLpPrice";
 			txt_menuUpdateLpPrice.PlaceholderText = "LP price";
-			txt_menuUpdateLpPrice.Size = new Size(303, 34);
+			txt_menuUpdateLpPrice.Size = new Size(303, 27);
 			txt_menuUpdateLpPrice.TabIndex = 45;
 			// 
 			// txt_menuUpdateNutriInfo
 			// 
-			txt_menuUpdateNutriInfo.Location = new Point(215, 316);
+			txt_menuUpdateNutriInfo.Font = new Font("Times New Roman", 10.2F);
+			txt_menuUpdateNutriInfo.Location = new Point(204, 307);
 			txt_menuUpdateNutriInfo.Name = "txt_menuUpdateNutriInfo";
 			txt_menuUpdateNutriInfo.PlaceholderText = "nutritional information";
-			txt_menuUpdateNutriInfo.Size = new Size(303, 34);
+			txt_menuUpdateNutriInfo.Size = new Size(303, 27);
 			txt_menuUpdateNutriInfo.TabIndex = 44;
 			// 
 			// txt_menuUpdatePrice
 			// 
-			txt_menuUpdatePrice.Location = new Point(215, 260);
+			txt_menuUpdatePrice.Font = new Font("Times New Roman", 10.2F);
+			txt_menuUpdatePrice.Location = new Point(204, 251);
 			txt_menuUpdatePrice.Name = "txt_menuUpdatePrice";
 			txt_menuUpdatePrice.PlaceholderText = "item price";
-			txt_menuUpdatePrice.Size = new Size(303, 34);
+			txt_menuUpdatePrice.Size = new Size(303, 27);
 			txt_menuUpdatePrice.TabIndex = 43;
 			// 
 			// txt_menuUpdateDescrip
 			// 
-			txt_menuUpdateDescrip.Location = new Point(215, 166);
+			txt_menuUpdateDescrip.Font = new Font("Times New Roman", 10.2F);
+			txt_menuUpdateDescrip.Location = new Point(204, 157);
 			txt_menuUpdateDescrip.Multiline = true;
 			txt_menuUpdateDescrip.Name = "txt_menuUpdateDescrip";
 			txt_menuUpdateDescrip.PlaceholderText = "item description";
@@ -923,54 +985,294 @@
 			// 
 			// txt_menuUpdateName
 			// 
-			txt_menuUpdateName.Location = new Point(215, 112);
+			txt_menuUpdateName.Font = new Font("Times New Roman", 10.2F);
+			txt_menuUpdateName.Location = new Point(204, 103);
 			txt_menuUpdateName.Name = "txt_menuUpdateName";
 			txt_menuUpdateName.PlaceholderText = "item name";
-			txt_menuUpdateName.Size = new Size(303, 34);
+			txt_menuUpdateName.Size = new Size(303, 27);
 			txt_menuUpdateName.TabIndex = 41;
 			// 
 			// flp_menuDisplayUpdateMenu
 			// 
+			flp_menuDisplayUpdateMenu.AutoScroll = true;
 			flp_menuDisplayUpdateMenu.BackColor = Color.LightBlue;
-			flp_menuDisplayUpdateMenu.Location = new Point(0, 0);
+			flp_menuDisplayUpdateMenu.Location = new Point(12, 65);
 			flp_menuDisplayUpdateMenu.Name = "flp_menuDisplayUpdateMenu";
-			flp_menuDisplayUpdateMenu.Size = new Size(766, 710);
+			flp_menuDisplayUpdateMenu.Size = new Size(754, 637);
 			flp_menuDisplayUpdateMenu.TabIndex = 0;
 			// 
 			// tab_updateEmployeeMgr
 			// 
-			tab_updateEmployeeMgr.BackColor = Color.Transparent;
+			tab_updateEmployeeMgr.BackColor = Color.Black;
+			tab_updateEmployeeMgr.Controls.Add(lbl_updateSelectedEm);
+			tab_updateEmployeeMgr.Controls.Add(lbl_empListUpdate);
 			tab_updateEmployeeMgr.Controls.Add(pnl_updateEmployeeInfo);
 			tab_updateEmployeeMgr.Controls.Add(flp_updateEmployeeMgr);
 			tab_updateEmployeeMgr.Location = new Point(4, 37);
 			tab_updateEmployeeMgr.Name = "tab_updateEmployeeMgr";
 			tab_updateEmployeeMgr.Padding = new Padding(3);
-			tab_updateEmployeeMgr.Size = new Size(1372, 710);
+			tab_updateEmployeeMgr.Size = new Size(1384, 710);
 			tab_updateEmployeeMgr.TabIndex = 5;
 			tab_updateEmployeeMgr.Text = "Update Employee";
 			tab_updateEmployeeMgr.Enter += tab_updateEmployeeMgr_Enter;
 			// 
+			// lbl_updateSelectedEm
+			// 
+			lbl_updateSelectedEm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			lbl_updateSelectedEm.AutoSize = true;
+			lbl_updateSelectedEm.BackColor = Color.Black;
+			lbl_updateSelectedEm.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_updateSelectedEm.ForeColor = SystemColors.Control;
+			lbl_updateSelectedEm.Location = new Point(906, 8);
+			lbl_updateSelectedEm.Name = "lbl_updateSelectedEm";
+			lbl_updateSelectedEm.Size = new Size(377, 54);
+			lbl_updateSelectedEm.TabIndex = 3;
+			lbl_updateSelectedEm.Text = "Selected Employee";
+			lbl_updateSelectedEm.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_empListUpdate
+			// 
+			lbl_empListUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			lbl_empListUpdate.AutoSize = true;
+			lbl_empListUpdate.BackColor = Color.Black;
+			lbl_empListUpdate.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_empListUpdate.ForeColor = SystemColors.Control;
+			lbl_empListUpdate.Location = new Point(240, 8);
+			lbl_empListUpdate.Name = "lbl_empListUpdate";
+			lbl_empListUpdate.Size = new Size(308, 54);
+			lbl_empListUpdate.TabIndex = 2;
+			lbl_empListUpdate.Text = "Employee's List";
+			lbl_empListUpdate.TextAlign = ContentAlignment.MiddleCenter;
+			// 
 			// pnl_updateEmployeeInfo
 			// 
 			pnl_updateEmployeeInfo.BackColor = Color.LightBlue;
-			pnl_updateEmployeeInfo.Location = new Point(819, 0);
+			pnl_updateEmployeeInfo.Controls.Add(btn_updateEmpBtn);
+			pnl_updateEmployeeInfo.Controls.Add(txt_updateEmpIdBox);
+			pnl_updateEmployeeInfo.Controls.Add(lbl_EmpIDupdate);
+			pnl_updateEmployeeInfo.Controls.Add(txt_updateEmpHrlyHrBox);
+			pnl_updateEmployeeInfo.Controls.Add(txt_updateEmpAddressBox);
+			pnl_updateEmployeeInfo.Controls.Add(txt_updateEmpEmailBox);
+			pnl_updateEmployeeInfo.Controls.Add(txt_updateEmpPhoneBox);
+			pnl_updateEmployeeInfo.Controls.Add(txt_updateEmpNameBox);
+			pnl_updateEmployeeInfo.Controls.Add(lbl_updateHrlyRate);
+			pnl_updateEmployeeInfo.Controls.Add(lbl_updateEmpAddress);
+			pnl_updateEmployeeInfo.Controls.Add(lbl_updateEmpEmail);
+			pnl_updateEmployeeInfo.Controls.Add(lbl_updateEmpPhone);
+			pnl_updateEmployeeInfo.Controls.Add(label17);
+			pnl_updateEmployeeInfo.Location = new Point(819, 65);
 			pnl_updateEmployeeInfo.Name = "pnl_updateEmployeeInfo";
-			pnl_updateEmployeeInfo.Size = new Size(553, 710);
+			pnl_updateEmployeeInfo.Size = new Size(551, 637);
 			pnl_updateEmployeeInfo.TabIndex = 1;
+			// 
+			// btn_updateEmpBtn
+			// 
+			btn_updateEmpBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			btn_updateEmpBtn.FlatStyle = FlatStyle.System;
+			btn_updateEmpBtn.Font = new Font("Times New Roman", 10.2F);
+			btn_updateEmpBtn.Location = new Point(265, 483);
+			btn_updateEmpBtn.Name = "btn_updateEmpBtn";
+			btn_updateEmpBtn.Size = new Size(120, 40);
+			btn_updateEmpBtn.TabIndex = 61;
+			btn_updateEmpBtn.Text = "Update";
+			btn_updateEmpBtn.UseVisualStyleBackColor = true;
+			// 
+			// txt_updateEmpIdBox
+			// 
+			txt_updateEmpIdBox.Font = new Font("Times New Roman", 10.2F);
+			txt_updateEmpIdBox.Location = new Point(189, 73);
+			txt_updateEmpIdBox.Name = "txt_updateEmpIdBox";
+			txt_updateEmpIdBox.ReadOnly = true;
+			txt_updateEmpIdBox.Size = new Size(272, 27);
+			txt_updateEmpIdBox.TabIndex = 60;
+			// 
+			// lbl_EmpIDupdate
+			// 
+			lbl_EmpIDupdate.AutoSize = true;
+			lbl_EmpIDupdate.Font = new Font("Times New Roman", 10.2F);
+			lbl_EmpIDupdate.Location = new Point(87, 84);
+			lbl_EmpIDupdate.Name = "lbl_EmpIDupdate";
+			lbl_EmpIDupdate.Size = new Size(26, 19);
+			lbl_EmpIDupdate.TabIndex = 59;
+			lbl_EmpIDupdate.Text = "ID";
+			lbl_EmpIDupdate.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// txt_updateEmpHrlyHrBox
+			// 
+			txt_updateEmpHrlyHrBox.Font = new Font("Times New Roman", 10.2F);
+			txt_updateEmpHrlyHrBox.Location = new Point(189, 428);
+			txt_updateEmpHrlyHrBox.Name = "txt_updateEmpHrlyHrBox";
+			txt_updateEmpHrlyHrBox.Size = new Size(272, 27);
+			txt_updateEmpHrlyHrBox.TabIndex = 56;
+			// 
+			// txt_updateEmpAddressBox
+			// 
+			txt_updateEmpAddressBox.Font = new Font("Times New Roman", 10.2F);
+			txt_updateEmpAddressBox.Location = new Point(189, 313);
+			txt_updateEmpAddressBox.Multiline = true;
+			txt_updateEmpAddressBox.Name = "txt_updateEmpAddressBox";
+			txt_updateEmpAddressBox.Size = new Size(272, 86);
+			txt_updateEmpAddressBox.TabIndex = 55;
+			// 
+			// txt_updateEmpEmailBox
+			// 
+			txt_updateEmpEmailBox.Font = new Font("Times New Roman", 10.2F);
+			txt_updateEmpEmailBox.Location = new Point(189, 250);
+			txt_updateEmpEmailBox.Name = "txt_updateEmpEmailBox";
+			txt_updateEmpEmailBox.Size = new Size(272, 27);
+			txt_updateEmpEmailBox.TabIndex = 54;
+			// 
+			// txt_updateEmpPhoneBox
+			// 
+			txt_updateEmpPhoneBox.Font = new Font("Times New Roman", 10.2F);
+			txt_updateEmpPhoneBox.Location = new Point(189, 193);
+			txt_updateEmpPhoneBox.Name = "txt_updateEmpPhoneBox";
+			txt_updateEmpPhoneBox.Size = new Size(272, 27);
+			txt_updateEmpPhoneBox.TabIndex = 53;
+			// 
+			// txt_updateEmpNameBox
+			// 
+			txt_updateEmpNameBox.Font = new Font("Times New Roman", 10.2F);
+			txt_updateEmpNameBox.Location = new Point(189, 126);
+			txt_updateEmpNameBox.Name = "txt_updateEmpNameBox";
+			txt_updateEmpNameBox.Size = new Size(272, 27);
+			txt_updateEmpNameBox.TabIndex = 52;
+			// 
+			// lbl_updateHrlyRate
+			// 
+			lbl_updateHrlyRate.AutoSize = true;
+			lbl_updateHrlyRate.Font = new Font("Times New Roman", 10.2F);
+			lbl_updateHrlyRate.Location = new Point(87, 436);
+			lbl_updateHrlyRate.Name = "lbl_updateHrlyRate";
+			lbl_updateHrlyRate.RightToLeft = RightToLeft.No;
+			lbl_updateHrlyRate.Size = new Size(92, 19);
+			lbl_updateHrlyRate.TabIndex = 51;
+			lbl_updateHrlyRate.Text = "Hourly Rate";
+			lbl_updateHrlyRate.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_updateEmpAddress
+			// 
+			lbl_updateEmpAddress.AutoSize = true;
+			lbl_updateEmpAddress.Font = new Font("Times New Roman", 10.2F);
+			lbl_updateEmpAddress.Location = new Point(87, 344);
+			lbl_updateEmpAddress.Name = "lbl_updateEmpAddress";
+			lbl_updateEmpAddress.Size = new Size(64, 19);
+			lbl_updateEmpAddress.TabIndex = 47;
+			lbl_updateEmpAddress.Text = "Address";
+			lbl_updateEmpAddress.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_updateEmpEmail
+			// 
+			lbl_updateEmpEmail.AutoSize = true;
+			lbl_updateEmpEmail.Font = new Font("Times New Roman", 10.2F);
+			lbl_updateEmpEmail.Location = new Point(87, 261);
+			lbl_updateEmpEmail.Name = "lbl_updateEmpEmail";
+			lbl_updateEmpEmail.Size = new Size(49, 19);
+			lbl_updateEmpEmail.TabIndex = 46;
+			lbl_updateEmpEmail.Text = "Email";
+			lbl_updateEmpEmail.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lbl_updateEmpPhone
+			// 
+			lbl_updateEmpPhone.AutoSize = true;
+			lbl_updateEmpPhone.Font = new Font("Times New Roman", 10.2F);
+			lbl_updateEmpPhone.Location = new Point(87, 201);
+			lbl_updateEmpPhone.Name = "lbl_updateEmpPhone";
+			lbl_updateEmpPhone.Size = new Size(73, 19);
+			lbl_updateEmpPhone.TabIndex = 44;
+			lbl_updateEmpPhone.Text = "PhoneNo";
+			lbl_updateEmpPhone.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label17
+			// 
+			label17.AutoSize = true;
+			label17.Font = new Font("Times New Roman", 10.2F);
+			label17.Location = new Point(87, 137);
+			label17.Name = "label17";
+			label17.Size = new Size(49, 19);
+			label17.TabIndex = 45;
+			label17.Text = "Name";
+			label17.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// flp_updateEmployeeMgr
 			// 
+			flp_updateEmployeeMgr.AutoScroll = true;
 			flp_updateEmployeeMgr.BackColor = Color.LightBlue;
-			flp_updateEmployeeMgr.Location = new Point(0, 0);
+			flp_updateEmployeeMgr.Location = new Point(12, 65);
 			flp_updateEmployeeMgr.Name = "flp_updateEmployeeMgr";
-			flp_updateEmployeeMgr.Size = new Size(777, 710);
+			flp_updateEmployeeMgr.Size = new Size(765, 637);
 			flp_updateEmployeeMgr.TabIndex = 0;
+			// 
+			// tab_reportsManager
+			// 
+			tab_reportsManager.BackColor = Color.Black;
+			tab_reportsManager.Controls.Add(lbl_reportsTabSalesReport);
+			tab_reportsManager.Controls.Add(lbl_reportsTabOrderReports);
+			tab_reportsManager.Controls.Add(pnl_totalSalesReport);
+			tab_reportsManager.Controls.Add(pnl_ordersReport);
+			tab_reportsManager.Location = new Point(4, 37);
+			tab_reportsManager.Name = "tab_reportsManager";
+			tab_reportsManager.Padding = new Padding(3);
+			tab_reportsManager.Size = new Size(1384, 710);
+			tab_reportsManager.TabIndex = 6;
+			tab_reportsManager.Text = "Reports";
+			tab_reportsManager.Enter += tab_reportsManager_Enter;
+			// 
+			// lbl_reportsTabSalesReport
+			// 
+			lbl_reportsTabSalesReport.AutoSize = true;
+			lbl_reportsTabSalesReport.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_reportsTabSalesReport.ForeColor = SystemColors.Control;
+			lbl_reportsTabSalesReport.Location = new Point(995, 7);
+			lbl_reportsTabSalesReport.Name = "lbl_reportsTabSalesReport";
+			lbl_reportsTabSalesReport.Size = new Size(239, 50);
+			lbl_reportsTabSalesReport.TabIndex = 3;
+			lbl_reportsTabSalesReport.Text = "Sales Report";
+			// 
+			// lbl_reportsTabOrderReports
+			// 
+			lbl_reportsTabOrderReports.AutoSize = true;
+			lbl_reportsTabOrderReports.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_reportsTabOrderReports.ForeColor = SystemColors.Control;
+			lbl_reportsTabOrderReports.Location = new Point(279, 7);
+			lbl_reportsTabOrderReports.Name = "lbl_reportsTabOrderReports";
+			lbl_reportsTabOrderReports.Size = new Size(268, 50);
+			lbl_reportsTabOrderReports.TabIndex = 2;
+			lbl_reportsTabOrderReports.Text = "Orders Report";
+			// 
+			// pnl_totalSalesReport
+			// 
+			pnl_totalSalesReport.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			pnl_totalSalesReport.AutoScroll = true;
+			pnl_totalSalesReport.BackColor = Color.LightBlue;
+			pnl_totalSalesReport.Location = new Point(859, 60);
+			pnl_totalSalesReport.Name = "pnl_totalSalesReport";
+			pnl_totalSalesReport.Size = new Size(511, 642);
+			pnl_totalSalesReport.TabIndex = 1;
+			// 
+			// pnl_ordersReport
+			// 
+			pnl_ordersReport.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			pnl_ordersReport.AutoScroll = true;
+			pnl_ordersReport.BackColor = Color.LightBlue;
+			pnl_ordersReport.Controls.Add(flp_ordersReportDisplay);
+			pnl_ordersReport.Location = new Point(12, 60);
+			pnl_ordersReport.Name = "pnl_ordersReport";
+			pnl_ordersReport.Size = new Size(802, 642);
+			pnl_ordersReport.TabIndex = 0;
+			// 
+			// flp_ordersReportDisplay
+			// 
+			flp_ordersReportDisplay.Location = new Point(3, 3);
+			flp_ordersReportDisplay.Name = "flp_ordersReportDisplay";
+			flp_ordersReportDisplay.Size = new Size(796, 636);
+			flp_ordersReportDisplay.TabIndex = 0;
 			// 
 			// ManagerScreen
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = SystemColors.Control;
+			BackColor = SystemColors.Desktop;
 			ClientSize = new Size(1382, 753);
 			Controls.Add(tab_ViewManager);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -986,9 +1288,16 @@
 			tab_addTaxes.ResumeLayout(false);
 			tab_addTaxes.PerformLayout();
 			tab_updateMenuItems.ResumeLayout(false);
+			tab_updateMenuItems.PerformLayout();
 			pnl_updateMenuitems.ResumeLayout(false);
 			pnl_updateMenuitems.PerformLayout();
 			tab_updateEmployeeMgr.ResumeLayout(false);
+			tab_updateEmployeeMgr.PerformLayout();
+			pnl_updateEmployeeInfo.ResumeLayout(false);
+			pnl_updateEmployeeInfo.PerformLayout();
+			tab_reportsManager.ResumeLayout(false);
+			tab_reportsManager.PerformLayout();
+			pnl_ordersReport.ResumeLayout(false);
 			ResumeLayout(false);
 		}
 
@@ -1072,5 +1381,28 @@
 		private TabPage tab_updateEmployeeMgr;
 		private FlowLayoutPanel flp_updateEmployeeMgr;
 		private Panel pnl_updateEmployeeInfo;
+		private TabPage tab_reportsManager;
+		private Panel pnl_ordersReport;
+		private Panel pnl_totalSalesReport;
+		private Label lbl_reportsTabOrderReports;
+		private Label lbl_reportsTabSalesReport;
+		private FlowLayoutPanel flp_ordersReportDisplay;
+		private Label lbl_updateEmpAddress;
+		private Label lbl_updateEmpEmail;
+		private Label lbl_updateEmpPhone;
+		private Label lbl_updateHrlyRate;
+		private TextBox txt_updateEmpPhoneBox;
+		private TextBox txt_updateEmpEmailBox;
+		private TextBox txt_updateEmpAddressBox;
+		private TextBox txt_updateEmpHrlyHrBox;
+		private TextBox txt_updateEmpIdBox;
+		private Label lbl_EmpIDupdate;
+		private TextBox txt_updateEmpNameBox;
+		private Label label17;
+		private Button btn_updateEmpBtn;
+		private Label lbl_empListUpdate;
+		private Label lbl_updateSelectedEm;
+		private Label lbl_menuItemsUpdate;
+		private Label label10;
 	}
 }

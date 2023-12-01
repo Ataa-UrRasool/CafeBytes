@@ -220,5 +220,13 @@ namespace DbProject.PresentationLayer
 				this.Visible = false;
 			}
 		}
+
+		private void btn_return_Click(object sender, EventArgs e)
+		{
+			this.Refresh();
+			this.Visible = false;
+			Form1 form = new Form1();
+			form.Visible = true;
+		}
 	}
 }

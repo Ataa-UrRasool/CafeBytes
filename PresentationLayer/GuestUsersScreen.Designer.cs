@@ -35,6 +35,7 @@
 			btn_placeOrder = new Button();
 			txt_custoID = new TextBox();
 			lbl_customerIdGU = new Label();
+			btn_return = new Button();
 			pnl_2_guestUser.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -107,12 +108,27 @@
 			lbl_customerIdGU.TabIndex = 0;
 			lbl_customerIdGU.Text = "Customer ID";
 			// 
+			// btn_return
+			// 
+			btn_return.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			btn_return.FlatStyle = FlatStyle.Popup;
+			btn_return.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			btn_return.ForeColor = SystemColors.ControlDark;
+			btn_return.Location = new Point(1220, 18);
+			btn_return.Name = "btn_return";
+			btn_return.Size = new Size(150, 40);
+			btn_return.TabIndex = 4;
+			btn_return.Text = "Return";
+			btn_return.UseVisualStyleBackColor = true;
+			btn_return.Click += btn_return_Click;
+			// 
 			// GuestUsersScreen
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.Desktop;
 			ClientSize = new Size(1382, 753);
+			Controls.Add(btn_return);
 			Controls.Add(pnl_2_guestUser);
 			Controls.Add(lv_guestUser);
 			Controls.Add(lbl_guestUserHeading);
@@ -135,5 +151,6 @@
 		private TextBox txt_custoID;
 		private Label lbl_customerIdGU;
 		private Button btn_placeOrder;
+		private Button btn_return;
 	}
 }

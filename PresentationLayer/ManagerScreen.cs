@@ -247,8 +247,22 @@ namespace DbProject.PresentationLayer
 				btn.Text = employeesList[i].Name;
 				btn.Tag = i;
 				btnsList.Add(btn);
+				btn.Click += new EventHandler(UpdateEmployeeInfoButton);
 				flp_updateEmployeeMgr.Controls.Add(btn);
 			}
+		}
+
+		public void UpdateEmployeeInfoButton(object sender, EventArgs e)
+		{
+			Button clickedButton = (Button)sender;
+			int clickedBtnIndex = (int)clickedButton.Tag;
+
+			txt_updateEmpIdBox.Text = employeesList[clickedBtnIndex].ID.ToString();
+			txt_updateEmpNameBox.Text = employeesList[clickedBtnIndex].Name.ToString();
+			txt_updateEmpEmailBox.Text = employeesList[clickedBtnIndex].Email.ToString();
+			txt_updateEmpPhoneBox.Text = employeesList[clickedBtnIndex].PhoneNumber.ToString();
+			txt_updateEmpAddressBox.Text = employeesList[clickedBtnIndex].Address.ToString();
+			txt_updateEmpHrlyHrBox.Text = employeesList[clickedBtnIndex].HourlyRate.ToString();
 		}
 
 		private void tab_updateEmployeeMgr_Enter(object sender, EventArgs e)
@@ -256,6 +270,32 @@ namespace DbProject.PresentationLayer
 			DisplayEmployeesForUpdation();
 		}
 
+		private void tab_reportsManager_Enter(object sender, EventArgs e)
+		{
+			Functionalities functionalities = new Functionalities();
+
+			List<Button> btns = new List<Button>();
+			List<OrderInfor> list = new List<OrderInfor>();
+
+			list = functionalities.GetOrdersInfoForReports();
+
+			flp_ordersReportDisplay.Controls.Clear();
+			flp_ordersReportDisplay.AutoScroll = true;
+
+			for (int i = 0; i < list.Count; i++)
+			{
+				Button btn = new Button();
+				btn.Size = new Size(200, 200);
+				btn.Text = "ItemName: " + list[i].itemName + "\nItemPrice: " + list[i].price + "\nDiscountValue: " + list[i].discountValue + "\nCustomerName: " + list[i].customerName;
+				btn.Cursor = Cursors.Hand;
+				btn.Font = new Font("Arial", 10);
+				btn.Tag = i;
+
+				btns.Add(btn);
+				flp_ordersReportDisplay.Controls.Add(btn);
+			}
+
+		}
 	}
 
 }

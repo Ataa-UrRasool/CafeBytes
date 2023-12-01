@@ -82,10 +82,10 @@
 			tab_ManageOrder.Controls.Add(tab_createCustomer);
 			tab_ManageOrder.Controls.Add(tab_orderManager);
 			tab_ManageOrder.Controls.Add(tab_ViewMenuEmp);
-			tab_ManageOrder.Location = new Point(2, 2);
+			tab_ManageOrder.Location = new Point(-1, 2);
 			tab_ManageOrder.Name = "tab_ManageOrder";
 			tab_ManageOrder.SelectedIndex = 0;
-			tab_ManageOrder.Size = new Size(1380, 752);
+			tab_ManageOrder.Size = new Size(1389, 752);
 			tab_ManageOrder.TabIndex = 0;
 			// 
 			// tab_createCustomer
@@ -110,7 +110,7 @@
 			tab_createCustomer.Location = new Point(4, 29);
 			tab_createCustomer.Name = "tab_createCustomer";
 			tab_createCustomer.Padding = new Padding(3);
-			tab_createCustomer.Size = new Size(1372, 719);
+			tab_createCustomer.Size = new Size(1381, 719);
 			tab_createCustomer.TabIndex = 0;
 			tab_createCustomer.Text = "Create Customer";
 			// 
@@ -270,7 +270,7 @@
 			tab_orderManager.Location = new Point(4, 29);
 			tab_orderManager.Name = "tab_orderManager";
 			tab_orderManager.Padding = new Padding(3);
-			tab_orderManager.Size = new Size(1372, 719);
+			tab_orderManager.Size = new Size(1381, 719);
 			tab_orderManager.TabIndex = 1;
 			tab_orderManager.Text = "Orders Manager";
 			tab_orderManager.Enter += tab_orderManager_Enter;
@@ -383,7 +383,7 @@
 			tab_ViewMenuEmp.Location = new Point(4, 29);
 			tab_ViewMenuEmp.Name = "tab_ViewMenuEmp";
 			tab_ViewMenuEmp.Padding = new Padding(3);
-			tab_ViewMenuEmp.Size = new Size(1372, 719);
+			tab_ViewMenuEmp.Size = new Size(1381, 719);
 			tab_ViewMenuEmp.TabIndex = 2;
 			tab_ViewMenuEmp.Text = "View Menu";
 			tab_ViewMenuEmp.Enter += tab_ViewMenuEmp_Enter;
@@ -530,13 +530,14 @@
 			flp_displayMenuEmp.BackColor = Color.LightBlue;
 			flp_displayMenuEmp.Location = new Point(0, 0);
 			flp_displayMenuEmp.Name = "flp_displayMenuEmp";
-			flp_displayMenuEmp.Size = new Size(893, 723);
+			flp_displayMenuEmp.Size = new Size(880, 723);
 			flp_displayMenuEmp.TabIndex = 0;
 			// 
 			// EmployeeScreen
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = SystemColors.Desktop;
 			ClientSize = new Size(1382, 753);
 			Controls.Add(tab_ManageOrder);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;

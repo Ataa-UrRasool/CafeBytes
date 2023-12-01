@@ -15,7 +15,8 @@ namespace DbProject
 			ApplicationConfiguration.Initialize();
 			//Application.Run(new Form1());
 			//Application.Run(new EmployeeScreen());
-			Application.Run(new GuestUsersScreen());	
+			Application.Run(new ManagerScreen());
+			//Application.Run(new GuestUsersScreen());	
 		}
 	}
 }

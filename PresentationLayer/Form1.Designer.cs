@@ -60,7 +60,7 @@
 			lbl_guestScreen.BackColor = Color.Transparent;
 			lbl_guestScreen.BorderStyle = BorderStyle.Fixed3D;
 			lbl_guestScreen.Cursor = Cursors.Hand;
-			lbl_guestScreen.FlatStyle = FlatStyle.Popup;
+			lbl_guestScreen.FlatStyle = FlatStyle.Flat;
 			lbl_guestScreen.Font = new Font("Times New Roman", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
 			lbl_guestScreen.ForeColor = SystemColors.Desktop;
 			lbl_guestScreen.Location = new Point(566, 714);
@@ -89,7 +89,7 @@
 			signInBtn.BackColor = Color.White;
 			signInBtn.Cursor = Cursors.Hand;
 			signInBtn.FlatAppearance.BorderSize = 10;
-			signInBtn.FlatStyle = FlatStyle.Popup;
+			signInBtn.FlatStyle = FlatStyle.System;
 			signInBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			signInBtn.Location = new Point(520, 484);
 			signInBtn.Name = "signInBtn";
