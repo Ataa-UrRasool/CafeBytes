@@ -15,7 +15,7 @@ namespace DbProject.BusinessLogicLayer
 			string query = "SELECT * FROM Employees";
 			DAL dAL = new DAL();
 			DataTable dt = dAL.executeGetData(query);
-
+			DataTable rolesDT = dAL.executeGetData(GetRolesWithHourlyRate());
 			List<Employee> employeesList = new List<Employee>();
 
 			for (int i = 0; i < dt.Rows.Count; i++)
@@ -264,6 +264,11 @@ namespace DbProject.BusinessLogicLayer
 		private string GetDiscountsQuery()
 		{
 			return "SELECT ID, name FROM Discounts";
+		}
+		
+		private string GetRolesWithHourlyRate()
+		{
+			return "SELECT Roles.role, AVG(Employees.hourlyRate) AS AverageHourlyRate FROM Employees INNER JOIN Roles ON Employees.role = Roles.ID GROUP BY Roles.role HAVING AVG(Employees.hourlyRate) > 25.0;";
 		}
 		private string GetTaxesQuery()
 		{
