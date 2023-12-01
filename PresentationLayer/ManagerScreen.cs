@@ -296,6 +296,55 @@ namespace DbProject.PresentationLayer
 			}
 
 		}
+
+		private void btn_return_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Form1 form1 = new Form1();
+			form1.Visible = true;
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Form1 form1 = new Form1();
+			form1.Visible = true;
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Form1 form1 = new Form1();
+			form1.Visible = true;
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Form1 form1 = new Form1();
+			form1.Visible = true;
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Form1 form1 = new Form1();
+			form1.Visible = true;
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Form1 form1 = new Form1();
+			form1.Visible = true;
+		}
+
+		private void button6_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Form1 form1 = new Form1();
+			form1.Visible = true;
+		}
 	}
 
 }

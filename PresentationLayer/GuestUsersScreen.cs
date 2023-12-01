@@ -41,10 +41,6 @@ namespace DbProject.PresentationLayer
 			customerOrder.ItemsList = new List<Item>();
 			customerOrder.Quantity = new List<int>();
 
-			lv_guestUser.Columns.Add("Name");
-			lv_guestUser.Columns.Add("Price");
-			lv_guestUser.Columns.Add("Quantity");
-
 			orderDetails = new string[3];
 		}
 
@@ -147,43 +143,34 @@ namespace DbProject.PresentationLayer
 		{
 			System.Windows.Forms.Button chosenButton = (System.Windows.Forms.Button)sender;
 			int clickedBtnIndex = (int)chosenButton.Tag;
+			
+			lv_guestUser.Items.Clear();
+			lv_guestUser.Columns.Clear();
 
-			string selectedItem = itemsList[clickedBtnIndex].Name.ToString();
+			lv_guestUser.Columns.Add("Name");
+			lv_guestUser.Columns.Add("Price");
+			lv_guestUser.Columns.Add("Quantity");
 
-			listViewItem = new ListViewItem(orderDetails);
+			listQuantity[clickedBtnIndex] += 1;
 
-			lv_guestUser.View = View.Details;
-
-			if (customerOrder.ItemsList.Count == 0)
+			for (int i = 0; i < itemsList.Count; i++)
 			{
-				listQuantity[clickedBtnIndex]++;
-				customerOrder.ItemsList.Add(itemsList[clickedBtnIndex]);
-				customerOrder.Quantity.Add(listQuantity[clickedBtnIndex]);
-			}
-			else
-			{
-				for (int i = 0; i < customerOrder.ItemsList.Count; i++)
+				if (listQuantity[i] > 0)
 				{
-					if (customerOrder.ItemsList[i].Name == selectedItem)
-					{
-						listQuantity[clickedBtnIndex]++;
-						customerOrder.Quantity.Add(listQuantity[clickedBtnIndex]);
-					}
-					else
-					{
-						customerOrder.ItemsList.Add(itemsList[clickedBtnIndex]);
-						listQuantity[clickedBtnIndex]++;
-						customerOrder.Quantity.Add(listQuantity[clickedBtnIndex]);
-						break;
-					}
-				}
+					customerOrder.ItemsList.Add(itemsList[i]);
+					customerOrder.Quantity.Add(listQuantity[i]);
 
+
+					orderDetails[0] = itemsList[i].Name;
+					orderDetails[1] = itemsList[i].Price.ToString();
+					orderDetails[2] = listQuantity[i].ToString();
+
+
+					listViewItem = new ListViewItem(orderDetails);
+					lv_guestUser.View = View.Details;
+					lv_guestUser.Items.Add(listViewItem);
+				}
 			}
-			orderDetails[0] = customerOrder.ItemsList[clickedBtnIndex].Name;
-			orderDetails[1] = customerOrder.ItemsList[clickedBtnIndex].Price.ToString();
-			orderDetails[2] = listQuantity[clickedBtnIndex].ToString();
-			//orderDetails[2] = customerOrder.Quantity[clickedBtnIndex].ToString();
-			lv_guestUser.Items.Add(listViewItem);
 		}
 
 		private void btn_placeOrder_Click(object sender, EventArgs e)
@@ -207,7 +194,6 @@ namespace DbProject.PresentationLayer
 					form1.Visible = true;
 					this.Visible = false;
 				}
-
 			}
 			else
 			{

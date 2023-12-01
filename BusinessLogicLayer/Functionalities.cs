@@ -30,7 +30,6 @@ namespace DbProject.BusinessLogicLayer
 	}
 	public class Functionalities
 	{
-
 		public Functionalities() { }
 
 		public List<OrderInfor> GetOrdersInfoForReports()
@@ -60,7 +59,6 @@ namespace DbProject.BusinessLogicLayer
 
 			return null;
 		}
-
 
 		private string GetOrdersInfoQuery()
 		{

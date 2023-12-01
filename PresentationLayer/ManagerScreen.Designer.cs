@@ -30,6 +30,7 @@
 		{
 			tab_ViewManager = new TabControl();
 			tab_createEmployeeProfile = new TabPage();
+			button3 = new Button();
 			cmb_gender = new ComboBox();
 			txt_hourlyRate = new TextBox();
 			lbl_hourlyRate = new Label();
@@ -48,6 +49,7 @@
 			txt_phoneNo = new TextBox();
 			txt_name = new TextBox();
 			tab_addMenuItems = new TabPage();
+			button4 = new Button();
 			lbl_taxInfo = new Label();
 			lbl_discountInfo = new Label();
 			lbl_lpReward = new Label();
@@ -66,6 +68,7 @@
 			txt_itemDescription = new TextBox();
 			txt_itemName = new TextBox();
 			tab_addDiscounts = new TabPage();
+			button5 = new Button();
 			lbl_discTabValue = new Label();
 			lbl_discTabStatus = new Label();
 			lbl_discTabName = new Label();
@@ -74,6 +77,7 @@
 			txt_dicountValue = new TextBox();
 			txt_discountName = new TextBox();
 			tab_addTaxes = new TabPage();
+			button6 = new Button();
 			lbl_taxTabValue = new Label();
 			lbl_taxTabStatus = new Label();
 			lbl_taxTabName = new Label();
@@ -82,6 +86,7 @@
 			txt_taxValue = new TextBox();
 			txt_taxName = new TextBox();
 			tab_updateMenuItems = new TabPage();
+			btn_return = new Button();
 			label10 = new Label();
 			lbl_menuItemsUpdate = new Label();
 			pnl_updateMenuitems = new Panel();
@@ -106,6 +111,7 @@
 			txt_menuUpdateName = new TextBox();
 			flp_menuDisplayUpdateMenu = new FlowLayoutPanel();
 			tab_updateEmployeeMgr = new TabPage();
+			button1 = new Button();
 			lbl_updateSelectedEm = new Label();
 			lbl_empListUpdate = new Label();
 			pnl_updateEmployeeInfo = new Panel();
@@ -124,6 +130,7 @@
 			label17 = new Label();
 			flp_updateEmployeeMgr = new FlowLayoutPanel();
 			tab_reportsManager = new TabPage();
+			button2 = new Button();
 			lbl_reportsTabSalesReport = new Label();
 			lbl_reportsTabOrderReports = new Label();
 			pnl_totalSalesReport = new Panel();
@@ -161,6 +168,7 @@
 			// tab_createEmployeeProfile
 			// 
 			tab_createEmployeeProfile.BackColor = Color.LightBlue;
+			tab_createEmployeeProfile.Controls.Add(button3);
 			tab_createEmployeeProfile.Controls.Add(cmb_gender);
 			tab_createEmployeeProfile.Controls.Add(txt_hourlyRate);
 			tab_createEmployeeProfile.Controls.Add(lbl_hourlyRate);
@@ -186,6 +194,22 @@
 			tab_createEmployeeProfile.Size = new Size(1384, 710);
 			tab_createEmployeeProfile.TabIndex = 0;
 			tab_createEmployeeProfile.Text = "Create Employee";
+			// 
+			// button3
+			// 
+			button3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			button3.BackColor = Color.Black;
+			button3.Cursor = Cursors.Hand;
+			button3.FlatStyle = FlatStyle.Popup;
+			button3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			button3.ForeColor = SystemColors.ControlDark;
+			button3.Location = new Point(0, 0);
+			button3.Name = "button3";
+			button3.Size = new Size(88, 43);
+			button3.TabIndex = 46;
+			button3.Text = "Return";
+			button3.UseVisualStyleBackColor = false;
+			button3.Click += button3_Click;
 			// 
 			// cmb_gender
 			// 
@@ -357,6 +381,7 @@
 			// tab_addMenuItems
 			// 
 			tab_addMenuItems.BackColor = Color.LightBlue;
+			tab_addMenuItems.Controls.Add(button4);
 			tab_addMenuItems.Controls.Add(lbl_taxInfo);
 			tab_addMenuItems.Controls.Add(lbl_discountInfo);
 			tab_addMenuItems.Controls.Add(lbl_lpReward);
@@ -381,6 +406,22 @@
 			tab_addMenuItems.Size = new Size(1384, 710);
 			tab_addMenuItems.TabIndex = 1;
 			tab_addMenuItems.Text = "Add MenuItems";
+			// 
+			// button4
+			// 
+			button4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			button4.BackColor = Color.Black;
+			button4.Cursor = Cursors.Hand;
+			button4.FlatStyle = FlatStyle.Popup;
+			button4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			button4.ForeColor = SystemColors.ControlDark;
+			button4.Location = new Point(0, 0);
+			button4.Name = "button4";
+			button4.Size = new Size(88, 43);
+			button4.TabIndex = 47;
+			button4.Text = "Return";
+			button4.UseVisualStyleBackColor = false;
+			button4.Click += button4_Click;
 			// 
 			// lbl_taxInfo
 			// 
@@ -554,6 +595,7 @@
 			// tab_addDiscounts
 			// 
 			tab_addDiscounts.BackColor = Color.LightBlue;
+			tab_addDiscounts.Controls.Add(button5);
 			tab_addDiscounts.Controls.Add(lbl_discTabValue);
 			tab_addDiscounts.Controls.Add(lbl_discTabStatus);
 			tab_addDiscounts.Controls.Add(lbl_discTabName);
@@ -568,6 +610,22 @@
 			tab_addDiscounts.Size = new Size(1384, 710);
 			tab_addDiscounts.TabIndex = 2;
 			tab_addDiscounts.Text = "Add Discounts";
+			// 
+			// button5
+			// 
+			button5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			button5.BackColor = Color.Black;
+			button5.Cursor = Cursors.Hand;
+			button5.FlatStyle = FlatStyle.Popup;
+			button5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			button5.ForeColor = SystemColors.ControlDark;
+			button5.Location = new Point(0, 0);
+			button5.Name = "button5";
+			button5.Size = new Size(88, 43);
+			button5.TabIndex = 47;
+			button5.Text = "Return";
+			button5.UseVisualStyleBackColor = false;
+			button5.Click += button5_Click;
 			// 
 			// lbl_discTabValue
 			// 
@@ -645,6 +703,7 @@
 			// tab_addTaxes
 			// 
 			tab_addTaxes.BackColor = Color.LightBlue;
+			tab_addTaxes.Controls.Add(button6);
 			tab_addTaxes.Controls.Add(lbl_taxTabValue);
 			tab_addTaxes.Controls.Add(lbl_taxTabStatus);
 			tab_addTaxes.Controls.Add(lbl_taxTabName);
@@ -659,6 +718,22 @@
 			tab_addTaxes.Size = new Size(1384, 710);
 			tab_addTaxes.TabIndex = 3;
 			tab_addTaxes.Text = "Add Taxes";
+			// 
+			// button6
+			// 
+			button6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			button6.BackColor = Color.Black;
+			button6.Cursor = Cursors.Hand;
+			button6.FlatStyle = FlatStyle.Popup;
+			button6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			button6.ForeColor = SystemColors.ControlDark;
+			button6.Location = new Point(0, 0);
+			button6.Name = "button6";
+			button6.Size = new Size(88, 43);
+			button6.TabIndex = 47;
+			button6.Text = "Return";
+			button6.UseVisualStyleBackColor = false;
+			button6.Click += button6_Click;
 			// 
 			// lbl_taxTabValue
 			// 
@@ -734,6 +809,7 @@
 			// tab_updateMenuItems
 			// 
 			tab_updateMenuItems.BackColor = SystemColors.Desktop;
+			tab_updateMenuItems.Controls.Add(btn_return);
 			tab_updateMenuItems.Controls.Add(label10);
 			tab_updateMenuItems.Controls.Add(lbl_menuItemsUpdate);
 			tab_updateMenuItems.Controls.Add(pnl_updateMenuitems);
@@ -745,6 +821,20 @@
 			tab_updateMenuItems.TabIndex = 4;
 			tab_updateMenuItems.Text = "Update MenuItems";
 			tab_updateMenuItems.Enter += tab_updateMenuItems_Enter;
+			// 
+			// btn_return
+			// 
+			btn_return.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			btn_return.FlatStyle = FlatStyle.Popup;
+			btn_return.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			btn_return.ForeColor = SystemColors.ControlDark;
+			btn_return.Location = new Point(6, 6);
+			btn_return.Name = "btn_return";
+			btn_return.Size = new Size(88, 43);
+			btn_return.TabIndex = 5;
+			btn_return.Text = "Return";
+			btn_return.UseVisualStyleBackColor = true;
+			btn_return.Click += btn_return_Click;
 			// 
 			// label10
 			// 
@@ -1004,6 +1094,7 @@
 			// tab_updateEmployeeMgr
 			// 
 			tab_updateEmployeeMgr.BackColor = Color.Black;
+			tab_updateEmployeeMgr.Controls.Add(button1);
 			tab_updateEmployeeMgr.Controls.Add(lbl_updateSelectedEm);
 			tab_updateEmployeeMgr.Controls.Add(lbl_empListUpdate);
 			tab_updateEmployeeMgr.Controls.Add(pnl_updateEmployeeInfo);
@@ -1015,6 +1106,20 @@
 			tab_updateEmployeeMgr.TabIndex = 5;
 			tab_updateEmployeeMgr.Text = "Update Employee";
 			tab_updateEmployeeMgr.Enter += tab_updateEmployeeMgr_Enter;
+			// 
+			// button1
+			// 
+			button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			button1.FlatStyle = FlatStyle.Popup;
+			button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			button1.ForeColor = SystemColors.ControlDark;
+			button1.Location = new Point(6, 6);
+			button1.Name = "button1";
+			button1.Size = new Size(88, 43);
+			button1.TabIndex = 6;
+			button1.Text = "Return";
+			button1.UseVisualStyleBackColor = true;
+			button1.Click += button1_Click;
 			// 
 			// lbl_updateSelectedEm
 			// 
@@ -1206,6 +1311,7 @@
 			// tab_reportsManager
 			// 
 			tab_reportsManager.BackColor = Color.Black;
+			tab_reportsManager.Controls.Add(button2);
 			tab_reportsManager.Controls.Add(lbl_reportsTabSalesReport);
 			tab_reportsManager.Controls.Add(lbl_reportsTabOrderReports);
 			tab_reportsManager.Controls.Add(pnl_totalSalesReport);
@@ -1217,6 +1323,20 @@
 			tab_reportsManager.TabIndex = 6;
 			tab_reportsManager.Text = "Reports";
 			tab_reportsManager.Enter += tab_reportsManager_Enter;
+			// 
+			// button2
+			// 
+			button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			button2.FlatStyle = FlatStyle.Popup;
+			button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			button2.ForeColor = SystemColors.ControlDark;
+			button2.Location = new Point(6, 3);
+			button2.Name = "button2";
+			button2.Size = new Size(88, 43);
+			button2.TabIndex = 6;
+			button2.Text = "Return";
+			button2.UseVisualStyleBackColor = true;
+			button2.Click += button2_Click;
 			// 
 			// lbl_reportsTabSalesReport
 			// 
@@ -1247,7 +1367,7 @@
 			pnl_totalSalesReport.BackColor = Color.LightBlue;
 			pnl_totalSalesReport.Location = new Point(859, 60);
 			pnl_totalSalesReport.Name = "pnl_totalSalesReport";
-			pnl_totalSalesReport.Size = new Size(511, 642);
+			pnl_totalSalesReport.Size = new Size(511, 639);
 			pnl_totalSalesReport.TabIndex = 1;
 			// 
 			// pnl_ordersReport
@@ -1404,5 +1524,12 @@
 		private Label lbl_updateSelectedEm;
 		private Label lbl_menuItemsUpdate;
 		private Label label10;
+		private Button btn_return;
+		private Button button1;
+		private Button button2;
+		private Button button3;
+		private Button button4;
+		private Button button5;
+		private Button button6;
 	}
 }

@@ -155,5 +155,58 @@ namespace DbProject.PresentationLayer
 			tab_orderManager.Refresh();
 			tab_orderManager.Update();
 		}
+
+		private void btn_cardPayment_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("Card Payment Completed. Thank You!");
+			this.Visible = false;
+			this.ResetText();
+			this.Refresh();
+			Form1 form = new Form1();
+			form.Visible = true;
+		}
+
+		private void btn_onlinePayment_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("Online Payment Completed. Thank You!");
+			this.Visible = false;
+			this.ResetText();
+			this.Refresh();
+			Form1 form = new Form1();
+			form.Visible = true;
+		}
+
+		private void btn_cashpayment_Click(object sender, EventArgs e)
+		{
+			Panel panel = new Panel();
+			//panel.Size = new Size(400, 400);
+			panel.Width = 400;
+			panel.Height = 400;
+			panel.Location = new Point(200, 250);
+			panel.BackColor = Color.White;
+			panel.Visible = true;
+			panel.BringToFront();
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Form1 form = new Form1();
+			form.Visible = true;
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Form1 form = new Form1();
+			form.Visible = true;
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Form1 form = new Form1();
+			form.Visible = true;
+		}
 	}
 }
